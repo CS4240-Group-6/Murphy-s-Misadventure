@@ -9,7 +9,7 @@ Problems and dangers will be produced in the following rooms for different level
 - Kitchen 🍳
 - Bedroom 🛌🏻
 
-If players survive all these levels, they WIN the game!
+If players survive all these levels, they WIN the game else they will be put in a dark room to reflect on their mistake and they can choose to be revived!
 
 ## Controls
 - Grab
