@@ -20,6 +20,8 @@ If players survive all these levels, they WIN the game else they will be put in 
 - Grab
 - Teleport
 - "General" Action Button
+- Movement (Left Joystick)
+- Rotation (Right Joystick)
 
 ## Features
 - Tooltips along the way for players to be guided/assisted.
