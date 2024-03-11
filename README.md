@@ -20,12 +20,15 @@ If players survive all these levels, they WIN the game else they will be put in 
 - Grab
 - Teleport
 - "General" Action Button
+- Movement (Left Joystick)
+- Rotation (Right Joystick)
 
 ## Features
 - Tooltips along the way for players to be guided/assisted.
 - Unique and realistic sounds behind every action to simulate real-life scenarios.
 - Poly assets to gamify the environment so that it does not stress the players too much.
 - Haptics that allow players to be in one with their surroundings.
+- Both continuous and snap movements are provided for users to prevent motion sickness and enjoy realistic motion.
 
 ## Team
 - Fan Shixi
