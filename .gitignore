@@ -146,3 +146,8 @@ PackageBackups/
 /UWP/*
 
 *.crdownload
+
+# Ignored files
+Assets/XR/com.meta.xr.simulator-60.0.0.tgz
+Assets/XR/com.meta.xr.simulator-60.0.0.tgz.meta
+*.tgz
