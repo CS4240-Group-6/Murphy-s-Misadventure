@@ -6,6 +6,9 @@ public class SpawnDoor : MonoBehaviour
 {
     public GameObject doorPlaceholder;
     public GameObject door;
+
+    public TextAnimation textAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,8 @@ public class SpawnDoor : MonoBehaviour
             // Deactivate the GameObject to which this script is attached
             doorPlaceholder.SetActive(false);
             door.SetActive(true);
+
+            textAnimation.DisplayTextOnPaper();
         }
     }
 }
