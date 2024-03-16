@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/KitchenScene.unity
+    guid: 93b02dc500dc8c74a890ab6b5cb87994
+  - enabled: 1
+    path: Assets/Scenes/DeathIsOnlyTheBeginning.unity
+    guid: 0edb696b6ced1e649ac97eade3447dd9
+  - enabled: 1
+    path: Assets/Scenes/BedroomScene.unity
+    guid: 79cc692faf369ed4ab3827dcb389c24e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6027c1be0707e42a09a3abe9cb9cc8f1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 48c3983efbb6e9748a7dbe1120a29adb, type: 2}

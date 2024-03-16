@@ -6,8 +6,8 @@ using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
-    // public float timeRemaining = 180; // 3 minute timer
-    public float timeRemaining = 10; // 10 second timer
+    // private float timeRemaining = 180; // 3 minute timer
+    private float timeRemaining = 10; // 10 second timer
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
 

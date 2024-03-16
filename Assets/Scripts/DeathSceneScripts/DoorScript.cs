@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class DoorScript : MonoBehaviour
 {
@@ -16,5 +17,10 @@ public class DoorScript : MonoBehaviour
     void Update()
     {
         rb.MovePosition(target.transform.position);
+    }
+
+    public void OpenDoor()
+    {
+        // Add change scene logic here Jonny
     }
 }
