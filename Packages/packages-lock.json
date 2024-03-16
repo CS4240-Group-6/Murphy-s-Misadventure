@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.meta.xr.simulator": {
-      "version": "file:C:/Users/hkish/Desktop/meta_xr_simulator_v60/com.meta.xr.simulator-60.0.0.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {}
-    },
     "com.unity.burst": {
       "version": "1.8.12",
       "depth": 1,

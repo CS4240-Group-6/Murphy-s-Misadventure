@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DeathSceneManger : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class DeathSceneManger : MonoBehaviour
         for (int i = 0; i < manequinnsToShow.Count; i++) {
             manequinnsToShow[i].SetActive(i < numDeaths);
         }
-        string playerDiedAt = PlayerPrefs.GetString("LocationOfDeath", "bedroomFire");
+        string playerDiedAt = GetPlayerDeathLocation();
         SetTextToDisplay(playerDiedAt);
     }
 
@@ -55,6 +56,29 @@ public class DeathSceneManger : MonoBehaviour
         }
     }
 
+    private string GetPlayerDeathLocation() {
+        switch(GlobalState.GetLevel()) {
+            case 1:
+                return PlayerPrefs.GetString("LocationOfDeath", "livingRoomFlowerPot");
+            case 2:
+                return  PlayerPrefs.GetString("LocationOfDeath", "livingRoomFire");
+            case 3:
+                return PlayerPrefs.GetString("LocationOfDeath", "kitchenGasLeak");
+            case 4:
+                return PlayerPrefs.GetString("LocationOfDeath", "kitchenOilFire");
+            case 5:
+                return PlayerPrefs.GetString("LocationOfDeath", "kitchenOvenFire");
+            case 6:
+                return PlayerPrefs.GetString("LocationOfDeath", "bedroomFire");
+            case 7:
+                return PlayerPrefs.GetString("LocationOfDeath", "bedroomEarthquake");
+            case 8:
+                return PlayerPrefs.GetString("LocationOfDeath", "livingRoomBreakIn");
+            default:
+                return PlayerPrefs.GetString("LocationOfDeath", "Unknown Location of Death");
+        }
+    }
+
     void SetTextToDisplay(string sceneWherePlayerDiedAt) {
         string textOnPaper = "";
         switch (sceneWherePlayerDiedAt) {
@@ -66,12 +90,16 @@ public class DeathSceneManger : MonoBehaviour
                 textOnPaper = "Rumble rumble! Brace yourself, it's the earth shaking! Quick, find cover and hold on tight!";
                 break;
 
-            case "kitchenFire":
-                textOnPaper = "Watch out! The oil's ignited in the kitchen! Water will only make it worse! Cover those flames and cut off the heat before it's too late...";
+            case "kitchenOilFire":
+                textOnPaper = "Watch out! The oil's ignited in the kitchen! Water will only make it worse! Cut off the heat and add cool oil before it's too late...";
                 break;
 
             case "kitchenGasLeak":
                 textOnPaper = "Careful now, that's not just a gas stove leak, it's a ticking time bomb. Move fast!";
+                break;
+
+            case "kitchenOvenFire":
+                textOnPaper = "Careful, oven fires are tricky. You can't just throw water on them. You need to smother the flames with the right extinguisher!";
                 break;
         }
         textAnimation.textToDisplay.text = textOnPaper;
