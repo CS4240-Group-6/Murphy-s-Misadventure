@@ -6,7 +6,8 @@ using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
-    public float timeRemaining = 180; // 3 minute timer
+    // public float timeRemaining = 180; // 3 minute timer
+    public float timeRemaining = 10; // 10 second timer
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
 
@@ -31,6 +32,7 @@ public class LevelTimer : MonoBehaviour
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                GlobalState.SetGameOver(true);
             }
         }
     }
