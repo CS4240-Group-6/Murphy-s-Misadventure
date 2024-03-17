@@ -1,6 +1,10 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.meta.xr.simulator": "file:C:/Users/hkish/Desktop/meta_xr_simulator_v60/com.meta.xr.simulator-60.0.0.tgz",
+=======
+    "com.meta.xr.simulator": "file:meta_xr_simulator_v62.tgz",
+>>>>>>> a07b976151da3af2b4dcac231ff1f797d94a1a8a
     "com.unity.cloud.gltfast": "6.2.0",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.feature.development": "1.0.1",
