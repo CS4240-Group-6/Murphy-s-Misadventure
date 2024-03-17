@@ -12,8 +12,8 @@ public class LevelTextManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI levelClearText;
     private int previousLevel = 0;
-    // private float timeRemaining = 180; // 3 minute timer
-    private float timeRemaining = 10; // 10 second timer
+    private float timeRemaining = 180; // 3 minute timer
+    // private float timeRemaining = 10; // 10 second timer
 
     private bool timerIsRunning = false;
 
