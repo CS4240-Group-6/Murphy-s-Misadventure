@@ -163,6 +163,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.CS4240_Grp6.MurphysMisadventures
+    Standalone: com.CS4240-Grp6.Murphys-Misadventures
   buildNumber:
     Standalone: 0
     VisionOS: 0
