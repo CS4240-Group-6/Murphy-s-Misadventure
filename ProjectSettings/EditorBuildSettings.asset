@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathIsOnlyTheBeginning.unity
     guid: 0edb696b6ced1e649ac97eade3447dd9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BedroomScene.unity
     guid: 79cc692faf369ed4ab3827dcb389c24e
   m_configObjects:

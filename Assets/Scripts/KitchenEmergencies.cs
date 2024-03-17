@@ -93,4 +93,10 @@ public class KitchenEmergencies : MonoBehaviour
             Emission.rateOverTime = 45.0f;
         }
     }
+
+    public void ExtinguishOilFire()
+    {
+        OilFireStart.SetActive(false);
+        OilFireSpread.SetActive(false);
+    }
 }
