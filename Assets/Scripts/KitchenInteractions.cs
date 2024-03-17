@@ -44,6 +44,7 @@ public class KitchenInteractions : MonoBehaviour
                 Vector3 newRot = new Vector3(0f, 0f, 90f);
                 Quaternion targetRot = currentRot * Quaternion.Euler(newRot);
                 StoveKnobLeft1.rotation = Quaternion.Slerp(currentRot, targetRot, speed);
+                KitchenSceneState.SetGasStoveTurnedOff(true);
             }
             else Debug.Log("no child with stove knob left 1 found");
         }
