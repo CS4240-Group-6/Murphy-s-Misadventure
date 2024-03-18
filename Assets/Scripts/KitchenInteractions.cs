@@ -53,6 +53,7 @@ public class KitchenInteractions : MonoBehaviour
 
     public void RotateStoveKnobLeft2()
     {
+        
         GameObject Stove = InteractableObjects.transform.Find("Stove").gameObject;
 
         if (Stove != null)
@@ -64,8 +65,11 @@ public class KitchenInteractions : MonoBehaviour
                 Quaternion currentRot = StoveKnobLeft1.rotation;
 
                 Vector3 newRot = new Vector3(0f, 0f, 90f);
+                Debug.Log("IT WORKS");
+                Debug.Log("New Rotation: " + newRot);
                 Quaternion targetRot = currentRot * Quaternion.Euler(newRot);
                 StoveKnobLeft1.rotation = Quaternion.Slerp(currentRot, targetRot, speed);
+                Debug.Log(StoveKnobLeft1.rotation);
             }
             else Debug.Log("no child with stove knob left 2 found");
         }
