@@ -23,6 +23,7 @@ public class DoorScript : MonoBehaviour
 
     public void OpenDoor()
     {
+        Debug.Log("It works");
         // Add change scene logic here Jonny
         int previousLevel = GlobalState.GetLevel();
         if (previousLevel == 1 || previousLevel == 2 || previousLevel == 8) {
@@ -30,6 +31,7 @@ public class DoorScript : MonoBehaviour
         }
         else if (previousLevel == 3 || previousLevel == 4 || previousLevel == 5) {
             SceneManager.LoadScene("KitchenScene");
+            Debug.Log("It reaches the go to KitchenScene code");
         }
         else if (previousLevel == 6 || previousLevel == 7) {
             SceneManager.LoadScene("BedroomScene");

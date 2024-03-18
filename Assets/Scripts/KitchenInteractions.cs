@@ -95,6 +95,7 @@ public class KitchenInteractions : MonoBehaviour
 
     public void RotateStoveKnobRight2()
     {
+        Debug.Log("Reaches function");
         GameObject Stove = InteractableObjects.transform.Find("Stove").gameObject;
 
         if (Stove != null)

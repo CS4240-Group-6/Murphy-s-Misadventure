@@ -38,6 +38,11 @@ public class DeathSceneManger : MonoBehaviour
         LightFlickering();
     }
 
+    public void DebugTesting()
+    {
+        Debug.Log("Button click works");
+    }
+
     void LightFlickering() {
         if (Timer > 0) {
             Timer -= Time.deltaTime;
