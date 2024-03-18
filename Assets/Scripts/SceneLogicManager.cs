@@ -56,6 +56,7 @@ public class SceneLogicManager : MonoBehaviour
         if (KitchenSceneState.Level3Complete())
         {
             levelTextManager.DisplayLevelComplete();
+            kitchenEmergencies.ExtinguishOilFire();
             // Click some button on the UI to increment to next level?
         }
     }
