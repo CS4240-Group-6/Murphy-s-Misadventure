@@ -504,7 +504,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1276776827}
   - {fileID: 1666592211}
@@ -22243,13 +22243,13 @@ SceneRoots:
   - {fileID: 834286438}
   - {fileID: 1733154745}
   - {fileID: 1632378044}
+  - {fileID: 1584545819}
+  - {fileID: 788498308}
   - {fileID: 109306933}
   - {fileID: 2074206045}
   - {fileID: 446623624}
-  - {fileID: 1584545819}
   - {fileID: 639726952}
   - {fileID: 1230573677}
   - {fileID: 544703783}
   - {fileID: 1993132719}
-  - {fileID: 788498308}
   - {fileID: 1957993503}
