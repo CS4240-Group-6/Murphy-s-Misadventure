@@ -48,6 +48,8 @@ public class PourDetector : MonoBehaviour
     private void EndPour()
     {
         Debug.Log("end");
+        currentStream.End();
+        currentStream = null;
     }
 
     private float CalcaulatePourAngle()
