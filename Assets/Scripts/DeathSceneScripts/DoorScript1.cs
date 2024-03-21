@@ -5,23 +5,28 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
 
-public class DoorScript : MonoBehaviour
+public class DoorScript1 : XRGrabInteractable
 {
     public Transform target;
     Rigidbody rb;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void OnSelectEntering(SelectEnterEventArgs args)
     {
-        rb = GetComponent<Rigidbody>();
+        Debug.Log("onselectEntering");
+        // Call the base method first to ensure that necessary setup is done
+        base.OnSelectEntering(args);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (rb != null)
-            rb.MovePosition(target.transform.position);
+        // Check if the interactor is grabbing the door
+        if (selectingInteractor != null)
+        {
+            // Check if the interacted object has the "Door" tag
+            if (args.interactable.gameObject.CompareTag("Respawn"))
+            {
+                // Call the method to change the level
+                OpenDoor();
+            }
+        }
     }
 
     public void OpenDoor()
