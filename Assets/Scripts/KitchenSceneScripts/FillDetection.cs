@@ -15,12 +15,4 @@ public class FillDetection : MonoBehaviour
     {
         
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Fluid")
-        {
-            Debug.Log("filling");
-        }
-    }
 }

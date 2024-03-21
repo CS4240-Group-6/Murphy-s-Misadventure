@@ -72,6 +72,12 @@ public class Stream : MonoBehaviour
 
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(5.0f);
 
+        if (hit.collider.isTrigger && hit.transform.gameObject.tag == "Fill")
+        {
+            Debug.Log("hit object to be filled");
+            // fill object
+        }
+
         return endPoint;
     }
 
@@ -104,5 +110,20 @@ public class Stream : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    private void AddColliderToStream()
+    {
+        BoxCollider col = new GameObject("Collider").AddComponent<BoxCollider>();
+
+        col.transform.parent = lineRenderer.transform;
+
+        float lineLength = Vector3.Distance(transform.position, targetPosition);
+        col.size = new Vector3(lineLength, 0.1f, 0.1f);
+
+        Vector3 midPoint = (transform.position + targetPosition)/2;
+        col.transform.position = midPoint;
+
+        col.transform.Rotate(0, 0, 90);
     }
 }
