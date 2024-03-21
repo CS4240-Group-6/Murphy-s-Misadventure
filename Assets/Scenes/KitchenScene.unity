@@ -21692,6 +21692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oil
       objectReference: {fileID: 0}
+    - target: {fileID: 5708765628253179331, guid: 646080442501c304ca53da3d446b82f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6056454142825678401, guid: 646080442501c304ca53da3d446b82f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5380144

@@ -13,6 +13,7 @@ public class Stream : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lineRenderer.positionCount = 2;
         MoveToPosition(0, transform.position);
         MoveToPosition(1, transform.position);
     }
@@ -67,14 +68,14 @@ public class Stream : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
 
-        Physics.Raycast(ray, out hit, 2.0f);
+        Physics.Raycast(ray, out hit, 5.0f);
 
-        Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(2.0f);
+        Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(5.0f);
 
         return endPoint;
     }
 
-    private void MoveToPosition(int index, Vector3 tartgetPositon)
+    private void MoveToPosition(int index, Vector3 targetPosition)
     {
         lineRenderer.SetPosition(index, targetPosition);
     }
