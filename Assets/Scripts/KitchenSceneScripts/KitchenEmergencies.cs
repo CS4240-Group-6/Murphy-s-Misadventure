@@ -37,17 +37,17 @@ public class KitchenEmergencies : MonoBehaviour
 
     /**
         Scene starts
-        5s later -> pan catches on fire
-        5s later -> pan fire strenghtens
-        10s later -> fire spreads to whole stove if unattended
-        5s later -> stove fire strengthens
+        10s later -> pan catches on fire
+        50s later -> pan fire strenghtens
+        1min later -> fire spreads to whole stove if unattended
+        10s later -> stove fire strengthens
     */
     void StartOilFireScene()
     {
-        Invoke("StartOilFireEffect", 5.0f);
-        Invoke("StrenghtenOilFireEffect", 10.0f);
-        Invoke("StartOilFireSpreadEffect", 20.0f);
-        Invoke("StrenghtenOilFireSpreadEffect", 25.0f);
+        Invoke("StartOilFireEffect", 10.0f);
+        Invoke("StrenghtenOilFireEffect", 60.0f);
+        Invoke("StartOilFireSpreadEffect", 120.0f);
+        Invoke("StrenghtenOilFireSpreadEffect", 130.0f);
     }
 
     void StartOilFireEffect()
@@ -92,6 +92,11 @@ public class KitchenEmergencies : MonoBehaviour
             var Emission = OilFireSpreadEffect.emission;
             Emission.rateOverTime = 45.0f;
         }
+    }
+
+    public void ExtinguishSmallOilFire()
+    {
+        OilFireStart.SetActive(false);
     }
 
     public void ExtinguishOilFire()

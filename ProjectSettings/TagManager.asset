@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CeilingChunk
   - FxTemporaire
+  - Fill
   layers:
   - Default
   - TransparentFX
