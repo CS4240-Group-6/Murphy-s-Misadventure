@@ -6,38 +6,86 @@ public class SoundManager : MonoBehaviour
 {
     // Action Sound
     public AudioSource grabSound;
+    public AudioSource teleportSound;
     public AudioSource pushDoorSound;
     public AudioSource pushWindowSound;
+    public AudioSource hoverSound;
 
+    // Player Audio
+    // public AudioSource ;
 
-    // Game Intro Song
-    public AudioSource introSong;
+    // Bedroom Scene
+    public AudioSource earthquakeSound;
+    public AudioSource objectFallSound;
+    public AudioSource wireSparkSound;
 
-    // Game Ending Song
-    public AudioSource endingSong;
+    // Kitchen Scene
+    public AudioSource fireBurningSound;
 
-    public void PlayIntroSong()
-    {
-        introSong.Play();
-    }
-    
-    public void PlayEndingSong()
-    {
-        endingSong.Play();
-    }
+    public AudioSource fireExplosionSound;
+
+    // Living Room Scene
+    public AudioSource doorKnockSound;
+
+    public AudioSource lightsOffSound;
 
     public void PlayGrabSound()
     {
         grabSound.Play();
     }
     
-    public void PushDoorSound()
+    public void PlayTeleportSound()
+    {
+        teleportSound.Play();
+    }
+    
+    public void PlayPushDoorSound()
     {
         pushDoorSound.Play();
     }
 
-    public void PushWindowSound()
+    public void PlayPushWindowSound()
     {
         pushWindowSound.Play();
+    }
+
+    public void PlayHoverSound()
+    {
+        hoverSound.Play();
+    }
+
+    public void PlayEarthquakeSound()
+    {
+        earthquakeSound.Play();
+    }
+
+    public void PlayObjectFallSound()
+    {
+        objectFallSound.Play();
+    }
+
+    public void PlayWireSparkSound()
+    {
+        wireSparkSound.Play();
+    }
+
+    public void PlayFireBurningSound()
+    {
+        fireBurningSound.Play();
+    }
+
+    public void PlayFireExplosionSound()
+    {
+        fireExplosionSound.Play();
+    }
+
+    public void PlayDoorKnockSound()
+    {
+        doorKnockSound.Play();
+    }
+
+    public void PlayLightsOffSound()
+    {
+        lightsOffSound.Play();
     }
 }
