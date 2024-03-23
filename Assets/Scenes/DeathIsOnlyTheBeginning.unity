@@ -2727,7 +2727,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1082234104}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayWalkSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -6583,6 +6595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082234103}
   - component: {fileID: 1082234102}
+  - component: {fileID: 1082234104}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -6701,6 +6714,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082234104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082234101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f99223cf0533d643be30d4b9dcf92f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabSound: {fileID: 1215638532}
+  pushDoorSound: {fileID: 0}
+  pushWindowSound: {fileID: 0}
+  hoverSound: {fileID: 0}
+  earthquakeSound: {fileID: 0}
+  objectFallSound: {fileID: 0}
+  wireSparkSound: {fileID: 0}
+  fireBurningSound: {fileID: 0}
+  fireExplosionSound: {fileID: 0}
+  doorKnockSound: {fileID: 0}
+  lightsOffSound: {fileID: 0}
+  footstepSounds:
+  - {fileID: 8300000, guid: 1afde38e222456d4992460c38a53e036, type: 3}
+  - {fileID: 8300000, guid: c31ffbac7b61a7243ba1b6c4b4a41c96, type: 3}
+  - {fileID: 8300000, guid: b1cce03eefd657846813da19bd0432ab, type: 3}
+  - {fileID: 8300000, guid: 82166d573d65d8c448698c7ce54396a1, type: 3}
+  - {fileID: 8300000, guid: a1ef2a135b74fbe44a2318a767a2921e, type: 3}
+  - {fileID: 8300000, guid: 9315e17bf9198614eb90ce43d333cd46, type: 3}
+  - {fileID: 8300000, guid: d5e0b0818af51f74c9b265d39e8eb0a3, type: 3}
+  - {fileID: 8300000, guid: bd209aaffa6919d488789d33f6a827da, type: 3}
+  - {fileID: 8300000, guid: bb3b447cf5e107749a9cb7ae004f7aea, type: 3}
+  - {fileID: 8300000, guid: b08df5af22d75054d9b45d716ddae92f, type: 3}
 --- !u!1 &1097089752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7786,6 +7833,7 @@ GameObject:
   - component: {fileID: 1215638529}
   - component: {fileID: 1215638528}
   - component: {fileID: 1215638527}
+  - component: {fileID: 1215638532}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -8104,7 +8152,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1082234104}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayGrabSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -8429,6 +8489,102 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!82 &1215638532
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215638525}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8f4b92ac67cb35e49ac6b91daa96e2da, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1248630535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1706462579219580, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}

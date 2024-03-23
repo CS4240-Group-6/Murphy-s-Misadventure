@@ -16,6 +16,9 @@ public class KitchenEmergencies : MonoBehaviour
     public GameObject OvenSmoke;
     public GameObject OvenExplosion;
 
+    // Sound Script
+    public SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,7 @@ public class KitchenEmergencies : MonoBehaviour
         {
             ParticleSystem OilFireStartEffect = childTransform.gameObject.GetComponent<ParticleSystem>();
             OilFireStartEffect.Play();
+            soundManager.PlayFireBurningSound();
         }
     }
 
