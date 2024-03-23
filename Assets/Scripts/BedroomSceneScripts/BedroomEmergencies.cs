@@ -17,6 +17,7 @@ public class BedroomEmergencies : MonoBehaviour
     private bool flickerLight = false;
 
     // EARTHQUAKE RELATED
+    public static bool isEarthquakeLevelOver = false;
     public float shakeMagnitude = 0.1f;
     public float shakeDuration = 10.0f;
     public float shakeForce = 5f;
@@ -28,8 +29,12 @@ public class BedroomEmergencies : MonoBehaviour
     public float delayBetweenChunks = 3f; 
     private List<GameObject> collapsedChunks = new List<GameObject>();
     public GameObject ceilingGameObject;
-    public GameObject crublingCeiling;
+    public GameObject crumblingCeiling;
     public GameObject ceilingFanNoEarthquake;
+    public GameObject sturdyTable;
+    [SerializeField] private GameObject player;
+    [SerializeField] BoxCollider sturdyTableAreaCollider;
+
 
     /*
         To start the fire scene, use StartFireScene();
@@ -56,7 +61,11 @@ public class BedroomEmergencies : MonoBehaviour
     {
         if (flickerLight)
             LightFlickering();
-        
+
+        // for earthquake level
+        if (!isEarthquakeLevelOver) {
+            CheckPlayerUnderSturdyTable();
+        }
     }
 
     /*
@@ -126,7 +135,8 @@ public class BedroomEmergencies : MonoBehaviour
     {
         InvokeRepeating("ShakeObjects", 0, 0.01f);
         Invoke("StartCollapse", collapseDelay);
-        // Invoke("StopEarthquake", shakeDuration);
+        // Invoke("TestEndEarthquakeLevel", 30f);
+        Invoke("StopEarthquake", 60);
 
     }
 
@@ -144,16 +154,22 @@ public class BedroomEmergencies : MonoBehaviour
 
     void StopEarthquake() {
         CancelInvoke("ShakeObjects");
-        for (int i = 0; i < objectsToShake.Length; i++)
-        {
-            objectsToShake[i].transform.position = originalObjectPositions[i];
+        // for (int i = 0; i < objectsToShake.Length; i++)
+        // {
+        //     objectsToShake[i].transform.position = originalObjectPositions[i];
+        // }
+        if (BedroomSceneState.IsPlayerUnderCorrectTable()) {
+            EndGame(true);
+        } else {
+            EndGame(false);
         }
+        
     }
 
     void StartCollapse() {
         ceilingGameObject.SetActive(false);
         ceilingFanNoEarthquake.SetActive(false);
-        crublingCeiling.SetActive(true);
+        crumblingCeiling.SetActive(true);
         StartCoroutine(CollapseChunks());
     }
 
@@ -178,4 +194,40 @@ public class BedroomEmergencies : MonoBehaviour
         int randomIndex = Random.Range(0, ceilingChunks.Length);
         return ceilingChunks[randomIndex];
     }
+
+
+    private void CheckPlayerUnderSturdyTable()
+    {
+        if (IsPlayerBelowTable(player, sturdyTable))
+        {
+            // Player is under the sturdy table
+            BedroomSceneState.SetUnderCorrectTable(true);
+        } else {
+            BedroomSceneState.SetUnderCorrectTable(false);
+        }
+    }
+
+    // This function checks if player is below the sturdy table and is also within the boundaries of the sturdy table
+    private bool IsPlayerBelowTable(GameObject player, GameObject table)
+    {
+        if (table == null)
+            return false;
+
+        // Check if the player is below the specified table based on their positions
+        return player.transform.position.y < table.transform.position.y && (sturdyTableAreaCollider.bounds.Contains(player.transform.position));
+    }
+
+    private void EndGame(bool isWinner)
+    {
+        isEarthquakeLevelOver = true;
+        if (isWinner)
+        {
+            Debug.Log("Congratulations! You win!");
+        }
+        else
+        {
+            Debug.Log("You lost! Try again.");
+        }
+    }
+
 }
