@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class KitchenInteractions : MonoBehaviour
 {
     public GameObject InteractableObjects;
+    [SerializeField] 
+    private GameObject TooltipForKnob;
+    [SerializeField] 
+    private TextMeshProUGUI toolTipText;
+    
     private static float STOVE_ON_ANGLE = 90f;
     private static float STOVE_OFF_ANGLE = 0f;
     private static float SPEED = 5.0f;
@@ -229,6 +235,18 @@ public class KitchenInteractions : MonoBehaviour
             else Debug.Log("no child with stove knob right 2 found");
         }
         else Debug.Log("no child with stove found");
+    }
+
+    public void hoverOnKnobForToolTip()
+    {
+        toolTipText.text = "TURN KNOB";
+        TooltipForKnob.SetActive(true);
+    }
+
+    public void hoverOffKnobForToolTip()
+    {
+        toolTipText.text = "";
+        TooltipForKnob.SetActive(false);
     }
 
 }
