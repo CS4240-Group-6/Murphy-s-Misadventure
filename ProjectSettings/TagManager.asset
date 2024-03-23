@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CeilingChunk
   - FxTemporaire
+  - Fill
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - Water
   - UI
   - wire
-  - grabbable
+  - Grab
   - Player
-  - Rotate
+  - 
   - 
   - 
   - 
