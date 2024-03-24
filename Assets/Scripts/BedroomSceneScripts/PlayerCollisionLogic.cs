@@ -23,11 +23,13 @@ public class PlayerCollisionLogic : MonoBehaviour
             else if (IsPlayerBelowTable(player, flimsyTable))
             {
                 // Player is below another table (e.g., flimsyTable), which collapses
-                EndGame(false); // Player loses
+                // EndGame(false); // Player loses
+                GlobalState.SetGameOver(true);
             }
             else
             {
                 EndGame(false); // Player loses
+                GlobalState.SetGameOver(true);
             }
         }
     }
