@@ -1,4 +1,6 @@
-# Murphy-s-Misadventure
+# Murphy-s-Misadventures
+
+![Murphy’s Misadventures vr](https://github.com/CS4240-Group-6/Murphy-s-Misadventure/assets/69337196/9621ba1e-0223-42c4-b948-a50830dff6d7)
 
 ## Storyline 📖
 Murphy, an unassuming office worker, returns home each evening to his quaint but chaotically arranged abode. After years of working diligently, Murphy has become oblivious to the looming hazards scattered throughout his home. Unbeknownst to him, each night is a covert dance with disaster, as common household items teeter on the brink of causing mayhem. In "Murphy’s Misadventures," players must guide Murphy through his nightly routine, identifying and mitigating these dangers before time runs out or catastrophe strikes.
@@ -17,9 +19,8 @@ Problems and dangers will be produced in the following rooms for different level
 If players survive all these levels, they WIN the game else they will be put in a dark room to reflect on their mistake and they can choose to be revived!
 
 ## Controls 🕹️
-- Grab
-- Teleport
-- "General" Action Button
+- Grab or Interact (Right Grip)
+- Teleport (Left Trigger)
 - Movement (Left Joystick)
 - Rotation (Right Joystick)
 
@@ -36,3 +37,15 @@ If players survive all these levels, they WIN the game else they will be put in 
 - Jonathan Mui Koy Kit
 - Kishor Kumar
 - Liaw Xin Yan
+
+## About
+A VR game made using **Unity 2022.3.16f1**
+
+**Target Device**: Meta Oculus Device (Quest or Rift)
+
+**How to build project**
+
+## Packages Used
+
+## Assets Used
+
