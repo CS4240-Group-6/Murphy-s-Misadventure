@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLogicManager : MonoBehaviour
+public class KitchenSceneLogicManager : MonoBehaviour
 {
     private LevelTextManager levelTextManager;
     private KitchenEmergencies kitchenEmergencies;  

@@ -2,15 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BedroomSceneState : MonoBehaviour
+public static class BedroomSceneState
 {
     private static bool playerUnderCorrectTable = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     /*
     Earthquake scene related. And a frog?!
