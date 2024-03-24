@@ -8,8 +8,6 @@ public class KitchenInteractions : MonoBehaviour
     public GameObject InteractableObjects;
     [SerializeField] 
     private GameObject TooltipForKnob;
-    [SerializeField] 
-    private TextMeshProUGUI toolTipText;
     
     private static float STOVE_ON_ANGLE = 90f;
     private static float STOVE_OFF_ANGLE = 0f;
@@ -239,13 +237,11 @@ public class KitchenInteractions : MonoBehaviour
 
     public void hoverOnKnobForToolTip()
     {
-        toolTipText.text = "TURN KNOB";
         TooltipForKnob.SetActive(true);
     }
 
     public void hoverOffKnobForToolTip()
     {
-        toolTipText.text = "";
         TooltipForKnob.SetActive(false);
     }
 

@@ -19,6 +19,13 @@ public class DeathSceneManger : MonoBehaviour
 
     public TextAnimation textAnimation;
 
+    // Tooltip
+    [SerializeField] 
+    private GameObject TooltipForNote;
+
+    [SerializeField] 
+    private GameObject TooltipForDoor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +116,26 @@ public class DeathSceneManger : MonoBehaviour
         }
         textAnimation.textToDisplay.text = textOnPaper;
 
+    }
+
+    public void hoverOnNoteForToolTip()
+    {
+        TooltipForNote.SetActive(true);
+    }
+
+    public void hoverOffNoteForToolTip()
+    {
+        TooltipForNote.SetActive(false);
+    }
+
+    public void hoverOnDoorForToolTip()
+    {
+        TooltipForDoor.SetActive(true);
+    }
+
+    public void hoverOffDoorForToolTip()
+    {
+        TooltipForDoor.SetActive(false);
     }
 
 }

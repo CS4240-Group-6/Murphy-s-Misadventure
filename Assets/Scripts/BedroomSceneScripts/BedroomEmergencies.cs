@@ -35,6 +35,9 @@ public class BedroomEmergencies : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] BoxCollider sturdyTableAreaCollider;
 
+    // Tooltip
+    [SerializeField] 
+    private GameObject TooltipForBigTable;
 
     /*
         To start the fire scene, use StartFireScene();
@@ -228,6 +231,16 @@ public class BedroomEmergencies : MonoBehaviour
         {
             Debug.Log("You lost! Try again.");
         }
+    }
+
+    public void hoverOnBigTableForToolTip()
+    {
+        TooltipForBigTable.SetActive(true);
+    }
+
+    public void hoverOffBigTableForToolTip()
+    {
+        TooltipForBigTable.SetActive(false);
     }
 
 }
