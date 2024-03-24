@@ -153,7 +153,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayFindASafeSpot()
     {
-        subtitleText.text = "Oh god! This is bad. I need to find a safe spot where I wont get hit?";
+        subtitleText.text = "Oh god! This is bad. I need to find a safe spot where I wont get hit";
         audioSource.PlayOneShot(findASafeSpot);
     }
 
