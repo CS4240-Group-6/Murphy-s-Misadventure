@@ -155,17 +155,19 @@ public class BedroomEmergencies : MonoBehaviour
         }
     }
 
-    void StopEarthquake() {
+    public void StopEarthquake() {
         CancelInvoke("ShakeObjects");
         // for (int i = 0; i < objectsToShake.Length; i++)
         // {
         //     objectsToShake[i].transform.position = originalObjectPositions[i];
         // }
-        if (BedroomSceneState.IsPlayerUnderCorrectTable()) {
-            EndGame(true);
-        } else {
-            EndGame(false);
-        }
+
+        // Shifted End game check to logic manager
+        // if (BedroomSceneState.IsPlayerUnderCorrectTable()) {
+        //     EndGame(true);
+        // } else {
+        //     EndGame(false);
+        // }
         
     }
 
@@ -220,18 +222,19 @@ public class BedroomEmergencies : MonoBehaviour
         return player.transform.position.y < table.transform.position.y && (sturdyTableAreaCollider.bounds.Contains(player.transform.position));
     }
 
-    private void EndGame(bool isWinner)
-    {
-        isEarthquakeLevelOver = true;
-        if (isWinner)
-        {
-            Debug.Log("Congratulations! You win!");
-        }
-        else
-        {
-            Debug.Log("You lost! Try again.");
-        }
-    }
+    // Shifted check to BedroomSceneLogicManager
+    // private void EndGame(bool isWinner)
+    // {
+    //     isEarthquakeLevelOver = true;
+    //     if (isWinner)
+    //     {
+    //         Debug.Log("Congratulations! You win!");
+    //     }
+    //     else
+    //     {
+    //         Debug.Log("You lost! Try again.");
+    //     }
+    // }
 
     public void hoverOnBigTableForToolTip()
     {
