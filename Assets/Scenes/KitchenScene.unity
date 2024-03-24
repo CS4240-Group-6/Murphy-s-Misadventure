@@ -443,7 +443,7 @@ MonoBehaviour:
   m_RequestedTrackingMode: 0
   m_TrackingOriginMode: 1
   m_TrackingSpace: 0
-  m_CameraYOffset: 1.7
+  m_CameraYOffset: 5
 --- !u!114 &69288558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11145,7 +11145,7 @@ Transform:
   m_GameObject: {fileID: 1183492270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12027,17 +12027,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f99223cf0533d643be30d4b9dcf92f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subtitleText: {fileID: 0}
   grabSound: {fileID: 2037387157}
   pushDoorSound: {fileID: 0}
   pushWindowSound: {fileID: 0}
   hoverSound: {fileID: 0}
-  earthquakeSound: {fileID: 0}
-  objectFallSound: {fileID: 0}
-  wireSparkSound: {fileID: 0}
-  fireBurningSound: {fileID: 639726953}
-  fireExplosionSound: {fileID: 544703784}
-  doorKnockSound: {fileID: 0}
-  lightsOffSound: {fileID: 0}
   footstepSounds:
   - {fileID: 8300000, guid: 1afde38e222456d4992460c38a53e036, type: 3}
   - {fileID: 8300000, guid: c31ffbac7b61a7243ba1b6c4b4a41c96, type: 3}
@@ -12049,6 +12043,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bd209aaffa6919d488789d33f6a827da, type: 3}
   - {fileID: 8300000, guid: bb3b447cf5e107749a9cb7ae004f7aea, type: 3}
   - {fileID: 8300000, guid: b08df5af22d75054d9b45d716ddae92f, type: 3}
+  earthquakeSound: {fileID: 0}
+  objectFallSound: {fileID: 0}
+  wireSparkSound: {fileID: 0}
+  fireBurningSound: {fileID: 639726953}
+  fireExplosionSound: {fileID: 544703784}
+  doorKnockSound: {fileID: 0}
+  lightsOffSound: {fileID: 0}
+  smellBurning: {fileID: 0}
+  fireOnTheAdaptor: {fileID: 0}
+  roomShaking: {fileID: 0}
+  findASafeSpot: {fileID: 0}
+  smellSomethingBurning: {fileID: 0}
+  shouldTurnOffSomethingAndCoverPan: {fileID: 0}
+  fireGotBiggerNeedToPour: {fileID: 0}
+  isThatSmoke: {fileID: 0}
+  needToExtinguishFireSoon: {fileID: 0}
+  anotherLongDay: {fileID: 0}
+  whatsThatSound: {fileID: 0}
+  lightsWentOut: {fileID: 0}
+  iDidntOrderDelivery: {fileID: 0}
+  leaveOrICallPolice: {fileID: 0}
 --- !u!4 &1290338121
 Transform:
   m_ObjectHideFlags: 0
@@ -13252,7 +13267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1423410820}
   - component: {fileID: 1423410819}
-  - component: {fileID: 1423410818}
   - component: {fileID: 1423410817}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
@@ -13275,27 +13289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 1846031496}
   m_DelayTime: 0
---- !u!65 &1423410818
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423410816}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 3, z: 1}
-  m_Center: {x: 0, y: 0.4533953, z: 0}
 --- !u!114 &1423410819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13322,7 +13315,7 @@ Transform:
   m_GameObject: {fileID: 1423410816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17455,7 +17448,7 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_LineType: 1
+  m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
   m_RayOriginTransform: {fileID: 0}
