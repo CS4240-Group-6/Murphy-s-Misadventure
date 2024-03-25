@@ -131,16 +131,16 @@ public class KitchenEmergencies : MonoBehaviour
 
     void StartOverFireScene()
     {
-        Invoke("StartVoiceOver3", 15.0f);
-        Invoke("StartVoiceOver4", 60.0f);
+        Invoke("StartVoiceOver4", 15.0f);
+        Invoke("StartVoiceOver5", 60.0f);
     }
 
-    void StartVoiceOver3()
+    void StartVoiceOver4()
     {
         soundManager.PlayIsThatSmoke();
     }
 
-    void StartVoiceOver4()
+    void StartVoiceOver5()
     {
         soundManager.PlayNeedToExtinguishFireSoon();
     }
