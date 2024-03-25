@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - CeilingChunk
+  - FxTemporaire
+  - Fill
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Teleport
   - Water
   - UI
   - wire
-  - grabbable
+  - Grab
   - Player
   - 
   - 

@@ -6,6 +6,7 @@ public class SpawnDoor : MonoBehaviour
 {
     public GameObject doorPlaceholder;
     public GameObject door;
+    public AudioSource audioSource;
 
     public TextAnimation textAnimation;
 
@@ -23,18 +24,29 @@ public class SpawnDoor : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("collision entered: " + collision.gameObject.tag);
-        // Check if the collision involves the specific collider you want to deactivate on collision
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("collision entered with player tag");
-            // Deactivate the GameObject to which this script is attached
-            doorPlaceholder.SetActive(false);
-            door.SetActive(true);
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     Debug.Log("collision entered: " + collision.gameObject.tag);
+    //     // Check if the collision involves the specific collider you want to deactivate on collision
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         Debug.Log("collision entered with player tag");
+    //         // Deactivate the GameObject to which this script is attached
+    //         doorPlaceholder.SetActive(false);
+    //         door.SetActive(true);
 
-            textAnimation.DisplayTextOnPaper();
-        }
+    //         textAnimation.DisplayTextOnPaper();
+    //     }
+    // }
+    public void SpawnDoorAction() {
+        Debug.Log("spawn door action");
+        // Deactivate the GameObject to which this script is attached
+        doorPlaceholder.SetActive(false);
+        door.SetActive(true);
+
+
+        textAnimation.DisplayTextOnPaper();
+
+        audioSource.Play();
     }
 }
