@@ -30,6 +30,8 @@ public class KitchenEmergencies : MonoBehaviour
 
         Timer = Random.Range(MinTime, MaxTime);
         StartOilFireScene();
+
+        // StartOvenFireScene();
     }
 
     // Update is called once per frame
@@ -48,9 +50,27 @@ public class KitchenEmergencies : MonoBehaviour
     void StartOilFireScene()
     {
         Invoke("StartOilFireEffect", 10.0f);
+        Invoke("StartVoiceOver1", 10.0f);
+        Invoke("StartVoiceOver2", 35.0f);
         Invoke("StrenghtenOilFireEffect", 60.0f);
+        Invoke("StartVoiceOver3", 60.0f);
         Invoke("StartOilFireSpreadEffect", 120.0f);
         Invoke("StrenghtenOilFireSpreadEffect", 130.0f);
+    }
+
+    void StartVoiceOver1()
+    {
+        soundManager.PlaySmellSomethingBurning();
+    }
+
+    void StartVoiceOver2()
+    {
+        soundManager.PlayShouldTurnOffSomethingAndCoverPan();
+    }
+
+    void StartVoiceOver3()
+    {
+        soundManager.PlayFireGotBiggerNeedToPour();
     }
 
     void StartOilFireEffect()
@@ -108,4 +128,21 @@ public class KitchenEmergencies : MonoBehaviour
         OilFireStart.SetActive(false);
         OilFireSpread.SetActive(false);
     }
+
+    void StartOverFireScene()
+    {
+        Invoke("StartVoiceOver3", 15.0f);
+        Invoke("StartVoiceOver4", 60.0f);
+    }
+
+    void StartVoiceOver3()
+    {
+        soundManager.PlayIsThatSmoke();
+    }
+
+    void StartVoiceOver4()
+    {
+        soundManager.PlayNeedToExtinguishFireSoon();
+    }
+
 }
