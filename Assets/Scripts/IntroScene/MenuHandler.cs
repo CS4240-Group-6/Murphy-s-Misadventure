@@ -21,4 +21,10 @@ public class MenuHandler : MonoBehaviour
     {
         SceneManager.LoadScene("KitchenScene");
     }
+
+    public void EndGame()
+    {
+        // Will only work when the game is built and the option is chosen
+        Application.Quit();
+    }
 }
