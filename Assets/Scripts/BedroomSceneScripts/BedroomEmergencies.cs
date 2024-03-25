@@ -39,6 +39,9 @@ public class BedroomEmergencies : MonoBehaviour
     [SerializeField] 
     private GameObject TooltipForBigTable;
 
+    // Sound Manager
+    public SoundManager soundManager;
+
     /*
         To start the fire scene, use StartFireScene();
         To start the earthquake scene, use StartEarthquakeScene();
@@ -83,10 +86,20 @@ public class BedroomEmergencies : MonoBehaviour
     void StartFireScene() {
         sparksFlying.Play();
         Invoke("StartElectricityEffect", 10f);
+        Invoke("StartVoiceOver1", 10f);
         Invoke("StartPlugFireEffect", 15f);
+        Invoke("StartVoiceOver2", 15f);
         Invoke("LightFlickering", 15f);
         Invoke("StartSmallTableFireEffect", 18f);
         Invoke("StartComTableFireEffect", 21f);
+    }
+
+    void StartVoiceOver1() {
+        soundManager.PlaySmellBurning();
+    }
+
+    void StartVoiceOver2() {
+        soundManager.PlayFireOnAdaptor();
     }
 
     void StartElectricityEffect() {
@@ -138,9 +151,19 @@ public class BedroomEmergencies : MonoBehaviour
     {
         InvokeRepeating("ShakeObjects", 0, 0.01f);
         Invoke("StartCollapse", collapseDelay);
+        Invoke("StartVoiceOver3", 0.01f);
+        Invoke("StartVoiceOver4", 10f);
         // Invoke("TestEndEarthquakeLevel", 30f);
         Invoke("StopEarthquake", 60);
 
+    }
+
+    void StartVoiceOver3() {
+        soundManager.PlayRoomShaking();
+    }
+
+    void StartVoiceOver4() {
+        soundManager.PlayFindASafeSpot();
     }
 
     void ShakeObjects() {

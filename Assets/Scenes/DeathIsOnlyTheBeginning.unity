@@ -2912,7 +2912,7 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_LineType: 1
+  m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
   m_RayOriginTransform: {fileID: 0}
@@ -6360,10 +6360,13 @@ PrefabInstance:
       addedObject: {fileID: 1365816746}
     - targetCorrespondingSourceObject: {fileID: 1010033139664216, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1365816745}
+      addedObject: {fileID: 1365816747}
     - targetCorrespondingSourceObject: {fileID: 1010033139664216, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1365816747}
+      addedObject: {fileID: 1365816749}
+    - targetCorrespondingSourceObject: {fileID: 1010033139664216, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1365816750}
     - targetCorrespondingSourceObject: {fileID: 1706462579219580, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1248630538}
@@ -6371,6 +6374,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1248630537}
   m_SourcePrefab: {fileID: 100100000, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
+--- !u!4 &944820606 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4114445281002462, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
+  m_PrefabInstance: {fileID: 944820605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &959557213
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,17 +6996,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f99223cf0533d643be30d4b9dcf92f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subtitleText: {fileID: 0}
   grabSound: {fileID: 1215638532}
   pushDoorSound: {fileID: 0}
   pushWindowSound: {fileID: 0}
   hoverSound: {fileID: 0}
-  earthquakeSound: {fileID: 0}
-  objectFallSound: {fileID: 0}
-  wireSparkSound: {fileID: 0}
-  fireBurningSound: {fileID: 0}
-  fireExplosionSound: {fileID: 0}
-  doorKnockSound: {fileID: 0}
-  lightsOffSound: {fileID: 0}
   footstepSounds:
   - {fileID: 8300000, guid: 1afde38e222456d4992460c38a53e036, type: 3}
   - {fileID: 8300000, guid: c31ffbac7b61a7243ba1b6c4b4a41c96, type: 3}
@@ -7010,6 +7012,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bd209aaffa6919d488789d33f6a827da, type: 3}
   - {fileID: 8300000, guid: bb3b447cf5e107749a9cb7ae004f7aea, type: 3}
   - {fileID: 8300000, guid: b08df5af22d75054d9b45d716ddae92f, type: 3}
+  earthquakeSound: {fileID: 0}
+  objectFallSound: {fileID: 0}
+  wireSparkSound: {fileID: 0}
+  fireBurningSound: {fileID: 0}
+  fireExplosionSound: {fileID: 0}
+  doorKnockSound: {fileID: 0}
+  lightsOffSound: {fileID: 0}
+  smellBurning: {fileID: 0}
+  fireOnTheAdaptor: {fileID: 0}
+  roomShaking: {fileID: 0}
+  findASafeSpot: {fileID: 0}
+  smellSomethingBurning: {fileID: 0}
+  shouldTurnOffSomethingAndCoverPan: {fileID: 0}
+  fireGotBiggerNeedToPour: {fileID: 0}
+  isThatSmoke: {fileID: 0}
+  needToExtinguishFireSoon: {fileID: 0}
+  anotherLongDay: {fileID: 0}
+  whatsThatSound: {fileID: 0}
+  lightsWentOut: {fileID: 0}
+  iDidntOrderDelivery: {fileID: 0}
+  leaveOrICallPolice: {fileID: 0}
 --- !u!1 &1097089752
 GameObject:
   m_ObjectHideFlags: 0
@@ -9309,183 +9332,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4818580342527148, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
   m_PrefabInstance: {fileID: 944820605}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1365816745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365816742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb118c4c5e3b0e046aa4d71de2a0217d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 1367084114}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1449764315}
-        m_TargetAssemblyTypeName: DeathSceneManger, Assembly-CSharp
-        m_MethodName: hoverOnDoorForToolTip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1449764315}
-        m_TargetAssemblyTypeName: DeathSceneManger, Assembly-CSharp
-        m_MethodName: hoverOffDoorForToolTip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
-  target: {fileID: 0}
 --- !u!54 &1365816746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9609,6 +9455,157 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1365816749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365816742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01551c6ecccc9364596f2401d00555be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 944820606}
+--- !u!114 &1365816750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365816742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 1367084114}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1449764315}
+        m_TargetAssemblyTypeName: DeathSceneManger, Assembly-CSharp
+        m_MethodName: hoverOnDoorForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1449764315}
+        m_TargetAssemblyTypeName: DeathSceneManger, Assembly-CSharp
+        m_MethodName: hoverOffDoorForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1365816749}
+        m_TargetAssemblyTypeName: DoorScript, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1367084112
 GameObject:
   m_ObjectHideFlags: 0
