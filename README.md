@@ -37,15 +37,29 @@ If players survive all these levels, they WIN the game else they will be put in 
 - Jonathan Mui Koy Kit
 - Kishor Kumar
 - Liaw Xin Yan
+  
+## Packages Used
+- XR Interaction Toolkit
+- OpenXR Plugin
+- Occulus XR Plugin
+- XR Meta Simulator
+- TextMeshPro
+
+## Assets Used
+- Furniture_FREE (Unity Asset Store)
+- Polygon City Pack (Poly Pizza)
+- Brick Project Studio (Unity Asset Store)
+- Ultra Emission Particles Shader (Unity Asset Store)
 
 ## About
 A VR game made using **Unity 2022.3.16f1**
 
 **Target Device**: Meta Oculus Device (Quest or Rift)
 
-**How to build project**
-
-## Packages Used
-
-## Assets Used
-
+**How To Build Project**:
+- Ensure you are using Unity 2022.3.16f1 ideally for preventing any settings issue
+- Clone this repository into your local directory
+- Open this from Unity Hub
+- The starting scene is called "Introduction"
+- To build the game onto your Oculus, go to File > Build Settings, and switch to Android platform (Make sure all the scenes are present under "scenes in build")
+- In Run Device, select your Oculus, and click Build and Run, it should take around 10 minutes to build the project the first time
