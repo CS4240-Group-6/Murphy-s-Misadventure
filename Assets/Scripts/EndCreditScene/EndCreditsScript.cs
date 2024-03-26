@@ -8,12 +8,11 @@ public class EndCreditsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ReturnToMainMenu());
+        Invoke("ReturnToMainMenu", 30.0f);
     }
 
-    IEnumerator ReturnToMainMenu()
+    public void ReturnToMainMenu()
     {
-        yield return new WaitForSeconds(20f);
         SceneManager.LoadScene("Introduction");
     }
 }
