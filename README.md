@@ -38,20 +38,20 @@ If players survive all these levels, they WIN the game else they will be put in 
 - Kishor Kumar
 - Liaw Xin Yan
   
-## Packages Used
+## Packages Used 📦
 - XR Interaction Toolkit
 - OpenXR Plugin
 - Occulus XR Plugin
 - XR Meta Simulator
 - TextMeshPro
 
-## Assets Used
+## Assets Used 🔗
 - Furniture_FREE (Unity Asset Store)
 - Polygon City Pack (Poly Pizza)
 - Brick Project Studio (Unity Asset Store)
 - Ultra Emission Particles Shader (Unity Asset Store)
 
-## About
+## About 🖥️
 A VR game made using **Unity 2022.3.16f1**
 
 **Target Device**: Meta Oculus Device (Quest or Rift)
