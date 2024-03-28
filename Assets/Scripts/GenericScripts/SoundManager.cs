@@ -64,6 +64,7 @@ public class SoundManager : MonoBehaviour
     // Level 2
     public AudioClip iDidntOrderDelivery;
     public AudioClip leaveOrICallPolice;
+    public AudioClip intruderDialogue;
 
     // Audio source component for sound effects
     private void Awake()
@@ -135,58 +136,93 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySmellBurning()
     {
-        subtitleText.text = "I’m smelling something burning";
+        subtitleText.text = "Murphy: I’m smelling something burning";
         audioSource.PlayOneShot(smellBurning);
     }
 
     public void PlayFireOnAdaptor()
     {
-        subtitleText.text = "Oh no there’s fire on the adaptor! I need to find a way to cut the electricity and extinguish the flame";
+        subtitleText.text = "Murphy: Oh no there’s fire on the adaptor! I need to find a way to cut the electricity and extinguish the flame";
         audioSource.PlayOneShot(fireOnTheAdaptor);
     }
 
     public void PlayRoomShaking()
     {
-        subtitleText.text = "Is the room shaking?";
+        subtitleText.text = "Murphy: Is the room shaking?";
         audioSource.PlayOneShot(roomShaking);
     }
 
     public void PlayFindASafeSpot()
     {
-        subtitleText.text = "Oh god! This is bad. I need to find a safe spot where I wont get hit";
+        subtitleText.text = "Murphy: Oh god! This is bad. I need to find a safe spot where I wont get hit";
         audioSource.PlayOneShot(findASafeSpot);
     }
 
     public void PlaySmellSomethingBurning()
     {
-        subtitleText.text = "I’m smelling something burning";
+        subtitleText.text = "Murphy: I’m smelling something burning";
         audioSource.PlayOneShot(smellSomethingBurning);
     }
 
     public void PlayShouldTurnOffSomethingAndCoverPan()
     {
-        subtitleText.text = "Hmm maybe I should turn something off and need to find a way to cover the pan";
+        subtitleText.text = "Murphy: Hmm maybe I should turn something off and need to find a way to cover the pan";
         audioSource.PlayOneShot(shouldTurnOffSomethingAndCoverPan);
     }
 
     public void PlayFireGotBiggerNeedToPour()
     {
-        subtitleText.text = "Oh no! The fire has gotten bigger now I should turn off something and pour something on top it";
+        subtitleText.text = "Murphy: Oh no! The fire has gotten bigger now I should turn off something and pour something on top it";
         audioSource.PlayOneShot(fireGotBiggerNeedToPour);
     }
 
     public void PlayIsThatSmoke()
     {
-        subtitleText.text = "Is that smoke? I have to find where its coming from and turn it off quick";
+        subtitleText.text = "Murphy: Is that smoke? I have to find where its coming from and turn it off quick";
         audioSource.PlayOneShot(isThatSmoke);
     }
 
     public void PlayNeedToExtinguishFireSoon()
     {
-        subtitleText.text = "Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
         audioSource.PlayOneShot(needToExtinguishFireSoon);
     }
 
+    public void PlayAnotherLongDay()
+    {
+        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        audioSource.PlayOneShot(anotherLongDay);      
+    }
+
+    public void PlayWhatsThatSound()
+    {
+        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        audioSource.PlayOneShot(whatsThatSound);          
+    }
+
+    public void PlayLightWentOut()
+    {
+        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        audioSource.PlayOneShot(lightsWentOut);          
+    }
+
+    public void PlayIDidntOrderDelivery()
+    {
+        subtitleText.text = "Murphy: Who’s that.. I didn’t order any delivery…"; 
+        audioSource.PlayOneShot(iDidntOrderDelivery);          
+    }
+
+    public void PlayLeaveOrICallPolice()
+    {
+        subtitleText.text = "Murphy: Sorry, I didn’t order anything. Please leave or I’ll call the police"; 
+        audioSource.PlayOneShot(leaveOrICallPolice);          
+    }
+    
+    public void PlayIntruderDialogue()
+    {
+        subtitleText.text = "Intruder: Wow! Ok i need to extinguish the fire soon before it explodes";
+        audioSource.PlayOneShot(intruderDialogue);
+    }
 }
 
 
