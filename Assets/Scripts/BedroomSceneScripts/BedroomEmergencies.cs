@@ -5,6 +5,7 @@ using UnityEngine;
 public class BedroomEmergencies : MonoBehaviour
 {
     // FIRE RELATED
+    [Header("Electrical fire related values")]
     public ParticleSystem sparksFlying;
     public ParticleSystem bigSparks;
     public GameObject plugFire;
@@ -15,9 +16,16 @@ public class BedroomEmergencies : MonoBehaviour
     public float Timer;
     public Light tableLight;
     private bool flickerLight = false;
+    private bool bakingSodaParticlesActive;
+    [SerializeField] private GameObject bakingSoda;
+    [SerializeField] private ParticleSystem bakingSodaParticles;
+    [SerializeField] private AudioSource fuseBoxAudio;
+
 
     // EARTHQUAKE RELATED
     public static bool isEarthquakeLevelOver = false;
+    [Header("Earthquake related values")]
+
     public float shakeMagnitude = 0.1f;
     public float shakeDuration = 10.0f;
     public float shakeForce = 5f;
@@ -36,8 +44,10 @@ public class BedroomEmergencies : MonoBehaviour
     [SerializeField] BoxCollider sturdyTableAreaCollider;
 
     // Tooltip
-    [SerializeField] 
-    private GameObject TooltipForBigTable;
+    [Header("Tooltips")]
+    [SerializeField] private GameObject TooltipForBigTable;
+    [SerializeField] private GameObject tooltipForBakingSoda;
+    [SerializeField] private GameObject tooltipForCircuitBreaker;
 
     // Sound Manager
     public SoundManager soundManager;
@@ -52,14 +62,14 @@ public class BedroomEmergencies : MonoBehaviour
         smallTableFire.SetActive(false);
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
-        // StartFireScene();
+        StartFireScene();
 
         originalObjectPositions = new Vector3[objectsToShake.Length];
         for (int i = 0; i < objectsToShake.Length; i++)
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
-        StartEarthquakeScene();
+        // StartEarthquakeScene();
     }
 
     // Update is called once per frame
@@ -71,6 +81,26 @@ public class BedroomEmergencies : MonoBehaviour
         // for earthquake level
         if (!isEarthquakeLevelOver) {
             CheckPlayerUnderSturdyTable();
+        }
+
+        // Check if the object is tilted more than 90 degrees
+        if (Vector3.Angle(bakingSoda.transform.up, Vector3.up) > 90f)
+        {
+            if (!bakingSodaParticlesActive)
+            {
+                // Start emitting particles
+                bakingSodaParticles.Play();
+                bakingSodaParticlesActive = true;
+            }
+        }
+        else
+        {
+            if (bakingSodaParticlesActive)
+            {
+                // Stop emitting particles
+                bakingSodaParticles.Stop();
+                bakingSodaParticlesActive = false;
+            }
         }
     }
 
@@ -86,12 +116,12 @@ public class BedroomEmergencies : MonoBehaviour
     void StartFireScene() {
         sparksFlying.Play();
         Invoke("StartElectricityEffect", 10f);
-        Invoke("StartVoiceOver1", 10f);
-        Invoke("StartPlugFireEffect", 15f);
-        Invoke("StartVoiceOver2", 15f);
-        Invoke("LightFlickering", 15f);
-        Invoke("StartSmallTableFireEffect", 18f);
-        Invoke("StartComTableFireEffect", 21f);
+        // Invoke("StartVoiceOver1", 10f);
+        InvokeRepeating("StartPlugFireEffect", 5, 10);
+        // Invoke("StartVoiceOver2", 20f);
+        Invoke("LightFlickering", 20f);
+        Invoke("StartSmallTableFireEffect", 35f);
+        Invoke("StartComTableFireEffect", 45f);
     }
 
     void StartVoiceOver1() {
@@ -103,16 +133,20 @@ public class BedroomEmergencies : MonoBehaviour
     }
 
     void StartElectricityEffect() {
+        StartVoiceOver1();
         bigSparks.Play();
     }
 
     void StartPlugFireEffect() {
-        plugFire.SetActive(true);
-        Transform childTransform = plugFire.transform.Find("Fire_Yellow");
-        if (childTransform != null)
-        {
-            ParticleSystem fireParticles = childTransform.gameObject.GetComponent<ParticleSystem>();
-            fireParticles.Play();
+        if (bigSparks.isPlaying && !plugFire.activeSelf) {
+            StartVoiceOver2();
+            plugFire.SetActive(true);
+            Transform childTransform = plugFire.transform.Find("Fire_Yellow");
+            if (childTransform != null)
+            {
+                ParticleSystem fireParticles = childTransform.gameObject.GetComponent<ParticleSystem>();
+                fireParticles.Play();
+            }
         }
     }
 
@@ -145,6 +179,12 @@ public class BedroomEmergencies : MonoBehaviour
             tableLight.enabled = !tableLight.enabled;
             Timer = Random.Range(MinTime, MaxTime);
         }
+    }
+
+    public void SelectFuseBox() {
+        Debug.Log("fusebox selected");
+        fuseBoxAudio.Play();
+        bigSparks.Stop();
     }
 
     public void StartEarthquakeScene()
@@ -245,28 +285,27 @@ public class BedroomEmergencies : MonoBehaviour
         return player.transform.position.y < table.transform.position.y && (sturdyTableAreaCollider.bounds.Contains(player.transform.position));
     }
 
-    // Shifted check to BedroomSceneLogicManager
-    // private void EndGame(bool isWinner)
-    // {
-    //     isEarthquakeLevelOver = true;
-    //     if (isWinner)
-    //     {
-    //         Debug.Log("Congratulations! You win!");
-    //     }
-    //     else
-    //     {
-    //         Debug.Log("You lost! Try again.");
-    //     }
-    // }
-
     public void hoverOnBigTableForToolTip()
     {
         TooltipForBigTable.SetActive(true);
     }
-
     public void hoverOffBigTableForToolTip()
     {
         TooltipForBigTable.SetActive(false);
+    }
+
+    public void HoverOnBakingSodaToolTip() {
+        tooltipForBakingSoda.SetActive(true);
+    }
+    public void HoverOffBakingSodaToolTip() {
+        tooltipForBakingSoda.SetActive(false);
+    }
+
+    public void HoverOnCircuitBreakerToolTip() {
+        tooltipForCircuitBreaker.SetActive(true);
+    }
+    public void HoverOffCircuitBreakerToolTip() {
+        tooltipForCircuitBreaker.SetActive(false);
     }
 
 }
