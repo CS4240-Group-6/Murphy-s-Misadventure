@@ -81,16 +81,6 @@ public class SoundManager : MonoBehaviour
         AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];
         audioSource.PlayOneShot(footstepSound);
     }
-    
-    public void PlayPushDoorSound()
-    {
-        pushDoorSound.Play();
-    }
-
-    public void PlayPushWindowSound()
-    {
-        pushWindowSound.Play();
-    }
 
     public void PlayHoverSound()
     {
