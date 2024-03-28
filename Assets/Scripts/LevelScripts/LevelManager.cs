@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     private List<ResetObject> resetObjects = new List<ResetObject>();
+
     void Start()
     {
         ResetObject[] foundObjects = GetComponentsInChildren<ResetObject>();
