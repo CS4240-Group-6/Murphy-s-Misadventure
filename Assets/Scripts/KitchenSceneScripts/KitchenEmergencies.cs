@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KitchenEmergencies : MonoBehaviour
 {
+    [SerializeField]
+    private LevelCanvasController LevelCanvasController;
+    
     public float MinTime;
     public float MaxTime;
     public float Timer;
@@ -29,6 +32,8 @@ public class KitchenEmergencies : MonoBehaviour
         OvenExplosion.SetActive(false);
 
         Timer = Random.Range(MinTime, MaxTime);
+
+        StartCoroutine(LevelIntro());
         StartOilFireScene();
 
         // StartOvenFireScene();
@@ -40,6 +45,12 @@ public class KitchenEmergencies : MonoBehaviour
         
     }
 
+    IEnumerator LevelIntro() 
+    {
+        LevelCanvasController.ShowWelcomeMessage(3, "An oily mistake...");
+        yield return new WaitForSeconds(5f);
+        LevelCanvasController.HideCanvas();
+    }
     /**
         Scene starts
         10s later -> pan catches on fire
