@@ -7,6 +7,12 @@ TagManager:
   - CeilingChunk
   - FxTemporaire
   - Fill
+  - BakingSoda
+  - Fire
+  - Yellow_Fire
+  - Green_Fire
+  - Blue_Fire
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -17,8 +23,9 @@ TagManager:
   - wire
   - Grab
   - Player
+  - Fires
   - Button
-  - 
+  -
   - 
   - 
   - 
