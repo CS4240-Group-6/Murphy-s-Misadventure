@@ -8,6 +8,16 @@ public class LivingRoomEmergencies : MonoBehaviour
     public float MaxTime;
     public float Timer;
 
+    // Tooltip
+    [Header("Tooltips")]
+    [SerializeField] private GameObject TooltipForCircuitBreaker;
+    [SerializeField] private GameObject tooltipForMainDoor;
+    [SerializeField] private GameObject tooltipForKitchenDoor;
+    [SerializeField] private GameObject TooltipForBedroomDoor;
+    [SerializeField] private GameObject tooltipForFireExtinguisher;
+    [SerializeField] private GameObject tooltipForWetExtensionCord;
+    [SerializeField] private GameObject tooltipForLightSwitch;
+
     // Sound Script
     public SoundManager soundManager;
 
@@ -33,51 +43,77 @@ public class LivingRoomEmergencies : MonoBehaviour
     */
     public void StartLightFuseScene()
     {
-        Invoke("StartVoiceOver1", 5.0f);
-        Invoke("StartVoiceOver2", );
-        Invoke("StartVoiceOver3", );
+        Invoke("StartVoiceOver1", 1.0f);
+        Invoke("StartSparkEffect", 5.0f);
+        Invoke("StartVoiceOver2", 7.0f);
+        Invoke("PowerOutageEffect", 20.0f);
+        Invoke("StartVoiceOver3", 22.0f);
     }
-
 
     void StartVoiceOver1()
     {
-        soundManager.Play();
+        soundManager.PlayAnotherLongDay();
     }
 
     void StartVoiceOver2()
     {
-        soundManager.PlayShouldTurnOffSomethingAndCoverPan();
+        soundManager.PlayWhatsThatSound();
     }
 
     void StartVoiceOver3()
     {
-        soundManager.PlayShouldTurnOffSomethingAndCoverPan();
+        soundManager.PlayLightWentOut();
+    }
+
+    void StartSparkEffect()
+    {
+        soundManager.PlayWireSparkSound();
+        // Add spark animation code logic here
+    }
+
+
+    void PowerOutageEffect()
+    {
+        soundManager.PlayLightsOffSound();
+        // Add animation logic here
     }
 
     /**
         Scene starts
-        10s later -> pan catches on fire
-        50s later -> pan fire strenghtens
-        1min later -> fire spreads to whole stove if unattended
-        10s later -> stove fire strengthens
+        5s later -> door knocking
+        25s later -> knocking stops and lockpicking starts
+        35s later -> door is unlocked
     */
     public void StartIntruderScene()
     {
-
+        Invoke("StartKnockingSound", 5.0f);
+        Invoke("StartVoiceOver6", 10.0f);
     }
 
     void StartVoiceOver4()
     {
-        soundManager.PlaySmellSomethingBurning();
+        soundManager.PlayIDidntOrderDelivery();
     }
 
     void StartVoiceOver5()
     {
-        soundManager.PlayShouldTurnOffSomethingAndCoverPan();
+        soundManager.PlayLeaveOrICallPolice();
     }
 
     void StartVoiceOver6()
     {
-        soundManager.PlayShouldTurnOffSomethingAndCoverPan();
+        soundManager.PlayIntruderDialogue();
     }
+
+    void StartKnockingSound()
+    {
+        soundManager.PlayDoorKnockSound();
+    }
+
+    void OpenDoor()
+    {
+        //  Add animation logic here
+    }
+
+
 }
