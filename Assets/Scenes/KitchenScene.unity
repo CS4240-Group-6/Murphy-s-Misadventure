@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7713,6 +7713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108fc564fb91c174cbff2fc18eb57510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractableObjects: {fileID: 0}
+  TooltipForKnob: {fileID: 7770122223122673654}
 --- !u!114 &788498310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12310,6 +12312,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f99223cf0533d643be30d4b9dcf92f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subtitleText: {fileID: 0}
+  grabSound: {fileID: 0}
+  pushDoorSound: {fileID: 0}
+  pushWindowSound: {fileID: 0}
+  hoverSound: {fileID: 0}
+  footstepSounds: []
+  earthquakeSound: {fileID: 0}
+  objectFallSound: {fileID: 0}
+  wireSparkSound: {fileID: 0}
+  fireBurningSound: {fileID: 0}
+  fireExplosionSound: {fileID: 0}
+  doorKnockSound: {fileID: 0}
+  lightsOffSound: {fileID: 0}
+  smellBurning: {fileID: 0}
+  fireOnTheAdaptor: {fileID: 0}
+  roomShaking: {fileID: 0}
+  findASafeSpot: {fileID: 0}
+  smellSomethingBurning: {fileID: 0}
+  shouldTurnOffSomethingAndCoverPan: {fileID: 0}
+  fireGotBiggerNeedToPour: {fileID: 0}
+  isThatSmoke: {fileID: 0}
+  needToExtinguishFireSoon: {fileID: 0}
+  anotherLongDay: {fileID: 0}
+  whatsThatSound: {fileID: 0}
+  lightsWentOut: {fileID: 0}
+  iDidntOrderDelivery: {fileID: 0}
+  leaveOrICallPolice: {fileID: 0}
+  intruderDialogue: {fileID: 0}
 --- !u!4 &1290338121
 Transform:
   m_ObjectHideFlags: 0
@@ -22549,6 +22579,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+--- !u!1 &7770122223122673654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 7770122223122673653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
