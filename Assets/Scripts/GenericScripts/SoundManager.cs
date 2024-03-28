@@ -11,8 +11,6 @@ public class SoundManager : MonoBehaviour
 
     // Action Sound
     public AudioSource grabSound;
-    public AudioSource pushDoorSound;
-    public AudioSource pushWindowSound;
     public AudioSource hoverSound;
     public AudioClip[] footstepSounds;
 

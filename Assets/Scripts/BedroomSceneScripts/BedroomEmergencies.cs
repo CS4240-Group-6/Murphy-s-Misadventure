@@ -45,7 +45,7 @@ public class BedroomEmergencies : MonoBehaviour
 
     // Tooltip
     [Header("Tooltips")]
-    [SerializeField] private GameObject TooltipForBigTable;
+    [SerializeField] private GameObject tooltipForBigTable;
     [SerializeField] private GameObject tooltipForBakingSoda;
     [SerializeField] private GameObject tooltipForCircuitBreaker;
 
@@ -287,11 +287,11 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void hoverOnBigTableForToolTip()
     {
-        TooltipForBigTable.SetActive(true);
+        tooltipForBigTable.SetActive(true);
     }
     public void hoverOffBigTableForToolTip()
     {
-        TooltipForBigTable.SetActive(false);
+        tooltipForBigTable.SetActive(false);
     }
 
     public void HoverOnBakingSodaToolTip() {
