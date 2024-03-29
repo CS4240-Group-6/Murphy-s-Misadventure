@@ -63,6 +63,7 @@ public class FireInteraction : MonoBehaviour
             {
                 Debug.Log("enter stop fire particles");
                 StopFireParticles();
+                KitchenSceneState.SetOilAddedToPan(true);
             }
         }
 

@@ -15,6 +15,7 @@ TagManager:
   - Floor
   - Oil_Fire
   - Oil
+  - Oil_Fire_Spread
   layers:
   - Default
   - TransparentFX
