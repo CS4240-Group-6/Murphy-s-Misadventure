@@ -16,6 +16,7 @@ TagManager:
   - Oil_Fire
   - Oil
   - Oil_Fire_Spread
+  - Water
   layers:
   - Default
   - TransparentFX

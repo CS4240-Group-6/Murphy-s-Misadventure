@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 269008121}
   m_Layer: 12
   m_Name: Particle
-  m_TagString: Oil
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

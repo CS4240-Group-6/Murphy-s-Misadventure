@@ -7,10 +7,14 @@ public class FireInteraction : MonoBehaviour
     [SerializeField] private AudioSource putOutFireAudio;
     [SerializeField] private ParticleSystem oilFireParticles;
     [SerializeField] private ParticleSystem oilFireSpreadParticles;
+    [SerializeField] private ParticleSystem oilFireExplosionParticles;
+    [SerializeField] private ParticleSystem oilFireBigParticles;
 
     public float durationThreshold; // Duration threshold for triggering the effect
+    public float waterThreshold; // Duration threshold for water over fire
 
     private float timer = 0f;
+    private float waterTimer = 0f;
     private bool isOilOverFire = false;
 
 
@@ -39,10 +43,41 @@ public class FireInteraction : MonoBehaviour
             //isOilOverFire = true;
             StartCoroutine(OilOverFire());
         }
+        if (other.CompareTag("Water"))
+        {
+            StartCoroutine(WaterOverFire());
+        }
         else
         {
             isOilOverFire = false;
         }
+    }
+
+    private IEnumerator WaterOverFire()
+    {
+        GameObject parentOfOilFire = oilFireParticles.transform.parent.gameObject;
+        if (parentOfOilFire.activeInHierarchy)
+        {
+            Debug.Log(waterTimer);
+            waterTimer += Time.deltaTime;
+            if (waterTimer > waterThreshold)
+            {
+                StartFireBigParticles();
+            }
+        }
+        yield return null;
+    }
+
+    void StartFireBigParticles()
+    {
+        GameObject parentOfOilFireBigParticles = oilFireBigParticles.transform.parent.gameObject;
+        GameObject parentOfOilFireExplosionParticles = oilFireExplosionParticles.transform.parent.gameObject;
+
+        parentOfOilFireExplosionParticles.SetActive(true);
+        oilFireExplosionParticles.Play();
+
+        parentOfOilFireBigParticles.SetActive(true);
+        oilFireBigParticles.Play();
     }
 
     private IEnumerator OilOverFire()
@@ -51,7 +86,6 @@ public class FireInteraction : MonoBehaviour
         GameObject parentOfOilFire = oilFireParticles.transform.parent.gameObject;
         if (parentOfOilFire.activeInHierarchy)
         {
-            //Debug.Log("putting out fire");
             putOutFireAudio.loop = true;
             if (!putOutFireAudio.isPlaying)
             {
