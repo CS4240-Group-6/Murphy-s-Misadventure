@@ -13,6 +13,8 @@ TagManager:
   - Green_Fire
   - Blue_Fire
   - Floor
+  - Oil_Fire
+  - Oil
   layers:
   - Default
   - TransparentFX
@@ -26,8 +28,7 @@ TagManager:
   - Fires
   - Button
   - Handle
-  - 
-  - 
+  - Oil
   - 
   - 
   - 

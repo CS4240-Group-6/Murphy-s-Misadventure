@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6287,7 +6287,7 @@ GameObject:
   - component: {fileID: 639726953}
   m_Layer: 0
   m_Name: OilFireStart
-  m_TagString: Untagged
+  m_TagString: Oil_Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6300,13 +6300,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639726951}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.418, y: 3.133, z: -10.195}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.29883623, y: -0.64085644, z: -0.64085644, w: -0.29883623}
+  m_LocalPosition: {x: 0.0053358506, y: -0.01730092, z: -0.013503112}
+  m_LocalScale: {x: 0.016666658, y: 0.016666662, z: 0.016666662}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1847841289}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1079732888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &639726953
 AudioSource:
@@ -7817,7 +7817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108fc564fb91c174cbff2fc18eb57510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractableObjects: {fileID: 0}
+  InteractableObjects: {fileID: 446623623}
   TooltipForKnob: {fileID: 7770122223122673654}
 --- !u!114 &788498310
 MonoBehaviour:
@@ -8166,6 +8166,11 @@ CanvasRenderer:
 --- !u!4 &814409346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4579533537640600, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
+  m_PrefabInstance: {fileID: 1501388282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &814409348 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
   m_PrefabInstance: {fileID: 1501388282}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &832513941
@@ -10017,7 +10022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.587
+      value: 0.624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10061,7 +10066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
       propertyPath: m_TagString
-      value: Fill
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10069,6 +10074,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1162089237}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 639726952}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1230573677}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f937e827488ffc447a817e63791fcb6f, type: 3}
       insertIndex: -1
@@ -10132,12 +10143,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023758331, y: 0.024, z: 0.0038}
-  m_Center: {x: -0.000000001296353, y: -0.021, z: -0.001}
+  m_Size: {x: 0.023758331, y: 0.024, z: 0.005}
+  m_Center: {x: -0.000000001296353, y: -0.021, z: -0.0014}
 --- !u!114 &1079732894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10147,9 +10158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079732889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d743eddc2dc8e4f8bbd2d37140b2c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 00d8082b706745c459c0ca4edfffc4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putOutFireAudio: {fileID: 639726953}
+  oilFireParticles: {fileID: 1414845542}
+  oilFireSpreadParticles: {fileID: 814409348}
+  durationThreshold: 2
 --- !u!1001 &1082877950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12191,7 +12206,7 @@ GameObject:
   - component: {fileID: 1230573677}
   m_Layer: 0
   m_Name: OilFireSpread
-  m_TagString: Untagged
+  m_TagString: Oil_Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12204,13 +12219,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230573676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82, y: 3.1316922, z: -10.71}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.29883623, y: -0.64085644, z: -0.64085644, w: -0.29883623}
+  m_LocalPosition: {x: -0.00764582, y: -0.015183279, z: -0.013524907}
+  m_LocalScale: {x: 0.016666658, y: 0.016666662, z: 0.016666662}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 814409346}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1079732888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1271025064
 PrefabInstance:
@@ -13905,6 +13920,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
       propertyPath: InitialModule.size3D
       value: 0
       objectReference: {fileID: 0}
@@ -13921,16 +13940,44 @@ PrefabInstance:
       value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.collidesWithDynamic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+      propertyPath: CollisionModule.multiplyColliderForceByCollisionAngle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199325928435467808, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
       propertyPath: m_Materials.Array.size
@@ -13945,6 +13992,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+--- !u!198 &1414845542 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198771004491828780, guid: 64ab3f6dcb0a5e148a1f122df8d2e623, type: 3}
+  m_PrefabInstance: {fileID: 1414845541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1423410816
 GameObject:
   m_ObjectHideFlags: 0
@@ -14607,6 +14659,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
       propertyPath: ShapeModule.m_Scale.x
       value: 3
       objectReference: {fileID: 0}
@@ -14615,8 +14671,20 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 198439962710929538, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 199095585810062600, guid: 1ccbae7cfcc7e514dbe1904c7e6d794a, type: 3}
       propertyPath: m_Materials.Array.size
@@ -22939,8 +23007,6 @@ SceneRoots:
   - {fileID: 109306933}
   - {fileID: 2074206045}
   - {fileID: 446623624}
-  - {fileID: 639726952}
-  - {fileID: 1230573677}
   - {fileID: 544703783}
   - {fileID: 1993132719}
   - {fileID: 1957993503}
