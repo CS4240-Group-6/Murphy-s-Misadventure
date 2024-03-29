@@ -72,12 +72,13 @@ public class Stream : MonoBehaviour
 
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(5.0f);
 
-        if (hit.collider.isTrigger && hit.transform.gameObject.tag == "Fill")
+/**
+        if (hit.collider.isTrigger  hit.transform.gameObject.tag == "Fill")
         {
             Debug.Log("hit object to be filled");
             // fill object
         }
-
+*/
         return endPoint;
     }
 
