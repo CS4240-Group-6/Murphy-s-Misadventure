@@ -35,7 +35,9 @@ public class BedroomSceneLogicManager : MonoBehaviour
 
     private void CheckLevelComplete() {
         // Check if the level is complete
-        if (BedroomSceneState.Level6Complete()) {
+        if (BedroomSceneState.Level6Complete()) 
+        {
+            GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             bedroomEmergencies.StopEarthquake();
             // bedroomEmergencies.ExtinguishElectricalFire();
@@ -51,6 +53,8 @@ public class BedroomSceneLogicManager : MonoBehaviour
             // levelObjectManager.ResetLevel();
             BedroomSceneState.ResetLevel6();
             gameOver = true; // Set game over flag
+            GlobalState.SetStartLevel(false); // Reset start level flag
+            levelTextManager.DisplayLevelTexts();
             gameOverTimer = 0f; // Reset timer
         }
 

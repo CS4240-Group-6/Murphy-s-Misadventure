@@ -8,6 +8,8 @@ public class HideUnderTableInteraction : MonoBehaviour
     public GameObject flimsyTable;
     public Transform cameraOffset;
     public GameObject player;
+    public BedroomEmergencies bedroomEmergencies;
+
     [SerializeField] BoxCollider sturdyTableAreaCollider;
     [SerializeField] BoxCollider flimsyTableAreaCollider;
 
@@ -22,16 +24,22 @@ public class HideUnderTableInteraction : MonoBehaviour
             Debug.Log("playerPrevPos 1: " + playerPrevPosition);
             Vector3 crouchPosition = new Vector3(-8.5f, 1f, 1.4f);
             cameraOffset.position = crouchPosition;
-            BedroomSceneState.SetUnderCorrectTable(true);
+            Invoke("InvokeStopEarthquake", 5f);
         }
         if (tooltipForFlimsyTable.activeSelf) {
             Vector3 crouchPosition = new Vector3(0.27f, 1f, 13.127f);
             cameraOffset.position = crouchPosition;
             BedroomSceneState.SetUnderCorrectTable(false);
+            Invoke("ExitFromUnderTable", 5f);
         }
         // TODO: Set exit from under table to be somewhere else (like upon level complete or sth!!!)
-        Invoke("ExitFromUnderTable", 5f);
     }  
+
+    public void InvokeStopEarthquake()
+    {
+        BedroomSceneState.SetUnderCorrectTable(true);
+        bedroomEmergencies.StopEarthquake();
+    }
 
     public void ExitFromUnderTable() {
         if (IsPlayerBelowTable(player, sturdyTable, sturdyTableAreaCollider) || IsPlayerBelowTable(player, flimsyTable, flimsyTableAreaCollider)) {

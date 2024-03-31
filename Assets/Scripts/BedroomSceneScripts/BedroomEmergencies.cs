@@ -62,14 +62,14 @@ public class BedroomEmergencies : MonoBehaviour
         smallTableFire.SetActive(false);
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
-        StartFireScene();
+        // StartFireScene();
 
         originalObjectPositions = new Vector3[objectsToShake.Length];
         for (int i = 0; i < objectsToShake.Length; i++)
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
-        // StartEarthquakeScene();
+        StartEarthquakeScene();
     }
 
     // Update is called once per frame
@@ -79,9 +79,9 @@ public class BedroomEmergencies : MonoBehaviour
             LightFlickering();
 
         // for earthquake level
-        if (!isEarthquakeLevelOver) {
-            CheckPlayerUnderSturdyTable();
-        }
+        // if (!isEarthquakeLevelOver) {
+        //     CheckPlayerUnderSturdyTable();
+        // }
 
         // Check if the object is tilted more than 90 degrees
         if (Vector3.Angle(bakingSoda.transform.up, Vector3.up) > 90f)
@@ -264,16 +264,16 @@ public class BedroomEmergencies : MonoBehaviour
     }
 
 
-    private void CheckPlayerUnderSturdyTable()
-    {
-        if (IsPlayerBelowTable(player, sturdyTable))
-        {
-            // Player is under the sturdy table
-            BedroomSceneState.SetUnderCorrectTable(true);
-        } else {
-            BedroomSceneState.SetUnderCorrectTable(false);
-        }
-    }
+    // private void CheckPlayerUnderSturdyTable()
+    // {
+    //     if (IsPlayerBelowTable(player, sturdyTable))
+    //     {
+    //         // Player is under the sturdy table
+    //         BedroomSceneState.SetUnderCorrectTable(true);
+    //     } else {
+    //         BedroomSceneState.SetUnderCorrectTable(false);
+    //     }
+    // }
 
     // This function checks if player is below the sturdy table and is also within the boundaries of the sturdy table
     private bool IsPlayerBelowTable(GameObject player, GameObject table)
