@@ -28985,9 +28985,17 @@ PrefabInstance:
       value: Oil
       objectReference: {fileID: 0}
     - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 788498309}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
