@@ -29,6 +29,7 @@ public class DoorScript : MonoBehaviour
         Debug.Log("It works");
         // Add change scene logic here Jonny
         int previousLevel = GlobalState.GetLevel();
+        GlobalState.SetStartLevel(true);
         if (previousLevel == 1 || previousLevel == 2 || previousLevel == 8) {
             SceneManager.LoadScene("BedroomScene");
         }
