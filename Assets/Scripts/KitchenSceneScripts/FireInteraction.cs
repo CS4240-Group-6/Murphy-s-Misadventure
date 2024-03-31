@@ -63,6 +63,7 @@ public class FireInteraction : MonoBehaviour
             if (waterTimer > waterThreshold)
             {
                 StartFireBigParticles();
+                KitchenSceneState.SetWaterAddedToPan(true);
             }
         }
         yield return null;
@@ -82,7 +83,6 @@ public class FireInteraction : MonoBehaviour
 
     private IEnumerator OilOverFire()
     {
-        Debug.Log(timer);
         GameObject parentOfOilFire = oilFireParticles.transform.parent.gameObject;
         if (parentOfOilFire.activeInHierarchy)
         {
@@ -95,7 +95,7 @@ public class FireInteraction : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= durationThreshold)
             {
-                Debug.Log("enter stop fire particles");
+                //Debug.Log("enter stop fire particles");
                 StopFireParticles();
                 KitchenSceneState.SetOilAddedToPan(true);
             }

@@ -13,7 +13,7 @@ public class LevelTextManager : MonoBehaviour
     private TextMeshProUGUI descriptionText;
     public GameObject levelCanvas; // We can turn off or on the canvas at the start and end of a level
     private int previousLevel = 0;
-    private float timeRemaining = 180; // 3 minute timer
+    public static float timeRemaining = 180; // 3 minute timer
 
     private bool timerIsRunning = false;
 
