@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class KitchenSceneLogicManager : MonoBehaviour
 {
-    [SerializeField]
-    private LevelCanvasController LevelCanvasController;
     private LevelTextManager levelTextManager;
     private KitchenEmergencies kitchenEmergencies;  
     private bool gameOver = false;
@@ -38,7 +36,6 @@ public class KitchenSceneLogicManager : MonoBehaviour
             KitchenSceneState.ResetLevel3();
             gameOver = true; // Set game over flag
             gameOverTimer = 0f; // Reset timer
-            LevelCanvasController.ShowDeathMessage();
         }
 
         // If game over flag is set, wait for the delay before changing scene
@@ -60,8 +57,6 @@ public class KitchenSceneLogicManager : MonoBehaviour
         {
             levelTextManager.DisplayLevelComplete();
             kitchenEmergencies.ExtinguishOilFire();
-            // Click some button on the UI to increment to next level?
-            LevelCanvasController.ShowLevelCompleteMessage("Fun fact: Most fire hazards start in the kitchen.");
         }
     }
 }
