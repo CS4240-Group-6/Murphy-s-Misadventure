@@ -69,7 +69,6 @@ public class BakingSodaKitchenInteraction : MonoBehaviour
 
         if (isBakingSodaOnFire)
         {
-            Debug.Log(timer);
             putOutFireAudio.loop = true;
             if (!putOutFireAudio.isPlaying) {
                 putOutFireAudio.Play();
@@ -78,6 +77,7 @@ public class BakingSodaKitchenInteraction : MonoBehaviour
             if (timer >= durationThreshold)
             {
                 StopFireParticles(fireType);
+                KitchenSceneState.SetSodaAddedToPan(true);
             }
         }
         else if (wasBakingSodaOnFire)

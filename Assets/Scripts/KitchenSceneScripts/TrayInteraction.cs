@@ -11,6 +11,7 @@ public class TrayInteraction : MonoBehaviour
 
     private float timer = 0f;
     private bool isTrayOverPan = false;
+    private bool wasTrayOverPan = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class TrayInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /**
         if (isTrayOverPan)
         {
             Debug.Log(timer);
@@ -30,13 +32,39 @@ public class TrayInteraction : MonoBehaviour
                 StopFireParticles();
             }
         }
+        else if (wasTrayOverPan)
+        {
+            // Tray has exited, reset timer
+            timer = 0f;
+            wasTrayOverPan = false;
+        }
+        else {
+            // Tray has exited, reset timer
+            timer = 0f;
+            wasTrayOverPan = false;
+        }
+
+        wasTrayOverPan = isTrayOverPan;
+        isTrayOverPan = false;
+        */
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        timer = 0f;
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
         if (collision.gameObject.CompareTag("Oil_Fire"))
         {
-            isTrayOverPan = true;
+            Debug.Log(timer);
+            timer += Time.deltaTime;
+            if (timer >= durationThreshold)
+            {
+                StopFireParticles();
+                KitchenSceneState.SetPanCovered(true);
+            }
         }
     }
 

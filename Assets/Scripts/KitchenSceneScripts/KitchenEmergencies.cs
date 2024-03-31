@@ -113,11 +113,6 @@ public class KitchenEmergencies : MonoBehaviour
         }
     }
 
-    public void ExtinguishSmallOilFire()
-    {
-        OilFireStart.SetActive(false);
-    }
-
     public void ExtinguishOilFire()
     {
         OilFireStart.SetActive(false);
