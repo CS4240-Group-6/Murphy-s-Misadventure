@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BakingSodaKitchenInteraction : MonoBehaviour
 {
-    public ParticleSystem sodaParticles; // Reference to the fire particle system
+    [SerializeField] private GameObject bakingSoda;
+    [SerializeField] private ParticleSystem bakingSodaParticles;
     //[SerializeField] private ParticleSystem yellowFireSteamParticles;
     //[SerializeField] private ParticleSystem blueFireSteamParticles;
 
     [SerializeField] private ParticleSystem oilFireParticles;
     [SerializeField] private ParticleSystem oilFireSpreadParticles;
     [SerializeField] private AudioSource putOutFireAudio;
-    public float durationThreshold = 5f; // Duration threshold for triggering the effect
+    public float durationThreshold; // Duration threshold for triggering the effect
+
+    private bool bakingSodaParticlesActive;
 
     private float timer = 0f;
     private bool isBakingSodaOnFire = false;
@@ -21,11 +24,13 @@ public class BakingSodaKitchenInteraction : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("particle collision enter");
         if (other.CompareTag("Oil_Fire")) // Assuming you've tagged the baking soda particles appropriately
         {
-            isBakingSodaOnFire = true;
-            fireType = "Oil_Fire";
+            GameObject parentOfOilFire = oilFireParticles.transform.parent.gameObject;
+            if (parentOfOilFire.activeInHierarchy) {
+                isBakingSodaOnFire = true;
+                fireType = "Oil_Fire";
+            }
         } 
         if (other.CompareTag("Oil_Fire_Spread")) // Assuming you've tagged the baking soda particles appropriately
         {
@@ -36,12 +41,32 @@ public class BakingSodaKitchenInteraction : MonoBehaviour
         {
             Debug.Log("Collide with floor");
             isBakingSodaOnFire = false;
-        } 
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Check if the baking soda is tilted more than 90 degrees
+        if (Vector3.Angle(bakingSoda.transform.up, Vector3.up) > 90f)
+        {
+            if (!bakingSodaParticlesActive)
+            {
+                // Start emitting particles
+                bakingSodaParticles.Play();
+                bakingSodaParticlesActive = true;
+            }
+        }
+        else
+        {
+            if (bakingSodaParticlesActive)
+            {
+                // Stop emitting particles
+                bakingSodaParticles.Stop();
+                bakingSodaParticlesActive = false;
+            }
+        }
+
         if (isBakingSodaOnFire)
         {
             putOutFireAudio.loop = true;
@@ -52,6 +77,7 @@ public class BakingSodaKitchenInteraction : MonoBehaviour
             if (timer >= durationThreshold)
             {
                 StopFireParticles(fireType);
+                KitchenSceneState.SetSodaAddedToPan(true);
             }
         }
         else if (wasBakingSodaOnFire)
