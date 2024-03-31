@@ -31,48 +31,12 @@ public class BedroomSceneLogicManager : MonoBehaviour
     {
         CheckGameOver();
         CheckLevelComplete();
-        // // Check if the game is already over
-        // if (isGameOver)
-        //     return;
-
-        // // Update the elapsed time
-        // elapsedTime += Time.deltaTime;
-
-        // // Check if the time limit has been reached
-        // if (elapsedTime >= timeLimit)
-        // {
-        //     EndGame(false); // User loses if time limit is exceeded
-        //     return;
-        // }
-
-        // // Check if the user is below the table
-        // if (playerTransform.position.y < sturdyTableTransform.position.y)
-        // {
-        //     EndGame(true); // User wins if below the table
-        // }
     }
-
-    // void EndGame(bool isWinner)
-    // {
-    //     isGameOver = true;
-
-    //     if (isWinner)
-    //     {
-    //         Debug.Log("Congratulations! You win!");
-    //         // Implement logic for winning the level
-    //         levelTextManager.DisplayLevelComplete();
-    //     }
-    //     else
-    //     {
-    //         Debug.Log("Time's up! You lose!");
-    //         // Implement logic for losing the level
-    //     }
-    // }
 
     private void CheckLevelComplete() {
         // Check if the level is complete
         if (BedroomSceneState.Level6Complete()) {
-            levelTextManager.DisplayLevelComplete();
+            levelTextManager.DisplayLevelTexts();
             bedroomEmergencies.StopEarthquake();
             // bedroomEmergencies.ExtinguishElectricalFire();
             // Click some button on the UI to increment to next level?

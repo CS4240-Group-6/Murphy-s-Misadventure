@@ -104,8 +104,14 @@ public class LevelTextManager : MonoBehaviour
         }
     }
 
-    public void DisplayLevelComplete() {
-        ShowCanvas();
+    public void DisplayLevelTexts() {
+        if (GlobalState.IsGameOver()) {
+            StartCoroutine(LevelIntro());
+        } else {
+            ShowCanvas();
+            // Click on button to go next level
+        }
+
         timeText.gameObject.SetActive(false);        
         timerIsRunning = false;
     }
