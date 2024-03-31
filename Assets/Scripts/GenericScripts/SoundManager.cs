@@ -178,19 +178,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlayAnotherLongDay()
     {
-        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        subtitleText.text = "Murphy: Another long day… I’m finally home"; 
         audioSource.PlayOneShot(anotherLongDay);      
     }
 
     public void PlayWhatsThatSound()
     {
-        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        subtitleText.text = "Murphy: What’s that sound?"; 
         audioSource.PlayOneShot(whatsThatSound);          
     }
 
     public void PlayLightWentOut()
     {
-        subtitleText.text = "Murphy: Wow! Ok i need to extinguish the fire soon before it explodes"; 
+        subtitleText.text = "Murphy: Ah! The lights went out! I should find a way to turn the lights back on…"; 
         audioSource.PlayOneShot(lightsWentOut);          
     }
 
@@ -208,7 +208,7 @@ public class SoundManager : MonoBehaviour
     
     public void PlayIntruderDialogue()
     {
-        subtitleText.text = "Intruder: Wow! Ok i need to extinguish the fire soon before it explodes";
+        subtitleText.text = "Intruder: “Hello? Delivery service. Anyone home?";
         audioSource.PlayOneShot(intruderDialogue);
     }
 }

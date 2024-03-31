@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KitchenEmergencies : MonoBehaviour
-{
-    [SerializeField]
-    private LevelCanvasController LevelCanvasController;
-    
-    public float MinTime;
-    public float MaxTime;
-    public float Timer;
-
+{    
     // OIL FIRE
     public GameObject OilFireStart;
     public GameObject OilFireSpread;
@@ -31,9 +24,6 @@ public class KitchenEmergencies : MonoBehaviour
         OvenSmoke.SetActive(false);
         OvenExplosion.SetActive(false);
 
-        Timer = Random.Range(MinTime, MaxTime);
-
-        StartCoroutine(LevelIntro());
         StartOilFireScene();
 
         // StartOvenFireScene();
@@ -45,12 +35,6 @@ public class KitchenEmergencies : MonoBehaviour
         
     }
 
-    IEnumerator LevelIntro() 
-    {
-        LevelCanvasController.ShowWelcomeMessage(3, "An oily mistake...");
-        yield return new WaitForSeconds(5f);
-        LevelCanvasController.HideCanvas();
-    }
     /**
         Scene starts
         10s later -> pan catches on fire
@@ -127,11 +111,6 @@ public class KitchenEmergencies : MonoBehaviour
             var Emission = OilFireSpreadEffect.emission;
             Emission.rateOverTime = 45.0f;
         }
-    }
-
-    public void ExtinguishSmallOilFire()
-    {
-        OilFireStart.SetActive(false);
     }
 
     public void ExtinguishOilFire()
