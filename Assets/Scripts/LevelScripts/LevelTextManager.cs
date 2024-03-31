@@ -11,6 +11,8 @@ public class LevelTextManager : MonoBehaviour
     private TextMeshProUGUI timeText;
     [SerializeField]
     private TextMeshProUGUI descriptionText;
+    [SerializeField]
+    private GameObject nextLevelButton;
     public GameObject levelCanvas; // We can turn off or on the canvas at the start and end of a level
     private int previousLevel = 0;
     public static float timeRemaining = 180; // 3 minute timer
@@ -23,6 +25,7 @@ public class LevelTextManager : MonoBehaviour
         levelText.text = "";
         descriptionText.text = "";
         timerIsRunning = true;
+        nextLevelButton.SetActive(true);
 
         StartCoroutine(LevelIntro());
         ShowCanvas();
@@ -76,12 +79,6 @@ public class LevelTextManager : MonoBehaviour
         timerIsRunning = running;
     }
 
-    // private void UpdateLevelText() {
-    //     levelText.text = "Level " + GlobalState.GetLevel().ToString();
-    //     UpdateLevelInfo(GlobalState.GetLevel());
-    //     previousLevel = GlobalState.GetLevel();
-    // }
-
     private void DisplayTime(float timeToDisplay)
     {
         timeToDisplay = Mathf.Max(0, timeToDisplay);
@@ -104,16 +101,47 @@ public class LevelTextManager : MonoBehaviour
         }
     }
 
-    public void DisplayLevelTexts() {
+    public void DisplayLevelTexts() 
+    {
         if (GlobalState.IsGameOver()) {
             StartCoroutine(LevelIntro());
         } else {
             ShowCanvas();
-            // Click on button to go next level
+            nextLevelButton.SetActive(true);
         }
 
         timeText.gameObject.SetActive(false);        
         timerIsRunning = false;
+    }
+
+    public void MoveToNextLevel()
+    {
+        Debug.Log("Button click works!");
+
+        // If scene got another level, press button start new level
+        // If the next level in another scene, then need lead them to the door
+        int nextLevel = GlobalState.GetLevel() + 1;
+
+        if (nextLevel == 3)
+        {
+            // Regarding the doors we can set check if current level is the 2nd level of the scene and only then you can enter the room/ load new scene
+            levelText.text = "";
+            descriptionText.text = "Please proceed to the Kitchen";
+            Invoke("HideCanvas", 5f);
+        } else if (nextLevel == 5)
+        {
+            // Regarding the doors we can set check if current level is the 2nd level of the scene and only then you can enter the room/ load new scene
+            levelText.text = "";
+            descriptionText.text = "Please proceed to the Bedroom";
+            Invoke("HideCanvas", 5f);
+        } else
+        {
+            // Call the other function in the scene for the next level
+
+            HideCanvas();
+        }
+        
+        GlobalState.IncrementLevel();
     }
 
     // To update level information
