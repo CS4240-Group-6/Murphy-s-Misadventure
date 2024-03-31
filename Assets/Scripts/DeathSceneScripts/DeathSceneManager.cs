@@ -29,6 +29,8 @@ public class DeathSceneManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GlobalState.SetStartLevel(true);
+        GlobalState.SetGameOver(false);
         Timer = Random.Range(MinTime, MaxTime);
         exitSignTimer = Random.Range(MinTimeExitSign, MaxTimeExitSign);
         int numDeaths = PlayerPrefs.GetInt("Deaths", 1);

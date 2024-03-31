@@ -4,10 +4,10 @@ using UnityEngine;
 
 public static class GlobalState
 {
-    private static int level = 4;
+    private static int level = 3;
     private static bool isGameOver = false;
     
-    private static bool isStartLevel = false;
+    private static bool isStartLevel = true;
 
     public static void SetLevel(int newLevel)
     {
