@@ -1,38 +1,20 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ShieldAnimation : MonoBehaviour
 {
-    public XRBaseInteractor shieldInteractor;
-    public XRBaseInteractor leverInteractor;
-    private Animator shieldAnimator;
-    private bool isShieldOpen = false;
-    private bool isLeverUp = true;
-    private bool isGrabbingLever = false;
+    [SerializeField] private Animator shieldAnimator;
+    private bool isOpen = false;
+    private bool isGrabbingSwitch = false;
     private bool isGrabbingShield = false; 
 
     void Start()
     {
-        shieldAnimator = GetComponent<Animator>();
+        shieldAnimator = GetComponentInParent<Animator>();
     }
 
-    void OnEnable()
-    {
-        shieldInteractor.selectEntered.AddListener(OnShieldGrabbed);
-        shieldInteractor.selectExited.AddListener(OnShieldReleased);
-        leverInteractor.selectEntered.AddListener(OnLeverGrabbed);
-        leverInteractor.selectExited.AddListener(OnLeverReleased); 
-    }
-
-    void OnDisable()
-    {
-        shieldInteractor.selectEntered.RemoveListener(OnShieldGrabbed);
-        shieldInteractor.selectExited.RemoveListener(OnShieldReleased); 
-        leverInteractor.selectEntered.RemoveListener(OnLeverGrabbed);
-        leverInteractor.selectExited.RemoveListener(OnLeverReleased); 
-    }
-
-    private void OnShieldGrabbed(SelectEnterEventArgs args)
+    public void OnShieldGrabbed(SelectEnterEventArgs args)
     {
         // Check if the shield is already being grabbed
         if (!isGrabbingShield)
@@ -42,7 +24,7 @@ public class ShieldAnimation : MonoBehaviour
         }
     }
 
-    private void OnShieldReleased(SelectExitEventArgs args) 
+    public void OnShieldReleased(SelectExitEventArgs args) 
     {
         // Reset the flag when the shield is released
         isGrabbingShield = false;
@@ -51,7 +33,7 @@ public class ShieldAnimation : MonoBehaviour
     private void ToggleShield()
     {
         // Toggle shield open/close with animation
-        if (isShieldOpen)
+        if (isOpen)
         {
             shieldAnimator.Play("CloseShield");
         }
@@ -59,37 +41,27 @@ public class ShieldAnimation : MonoBehaviour
         {
             shieldAnimator.Play("OpenShield");
         }
-        isShieldOpen = !isShieldOpen;
+        isOpen = !isOpen;
+        Debug.Log("IsOpen " + isOpen);
     }
 
-    private void OnLeverGrabbed(SelectEnterEventArgs args)
+    public void OnSwitchGrabbed(SelectEnterEventArgs args)
     {
-        // Only allow lever interaction if the shield is open and the lever is not being grabbed
-        if (isShieldOpen && !isGrabbingLever)
+        Debug.Log("grab on " + isGrabbingSwitch);
+        Debug.Log("isopen " + isOpen);
+        if (!isGrabbingSwitch)
         {
-            isGrabbingLever = true; // Update the flag when the lever is grabbed
-            ToggleLever();
+            isGrabbingSwitch = true;
+            Debug.Log("playing");
+            shieldAnimator.Play("TurnOnSwitch");
         }
+        Debug.Log("grab on1 " + isGrabbingSwitch);
     }
 
-    private void OnLeverReleased(SelectExitEventArgs args)
+    public void OnSwitchReleased(SelectExitEventArgs args)
     {
-        // Reset the flag when the lever is released
-        isGrabbingLever = false;
-    }
-
-    private void ToggleLever()
-    {
-        // Toggle the lever up/down with animation
-        if (isLeverUp)
-        {
-            shieldAnimator.Play("PullDownLever");
-        }
-        else
-        {
-            shieldAnimator.Play("PullUpLever");
-        }
-        isLeverUp = !isLeverUp;
+        isGrabbingSwitch = false;
+        Debug.Log("grab off " + isGrabbingSwitch);
     }
 }
 
