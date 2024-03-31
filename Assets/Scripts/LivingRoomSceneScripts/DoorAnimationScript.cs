@@ -6,6 +6,7 @@ public class DoorAnimation : MonoBehaviour
     [SerializeField] private Animator DoorAnimator;
     private bool isOpen = false;
     private bool isGrabbingDoor = false; 
+    private bool isLocked = false;
 
     void Start()
     {
@@ -28,18 +29,28 @@ public class DoorAnimation : MonoBehaviour
         isGrabbingDoor = false;
     }
 
+    public void OnDoorLockGrabbed()
+    {
+        isLocked = !isLocked;
+        Debug.Log("lock " + isLocked);
+    }
+
     private void ToggleDoor()
     {
         // Toggle Door open/close with animation
-        if (isOpen)
+        Debug.Log("lock when toggling door " + isLocked);
+        if (!isLocked)
         {
-            DoorAnimator.Play("CloseDoor");
+            if (isOpen)
+            {
+                DoorAnimator.Play("CloseDoor");
+            }
+            else
+            {
+                DoorAnimator.Play("OpenDoor");
+            }
+            isOpen = !isOpen;
         }
-        else
-        {
-            DoorAnimator.Play("OpenDoor");
-        }
-        isOpen = !isOpen;
     }
 }
 
