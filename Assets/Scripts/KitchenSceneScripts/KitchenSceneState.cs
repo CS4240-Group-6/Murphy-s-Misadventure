@@ -6,6 +6,8 @@ public static class KitchenSceneState
 {
     private static bool gasStoveTurnedOff = false;
     private static bool oilAddedToPan = false;
+    private static bool sodaAddedToPan = false;
+    private static bool waterAddedToPan = false;
 
     public static void SetGasStoveTurnedOff(bool isTurnedOff)
     {
@@ -27,6 +29,27 @@ public static class KitchenSceneState
         return oilAddedToPan;
     }
 
+    public static void SetSodaAddedToPan(bool isAdded)
+    {
+        sodaAddedToPan = isAdded;
+    }
+
+    public static bool IsSodaAddedToPan()
+    {
+        return sodaAddedToPan;
+    }
+
+    // MISTAKE ACTION
+    public static void SetWaterAddedToPan(bool isAdded)
+    {
+        waterAddedToPan = isAdded;
+    }
+
+    public static bool IsWaterAddedToPan()
+    {
+        return waterAddedToPan;
+    }
+
     public static bool Level3Complete()
     {
         // return gasStoveTurnedOff && oilAddedToPan;
@@ -37,5 +60,7 @@ public static class KitchenSceneState
     {
         gasStoveTurnedOff = false;
         oilAddedToPan = false;
+        sodaAddedToPan = false;
+        waterAddedToPan = false;
     }
 }

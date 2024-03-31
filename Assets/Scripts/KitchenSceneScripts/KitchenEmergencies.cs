@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class KitchenEmergencies : MonoBehaviour
 {    
-    public float MinTime;
-    public float MaxTime;
-    public float Timer;
-
     // OIL FIRE
     public GameObject OilFireStart;
     public GameObject OilFireSpread;
@@ -27,8 +23,6 @@ public class KitchenEmergencies : MonoBehaviour
 
         OvenSmoke.SetActive(false);
         OvenExplosion.SetActive(false);
-
-        Timer = Random.Range(MinTime, MaxTime);
 
         StartOilFireScene();
 
