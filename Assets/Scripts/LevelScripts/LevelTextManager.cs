@@ -25,7 +25,7 @@ public class LevelTextManager : MonoBehaviour
         levelText.text = "";
         descriptionText.text = "";
         timerIsRunning = true;
-        nextLevelButton.SetActive(true);
+        nextLevelButton.SetActive(false);
 
         StartCoroutine(LevelIntro());
         ShowCanvas();
@@ -142,6 +142,17 @@ public class LevelTextManager : MonoBehaviour
         }
         
         GlobalState.IncrementLevel();
+
+        switch(nextLevel) {
+            case 2:
+                break;
+            case 4:
+                // FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
+                break;
+            case 6:
+                FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
+                break;
+        }
     }
 
     // To update level information
