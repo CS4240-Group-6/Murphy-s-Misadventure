@@ -7,10 +7,12 @@ public class BedroomEmergencies : MonoBehaviour
     // FIRE RELATED
     [Header("Electrical fire related values")]
     public ParticleSystem sparksFlying;
-    public ParticleSystem bigSparks;
-    public GameObject plugFire;
-    public GameObject smallTableFire;
-    public GameObject comTableFire;
+
+    // Things to check for level complete
+    public ParticleSystem bigSparks; // circuit breaker
+    public GameObject plugFire; // yellow fire
+    public GameObject smallTableFire; // green fire
+    public GameObject comTableFire; // blue fire
     public float MinTime;
     public float MaxTime;
     public float Timer;
@@ -62,14 +64,14 @@ public class BedroomEmergencies : MonoBehaviour
         smallTableFire.SetActive(false);
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
-        // StartFireScene();
+        StartFireScene();
 
         originalObjectPositions = new Vector3[objectsToShake.Length];
         for (int i = 0; i < objectsToShake.Length; i++)
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
-        StartEarthquakeScene();
+        // StartEarthquakeScene();
     }
 
     // Update is called once per frame
@@ -183,6 +185,7 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void SelectFuseBox() {
         Debug.Log("fusebox selected");
+        BedroomSceneState.SetCircuitBreakerOff(true);
         fuseBoxAudio.Play();
         bigSparks.Stop();
     }
@@ -261,28 +264,6 @@ public class BedroomEmergencies : MonoBehaviour
             return null;
         int randomIndex = Random.Range(0, ceilingChunks.Length);
         return ceilingChunks[randomIndex];
-    }
-
-
-    // private void CheckPlayerUnderSturdyTable()
-    // {
-    //     if (IsPlayerBelowTable(player, sturdyTable))
-    //     {
-    //         // Player is under the sturdy table
-    //         BedroomSceneState.SetUnderCorrectTable(true);
-    //     } else {
-    //         BedroomSceneState.SetUnderCorrectTable(false);
-    //     }
-    // }
-
-    // This function checks if player is below the sturdy table and is also within the boundaries of the sturdy table
-    private bool IsPlayerBelowTable(GameObject player, GameObject table)
-    {
-        if (table == null)
-            return false;
-
-        // Check if the player is below the specified table based on their positions
-        return player.transform.position.y < table.transform.position.y && (sturdyTableAreaCollider.bounds.Contains(player.transform.position));
     }
 
     public void hoverOnBigTableForToolTip()
