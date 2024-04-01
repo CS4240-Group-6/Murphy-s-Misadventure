@@ -100,18 +100,19 @@ public class BakingSodaInteraction : MonoBehaviour
                 yellowFireParticles.Stop();
                 parentOfYellowFire.SetActive(false);
                 yellowFireSteamParticles.Play();
+                BedroomSceneState.SetExtinguishYellowFlames(true);
                 break;
             case "blue":
                 blueFireParticles.Stop();
                 parentOfBlueFire.SetActive(false);
                 blueFireSteamParticles.Play();
-
+                BedroomSceneState.SetExtinguishBlueFlames(true);
                 break;
             case "green":
                 greenFireParticles.Stop();
                 parentOfGreenFire.SetActive(false);
                 greenFireSteamParticles.Play();
-
+                BedroomSceneState.SetExtinguishGreenFlames(true);
                 break;
         }
     }

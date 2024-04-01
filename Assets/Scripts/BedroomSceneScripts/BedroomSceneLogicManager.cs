@@ -43,6 +43,10 @@ public class BedroomSceneLogicManager : MonoBehaviour
             // bedroomEmergencies.ExtinguishElectricalFire();
             // Click some button on the UI to increment to next level?
         }
+        if (BedroomSceneState.Level5Complete()) {
+            levelTextManager.DisplayLevelTexts();
+            // Increment level to 6 on button click
+        }
     }
 
     private void CheckGameOver()
@@ -75,4 +79,5 @@ public class BedroomSceneLogicManager : MonoBehaviour
     /*
     Electrical Fire scene related
     */
+
 }

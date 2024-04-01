@@ -5,6 +5,10 @@ using UnityEngine;
 public static class BedroomSceneState
 {
     private static bool playerUnderCorrectTable = false;
+    private static bool isCircuitBreakerOff = false;
+    private static bool isYellowFireExtinguished = false;
+    private static bool isBlueFireExtinguished = false;
+    private static bool isGreenFireExtinguished = false;
 
     /*
     Earthquake scene related. And a frog?!
@@ -28,6 +32,26 @@ public static class BedroomSceneState
     /*
     Electrical Fire scene related
     */
+    public static void SetExtinguishBlueFlames(bool isExtinguished) {
+        isBlueFireExtinguished = isExtinguished;
+    }
+
+    public static void SetExtinguishGreenFlames(bool isExtinguished) {
+        isGreenFireExtinguished = isExtinguished;
+    }
+
+    public static void SetExtinguishYellowFlames(bool isExtinguished) {
+        isYellowFireExtinguished = isExtinguished;
+    }
+
+    public static void SetCircuitBreakerOff(bool isOff) {
+        isCircuitBreakerOff = isOff;
+    }
+
+    public static bool Level5Complete() {
+        // player has extinguished the fire
+        return isBlueFireExtinguished && isGreenFireExtinguished && isYellowFireExtinguished && isCircuitBreakerOff;
+    }
 
     /*
     Level related
