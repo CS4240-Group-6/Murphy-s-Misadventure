@@ -19,6 +19,11 @@ public class KitchenInteractions : MonoBehaviour
     /**
         STATES OF THE KNOBS
     */
+    private bool isHoverLeft1;
+    private bool isHoverLeft2;
+    private bool isHoverRight1;
+    private bool isHoverRight2;
+
     private static float StoveKnobLeft1_state;
     private static float StoveKnobLeft2_state;
     private static float StoveKnobRight1_state;
@@ -32,6 +37,8 @@ public class KitchenInteractions : MonoBehaviour
     /**
         STATES OF THE OVEN DOOR
     */
+    private bool isHoverOvenDoor;
+
     private static float OvenDoor_state;
 
     private bool canRotateDoor;
@@ -39,6 +46,13 @@ public class KitchenInteractions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isHoverLeft1 = false;
+        isHoverLeft2 = false;
+        isHoverRight1 = false;
+        isHoverRight2 = false;
+
+        isHoverOvenDoor = false;
+
         canRotateLeft1 = false;
         canRotateLeft2 = false;
         canRotateRight1 = false;
@@ -94,6 +108,50 @@ public class KitchenInteractions : MonoBehaviour
 
         (dont ask me why theyre named this way...its from the asset)
     */
+    public void IsHoverLeft1()
+    {
+        isHoverLeft1 = true;
+    }
+
+    public void IsExitHoverLeft1()
+    {
+        isHoverLeft1 = false;
+    }
+
+
+    public void IsHoverLeft2()
+    {
+        isHoverLeft2 = true;
+    }
+
+    public void IsExitHoverLeft2()
+    {
+        isHoverLeft2 = false;
+    }
+
+
+    public void IsHoverRight1()
+    {
+        isHoverRight1 = true;
+    }
+
+    public void IsExitHoverRight1()
+    {
+        isHoverRight1 = false;
+    }
+
+
+    public void IsHoverRight2()
+    {
+        isHoverRight2 = true;
+    }
+
+    public void IsExitHoverRight2()
+    {
+        isHoverRight2 = false;
+    }
+
+
     public void RotateStoveKnobLeft1() 
     {
         if (StoveKnobLeft1_state == STOVE_ON_ANGLE)
@@ -104,8 +162,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobLeft1_state = STOVE_ON_ANGLE;
         }
-        canRotateLeft1 = true;
-        
+
+        if (isHoverLeft1)
+        {
+            canRotateLeft1 = true;
+        }
+        else
+        {
+            canRotateLeft1 = false;
+        }
     }
 
     public void RotateStoveKnobLeft2() 
@@ -113,13 +178,20 @@ public class KitchenInteractions : MonoBehaviour
         if (StoveKnobLeft2_state == STOVE_ON_ANGLE)
         {
             StoveKnobLeft2_state = STOVE_OFF_ANGLE;
-            KitchenSceneState.SetGasStoveTurnedOff(true);
         } 
         else
         {
             StoveKnobLeft2_state = STOVE_ON_ANGLE;
         }
-        canRotateLeft2 = true;
+
+        if (isHoverLeft2)
+        {
+            canRotateLeft2 = true;
+        }
+        else
+        {
+            canRotateLeft2 = false;
+        }
     }
 
     public void RotateStoveKnobRight1()
@@ -132,7 +204,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobRight1_state = STOVE_ON_ANGLE;
         }
-        canRotateRight1 = true;
+
+        if (isHoverRight1)
+        {
+            canRotateRight1 = true;
+        }
+        else
+        {
+            canRotateRight1 = false;
+        }
     }
 
     public void RotateStoveKnobRight2()
@@ -145,7 +225,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobRight2_state = STOVE_ON_ANGLE;
         }
-        canRotateRight2 = true;
+
+        if (isHoverRight2)
+        {
+            canRotateRight2 = true;
+        }
+        else
+        {
+            canRotateRight2 = false;
+        }
     }
 
 
@@ -184,6 +272,10 @@ public class KitchenInteractions : MonoBehaviour
 
             if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
             {
+                if (currentRot.eulerAngles == new Vector3(0, 0, STOVE_ON_ANGLE))
+                {
+                    KitchenSceneState.SetGasStoveTurnedOff(true);
+                }
                 canRotateLeft2 = false;
             }
 
@@ -240,6 +332,16 @@ public class KitchenInteractions : MonoBehaviour
     /**
         PUBLIC FUNCTIONS FOR OPENING OVEN DOOR
     */
+    public void IsHoverOvenDoor()
+    {
+        isHoverOvenDoor = true;
+    }
+
+    public void IsExitHoverOvenDoor()
+    {
+        isHoverOvenDoor = false;
+    }
+
     public void OpenOvenDoor()
     {
         if (OvenDoor_state == OVEN_CLOSED_ANGLE)
@@ -250,7 +352,11 @@ public class KitchenInteractions : MonoBehaviour
         {
             OvenDoor_state = OVEN_CLOSED_ANGLE;
         }
-        canRotateDoor = true;
+
+        if (isHoverOvenDoor)
+        {
+            canRotateDoor = true;
+        }
     }
 
     /**
@@ -263,8 +369,6 @@ public class KitchenInteractions : MonoBehaviour
         {
             Quaternion currentRot = OvenDoor.rotation;
             Quaternion targetRot = Quaternion.Euler(new Vector3(OvenDoor_state, 0, 0));
-
-            Debug.Log(currentRot);
 
             OvenDoor.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
             if (currentRot.eulerAngles.x == targetRot.eulerAngles.x)
