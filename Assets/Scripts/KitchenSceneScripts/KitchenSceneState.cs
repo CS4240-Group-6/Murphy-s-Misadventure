@@ -4,12 +4,20 @@ using UnityEngine;
 
 public static class KitchenSceneState
 {
+    // OIL FIRE STATES
     private static bool gasStoveTurnedOff = false;
     private static bool panCovered = false;
     private static bool oilAddedToPan = false;
     private static bool sodaAddedToPan = false;
     private static bool waterAddedToPan = false;
     private static bool fireExtinguisherUsed = false;
+
+    // OVEN FIRE STATES
+
+
+    /**
+        ================ OIL FIRE ===============
+    */
 
     // SMALL FIRE - 2:50 TO 2:00
     public static void SetPanCovered(bool isCovered)
@@ -106,4 +114,8 @@ public static class KitchenSceneState
         waterAddedToPan = false;
         fireExtinguisherUsed = false;
     }
+
+    /**
+        ================ OVEN FIRE ===============
+    */
 }

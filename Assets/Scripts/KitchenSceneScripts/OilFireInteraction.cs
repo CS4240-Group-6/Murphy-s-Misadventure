@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireInteraction : MonoBehaviour
+public class OilFireInteraction : MonoBehaviour
 {
     [SerializeField] private AudioSource putOutFireAudio;
     [SerializeField] private ParticleSystem oilFireParticles;
