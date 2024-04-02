@@ -10,7 +10,8 @@ public class FireInteraction : MonoBehaviour
     [SerializeField] private ParticleSystem oilFireExplosionParticles;
     [SerializeField] private ParticleSystem oilFireBigParticles;
 
-    public float durationThreshold; // Duration threshold for triggering the effect
+    public float extinguisherDurationThreshold; // Duration threshold for extinguisher
+    public float oilDurationThreshold; // Duration threshold for triggering the effect
     public float waterThreshold; // Duration threshold for water over fire
 
     private float timer = 0f;
@@ -37,15 +38,18 @@ public class FireInteraction : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        //Debug.Log("oil particle fire");
         if (other.CompareTag("Oil"))
         {
             //isOilOverFire = true;
             StartCoroutine(OilOverFire());
         }
-        if (other.CompareTag("Water"))
+        else if (other.CompareTag("Water"))
         {
             StartCoroutine(WaterOverFire());
+        }
+        else if (other.CompareTag("Fire_Extinguisher"))
+        {
+            StartCoroutine(ExtinguisherOverFire());
         }
         else
         {
@@ -53,12 +57,34 @@ public class FireInteraction : MonoBehaviour
         }
     }
 
+    private IEnumerator ExtinguisherOverFire()
+    {
+        GameObject parentOfOilFire = oilFireParticles.transform.parent.gameObject;
+        if (parentOfOilFire.activeInHierarchy)
+        {
+            Debug.Log(timer);
+            putOutFireAudio.loop = true;
+            if (!putOutFireAudio.isPlaying)
+            {
+                putOutFireAudio.Play();
+            }
+
+            timer += Time.deltaTime;
+            if (timer >= extinguisherDurationThreshold)
+            {
+                //Debug.Log("enter stop fire particles");
+                StopFireParticles();
+                KitchenSceneState.SetFireExtinguisherUsed(true);
+            }
+        }
+        yield return null;
+    }
+
     private IEnumerator WaterOverFire()
     {
         GameObject parentOfOilFire = oilFireParticles.transform.parent.gameObject;
         if (parentOfOilFire.activeInHierarchy)
         {
-            Debug.Log(waterTimer);
             waterTimer += Time.deltaTime;
             if (waterTimer > waterThreshold)
             {
@@ -93,7 +119,7 @@ public class FireInteraction : MonoBehaviour
             }
 
             timer += Time.deltaTime;
-            if (timer >= durationThreshold)
+            if (timer >= oilDurationThreshold)
             {
                 //Debug.Log("enter stop fire particles");
                 StopFireParticles();
