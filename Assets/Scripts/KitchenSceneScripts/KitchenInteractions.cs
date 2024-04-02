@@ -5,17 +5,25 @@ using TMPro;
 
 public class KitchenInteractions : MonoBehaviour
 {
-    public GameObject InteractableObjects;
-    [SerializeField] 
-    private GameObject TooltipForKnob;
+    [SerializeField] private GameObject Stove;
+    [SerializeField] private GameObject TooltipForKnob;
     
     private static float STOVE_ON_ANGLE = 90f;
     private static float STOVE_OFF_ANGLE = 0f;
+
+    private static float OVEN_OPEN_ANGLE = 90f;
+    private static float OVEN_CLOSED_ANGLE = 0f;
+
     private static float SPEED = 5.0f;
 
     /**
         STATES OF THE KNOBS
     */
+    private bool isHoverLeft1;
+    private bool isHoverLeft2;
+    private bool isHoverRight1;
+    private bool isHoverRight2;
+
     private static float StoveKnobLeft1_state;
     private static float StoveKnobLeft2_state;
     private static float StoveKnobRight1_state;
@@ -26,18 +34,37 @@ public class KitchenInteractions : MonoBehaviour
     private bool canRotateRight1;
     private bool canRotateRight2;
 
+    /**
+        STATES OF THE OVEN DOOR
+    */
+    private bool isHoverOvenDoor;
+
+    private static float OvenDoor_state;
+
+    private bool canRotateDoor;
+
     // Start is called before the first frame update
     void Start()
     {
+        isHoverLeft1 = false;
+        isHoverLeft2 = false;
+        isHoverRight1 = false;
+        isHoverRight2 = false;
+
+        isHoverOvenDoor = false;
+
         canRotateLeft1 = false;
         canRotateLeft2 = false;
         canRotateRight1 = false;
         canRotateRight2 = false;
 
+        canRotateDoor = false;
+
         StoveKnobLeft1_state = STOVE_OFF_ANGLE;
         StoveKnobLeft2_state = STOVE_ON_ANGLE;
         StoveKnobRight1_state = STOVE_OFF_ANGLE;
         StoveKnobRight2_state = STOVE_OFF_ANGLE;
+        OvenDoor_state = OVEN_CLOSED_ANGLE;
     }
 
     // Update is called once per frame
@@ -62,6 +89,11 @@ public class KitchenInteractions : MonoBehaviour
         {
             rotateStoveKnobRight2();
         }
+
+        if (canRotateDoor)
+        {
+            openOvenDoor();
+        }
     }
 
 
@@ -76,6 +108,50 @@ public class KitchenInteractions : MonoBehaviour
 
         (dont ask me why theyre named this way...its from the asset)
     */
+    public void IsHoverLeft1()
+    {
+        isHoverLeft1 = true;
+    }
+
+    public void IsExitHoverLeft1()
+    {
+        isHoverLeft1 = false;
+    }
+
+
+    public void IsHoverLeft2()
+    {
+        isHoverLeft2 = true;
+    }
+
+    public void IsExitHoverLeft2()
+    {
+        isHoverLeft2 = false;
+    }
+
+
+    public void IsHoverRight1()
+    {
+        isHoverRight1 = true;
+    }
+
+    public void IsExitHoverRight1()
+    {
+        isHoverRight1 = false;
+    }
+
+
+    public void IsHoverRight2()
+    {
+        isHoverRight2 = true;
+    }
+
+    public void IsExitHoverRight2()
+    {
+        isHoverRight2 = false;
+    }
+
+
     public void RotateStoveKnobLeft1() 
     {
         if (StoveKnobLeft1_state == STOVE_ON_ANGLE)
@@ -86,8 +162,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobLeft1_state = STOVE_ON_ANGLE;
         }
-        canRotateLeft1 = true;
-        
+
+        if (isHoverLeft1)
+        {
+            canRotateLeft1 = true;
+        }
+        else
+        {
+            canRotateLeft1 = false;
+        }
     }
 
     public void RotateStoveKnobLeft2() 
@@ -100,7 +183,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobLeft2_state = STOVE_ON_ANGLE;
         }
-        canRotateLeft2 = true;
+
+        if (isHoverLeft2)
+        {
+            canRotateLeft2 = true;
+        }
+        else
+        {
+            canRotateLeft2 = false;
+        }
     }
 
     public void RotateStoveKnobRight1()
@@ -113,7 +204,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobRight1_state = STOVE_ON_ANGLE;
         }
-        canRotateRight1 = true;
+
+        if (isHoverRight1)
+        {
+            canRotateRight1 = true;
+        }
+        else
+        {
+            canRotateRight1 = false;
+        }
     }
 
     public void RotateStoveKnobRight2()
@@ -126,7 +225,15 @@ public class KitchenInteractions : MonoBehaviour
         {
             StoveKnobRight2_state = STOVE_ON_ANGLE;
         }
-        canRotateRight2 = true;
+
+        if (isHoverRight2)
+        {
+            canRotateRight2 = true;
+        }
+        else
+        {
+            canRotateRight2 = false;
+        }
     }
 
 
@@ -135,104 +242,81 @@ public class KitchenInteractions : MonoBehaviour
     */
     private void rotateStoveKnobLeft1()
     {
-        GameObject Stove = InteractableObjects.transform.Find("Stove").gameObject;
-
-        if (Stove != null)
+        Transform StoveKnobLeft1 = Stove.transform.Find("Stove-KnobLeft1");
+        if (StoveKnobLeft1 != null)
         {
-            Transform StoveKnobLeft1 = Stove.transform.Find("Stove-KnobLeft1");
-            if (StoveKnobLeft1 != null)
+            Quaternion currentRot = StoveKnobLeft1.rotation;
+            Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobLeft1_state));
+
+            StoveKnobLeft1.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+
+            if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
             {
-                Quaternion currentRot = StoveKnobLeft1.rotation;
-                Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobLeft1_state));
-
-                StoveKnobLeft1.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
-
-                if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
-                {
-                    canRotateLeft1 = false;
-                }
-
-                StoveKnobLeft1.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+                canRotateLeft1 = false;
             }
-            else Debug.Log("no child with stove knob left 1 found");
-        }
-        else Debug.Log("no child with stove found");
+
+            StoveKnobLeft1.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+           }
+        else Debug.Log("no child with stove knob left 1 found");
     }
 
     private void rotateStoveKnobLeft2()
     {
-        
-        GameObject Stove = InteractableObjects.transform.Find("Stove").gameObject;
-
-        if (Stove != null)
+        Transform StoveKnobLeft2 = Stove.transform.Find("Stove-KnobLeft2");
+        if (StoveKnobLeft2 != null)
         {
-            Transform StoveKnobLeft2 = Stove.transform.Find("Stove-KnobLeft2");
-            if (StoveKnobLeft2 != null)
+            Quaternion currentRot = StoveKnobLeft2.rotation;
+            Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobLeft2_state));
+
+            StoveKnobLeft2.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+
+            if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
             {
-                Quaternion currentRot = StoveKnobLeft2.rotation;
-                Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobLeft2_state));
-
-                StoveKnobLeft2.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
-
-                if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
+                if (currentRot.eulerAngles == new Vector3(0, 0, STOVE_ON_ANGLE))
                 {
-                    canRotateLeft2 = false;
+                    KitchenSceneState.SetGasStoveTurnedOff(true);
                 }
-
-                KitchenSceneState.SetGasStoveTurnedOff(true);
+                canRotateLeft2 = false;
             }
-            else Debug.Log("no child with stove knob left 2 found");
+
         }
-        else Debug.Log("no child with stove found");
+        else Debug.Log("no child with stove knob left 2 found");
     }
 
     private void rotateStoveKnobRight1()
     {
-        GameObject Stove = InteractableObjects.transform.Find("Stove").gameObject;
-
-        if (Stove != null)
+        Transform StoveKnobRight1 = Stove.transform.Find("Stove-KnobRight1");
+        if (StoveKnobRight1 != null)
         {
-            Transform StoveKnobRight1 = Stove.transform.Find("Stove-KnobRight1");
-            if (StoveKnobRight1 != null)
+            Quaternion currentRot = StoveKnobRight1.rotation;
+            Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobRight1_state));
+
+            StoveKnobRight1.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+
+            if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
             {
-                Quaternion currentRot = StoveKnobRight1.rotation;
-                Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobRight1_state));
-
-                StoveKnobRight1.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
-
-                if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
-                {
-                    canRotateRight1 = false;
-                }
+                canRotateRight1 = false;
             }
-            else Debug.Log("no child with stove knob right 1 found");
         }
-        else Debug.Log("no child with stove found");
+        else Debug.Log("no child with stove knob right 1 found");
     }
 
     private void rotateStoveKnobRight2()
     {
-        Debug.Log("Reaches function");
-        GameObject Stove = InteractableObjects.transform.Find("Stove").gameObject;
-
-        if (Stove != null)
+        Transform StoveKnobRight2 = Stove.transform.Find("Stove-KnobRight2");
+        if (StoveKnobRight2 != null)
         {
-            Transform StoveKnobRight2 = Stove.transform.Find("Stove-KnobRight2");
-            if (StoveKnobRight2 != null)
+            Quaternion currentRot = StoveKnobRight2.rotation;
+            Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobRight2_state));
+
+            StoveKnobRight2.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+
+            if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
             {
-                Quaternion currentRot = StoveKnobRight2.rotation;
-                Quaternion targetRot = Quaternion.Euler(new Vector3(0, 0, StoveKnobRight2_state));
-
-                StoveKnobRight2.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
-
-                if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
-                {
-                    canRotateRight2 = false;
-                }
+                canRotateRight2 = false;
             }
-            else Debug.Log("no child with stove knob right 2 found");
         }
-        else Debug.Log("no child with stove found");
+        else Debug.Log("no child with stove knob right 2 found");
     }
 
     public void hoverOnKnobForToolTip()
@@ -243,6 +327,56 @@ public class KitchenInteractions : MonoBehaviour
     public void hoverOffKnobForToolTip()
     {
         TooltipForKnob.SetActive(false);
+    }
+
+    /**
+        PUBLIC FUNCTIONS FOR OPENING OVEN DOOR
+    */
+    public void IsHoverOvenDoor()
+    {
+        isHoverOvenDoor = true;
+    }
+
+    public void IsExitHoverOvenDoor()
+    {
+        isHoverOvenDoor = false;
+    }
+
+    public void OpenOvenDoor()
+    {
+        if (OvenDoor_state == OVEN_CLOSED_ANGLE)
+        {
+            OvenDoor_state = OVEN_OPEN_ANGLE;
+        } 
+        else
+        {
+            OvenDoor_state = OVEN_CLOSED_ANGLE;
+        }
+
+        if (isHoverOvenDoor)
+        {
+            canRotateDoor = true;
+        }
+    }
+
+    /**
+        PRIVATE COROUTINES TO MAKE THE ROTATION SMOOTH
+    */
+    private void openOvenDoor()
+    {
+        Transform OvenDoor = Stove.transform.Find("Stove-FrontDoor");
+        if (OvenDoor != null)
+        {
+            Quaternion currentRot = OvenDoor.rotation;
+            Quaternion targetRot = Quaternion.Euler(new Vector3(OvenDoor_state, 0, 0));
+
+            OvenDoor.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
+            if (currentRot.eulerAngles.x == targetRot.eulerAngles.x)
+            {
+                canRotateDoor = false;
+            }
+        }
+        else Debug.Log("no child with stove front door found");
     }
 
 }
