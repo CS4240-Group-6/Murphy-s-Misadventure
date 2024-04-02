@@ -31,8 +31,7 @@ public class FlimsyTableCollisionLogic : MonoBehaviour
             // Check if the player is below the sturdyTable or any other table except the sturdyTable
             if (IsPlayerBelowTable(player, flimsyTable))
             {
-                // Player is below another table (e.g., flimsyTable), which collapses
-                EndGame(false); // Player loses
+                GlobalState.SetGameOver(true);
             }
         }
     }
