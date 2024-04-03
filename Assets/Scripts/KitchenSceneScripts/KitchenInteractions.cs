@@ -39,7 +39,10 @@ public class KitchenInteractions : MonoBehaviour
     */
     private bool isHoverOvenSwitch;
 
-    private bool isOvenOn;
+    public static bool isOvenOn;
+
+    private float ovenTimer = 0f;
+    public float ovenDurationThreshold;
 
     /**
         STATES OF THE OVEN DOOR
@@ -77,8 +80,6 @@ public class KitchenInteractions : MonoBehaviour
         StoveKnobRight1_state = STOVE_OFF_ANGLE;
         StoveKnobRight2_state = STOVE_OFF_ANGLE;
         OvenDoor_state = OVEN_CLOSED_ANGLE;
-
-        isOvenOn = false;
     }
 
     // Update is called once per frame
@@ -107,6 +108,19 @@ public class KitchenInteractions : MonoBehaviour
         if (canRotateDoor)
         {
             openOvenDoor();
+        }
+
+        if (!isOvenOn)
+        {
+            ovenTimer += Time.deltaTime;
+            if (ovenTimer > ovenDurationThreshold)
+            {
+                KitchenSceneState.SetOvenTurnedOff(true);
+            }
+        }
+        else if (isOvenOn)
+        {
+            ovenTimer = 0;
         }
     }
 

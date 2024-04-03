@@ -1095,6 +1095,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290986095587480845, guid: 158f818f5cdf7f54f8cb6f3b74f535c8, type: 3}
   m_PrefabInstance: {fileID: 1742229249}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &97344629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97344614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb0a76ad0c04944e9b5f9dc92ceafa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  putOutFireAudio: {fileID: 0}
+  ovenSmokeParticles: {fileID: 895725044}
+  ovenFireParticles: {fileID: 2097062039}
+  ovenExplosionParticles: {fileID: 2070000473}
+  ovenSmallExplosionParticles: {fileID: 0}
+  ovenFireBigParticles: {fileID: 0}
+  extinguisherDurationThreshold: 5
+  waterThreshold: 2
 --- !u!1001 &101229109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2097,7 +2117,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164006620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14546,6 +14566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stove: {fileID: 745349756}
   TooltipForKnob: {fileID: 7770122223122673654}
+  ovenDurationThreshold: 10
 --- !u!114 &788498311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15033,6 +15054,11 @@ Transform:
 --- !u!4 &895725042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4988909367119950, guid: e58a55b2514575f4cb70754397301b36, type: 3}
+  m_PrefabInstance: {fileID: 1630457040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &895725044 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198628400744592984, guid: e58a55b2514575f4cb70754397301b36, type: 3}
   m_PrefabInstance: {fileID: 1630457040}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &919675531
@@ -29642,6 +29668,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8265718345985046041, guid: 158f818f5cdf7f54f8cb6f3b74f535c8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 97344624}
+    - targetCorrespondingSourceObject: {fileID: 8265718345985046041, guid: 158f818f5cdf7f54f8cb6f3b74f535c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 97344629}
     - targetCorrespondingSourceObject: {fileID: 7168276463004793546, guid: 158f818f5cdf7f54f8cb6f3b74f535c8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 170760790}
@@ -32641,7 +32670,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870816284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -35050,6 +35079,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4718938953682214, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
   m_PrefabInstance: {fileID: 2069899774}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &2070000473 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198168632713017960, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
+  m_PrefabInstance: {fileID: 2069899774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2074206044
 GameObject:
   m_ObjectHideFlags: 0
@@ -35235,6 +35269,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.9300413, y: 0.34231398, z: 3.0652497}
   m_Center: {x: 0, y: 0, z: -0.0000009536743}
+--- !u!198 &2097062039 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198506583811698080, guid: a4afec72d7b0d5d44bee980d08e35dde, type: 3}
+  m_PrefabInstance: {fileID: 1690973362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2099479321
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,10 +10,12 @@ public static class KitchenSceneState
     private static bool oilAddedToPan = false;
     private static bool sodaAddedToPan = false;
     private static bool waterAddedToPan = false;
-    private static bool fireExtinguisherUsed = false;
+
+    private static bool fireExtinguisherUsed = false; // OVERLAPPING STATE BOTH LEVEL 3 & 4
 
     // OVEN FIRE STATES
-
+    private static bool ovenTurnedOff = false;
+    private static bool waterAddedToOven = false;
 
     /**
         ================ OIL FIRE ===============
@@ -118,4 +120,31 @@ public static class KitchenSceneState
     /**
         ================ OVEN FIRE ===============
     */
+    public static void SetOvenTurnedOff(bool isTurnedOff)
+    {
+        ovenTurnedOff = isTurnedOff;
+    }
+
+    public static bool IsOvenTurnedOff()
+    {
+        return ovenTurnedOff;
+    }
+
+    // MISTAKE ACTION
+    public static void SetWaterAddedToOven(bool isAdded)
+    {
+        waterAddedToOven = isAdded;
+    }
+
+    public static bool IsWaterAddedToOven()
+    {
+        return waterAddedToOven;
+    }
+
+    public static void ResetLevel4()
+    {
+        ovenTurnedOff = false;
+        waterAddedToOven = false;
+        fireExtinguisherUsed = false; 
+    }
 }

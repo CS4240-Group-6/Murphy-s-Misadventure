@@ -50,7 +50,7 @@ public class KitchenEmergencies : MonoBehaviour
     void StartOilFireScene()
     {
         ToggleOvenOff();
-        
+
         Invoke("StartOilFireEffect", 10.0f);
         Invoke("StartVoiceOver1", 10.0f);
         Invoke("StartVoiceOver2", 35.0f);
@@ -79,6 +79,7 @@ public class KitchenEmergencies : MonoBehaviour
     {
         var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
         OvenSwitchRenderer.material.SetColor("_Color", Color.red);
+        KitchenInteractions.isOvenOn = false;
     }
 
     void StartOilFireEffect()
@@ -163,6 +164,7 @@ public class KitchenEmergencies : MonoBehaviour
     {
         var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
         OvenSwitchRenderer.material.SetColor("_Color", Color.green);
+        KitchenInteractions.isOvenOn = true;
     }
 
     void StartOvenSmokeEffect()
