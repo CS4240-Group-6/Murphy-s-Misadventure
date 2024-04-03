@@ -35,6 +35,13 @@ public class KitchenInteractions : MonoBehaviour
     private bool canRotateRight2;
 
     /**
+        STATES OF OVEN
+    */
+    private bool isHoverOvenSwitch;
+
+    private bool isOvenOn;
+
+    /**
         STATES OF THE OVEN DOOR
     */
     private bool isHoverOvenDoor;
@@ -46,6 +53,7 @@ public class KitchenInteractions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // HOVERS
         isHoverLeft1 = false;
         isHoverLeft2 = false;
         isHoverRight1 = false;
@@ -53,6 +61,9 @@ public class KitchenInteractions : MonoBehaviour
 
         isHoverOvenDoor = false;
 
+        isHoverOvenSwitch = false;
+
+        // CAN START ACTION
         canRotateLeft1 = false;
         canRotateLeft2 = false;
         canRotateRight1 = false;
@@ -60,11 +71,14 @@ public class KitchenInteractions : MonoBehaviour
 
         canRotateDoor = false;
 
+        // STATES
         StoveKnobLeft1_state = STOVE_OFF_ANGLE;
         StoveKnobLeft2_state = STOVE_ON_ANGLE;
         StoveKnobRight1_state = STOVE_OFF_ANGLE;
         StoveKnobRight2_state = STOVE_OFF_ANGLE;
         OvenDoor_state = OVEN_CLOSED_ANGLE;
+
+        isOvenOn = false;
     }
 
     // Update is called once per frame
@@ -327,6 +341,50 @@ public class KitchenInteractions : MonoBehaviour
     public void hoverOffKnobForToolTip()
     {
         TooltipForKnob.SetActive(false);
+    }
+
+    /**
+        PUBLIC FUNCTION FOR TURNING OVEN OFF/ON
+    */
+    public void IsHoverOvenSwitch()
+    {
+        isHoverOvenSwitch = true;
+    }
+
+    public void IsExitHoverOvenSwitch()
+    {
+        isHoverOvenSwitch = false;
+    }
+
+    public void ToggleOven()
+    {
+        if (isHoverOvenSwitch)
+        {
+            if (isOvenOn)
+            {
+                GameObject OvenSwitch = Stove.transform.Find("Stove-OvenSwitch").gameObject;
+                if (OvenSwitch != null)
+                {
+                    var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+
+                    OvenSwitchRenderer.material.SetColor("_Color", Color.red);
+                    isOvenOn = false;
+                }
+                else Debug.Log("no child with oven switch found");
+            } 
+            else
+            {
+                GameObject OvenSwitch = Stove.transform.Find("Stove-OvenSwitch").gameObject;
+                if (OvenSwitch != null)
+                {
+                    var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+
+                    OvenSwitchRenderer.material.SetColor("_Color", Color.green);
+                    isOvenOn = true;
+                }
+                else Debug.Log("no child with oven switch found");
+            }
+        }
     }
 
     /**
