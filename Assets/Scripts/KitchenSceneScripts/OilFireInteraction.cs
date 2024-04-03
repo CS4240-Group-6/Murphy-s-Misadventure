@@ -32,18 +32,21 @@ public class OilFireInteraction : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Oil"))
+        if (GlobalState.GetLevel() == 3)
         {
-            //isOilOverFire = true;
-            StartCoroutine(OilOverFire());
-        }
-        else if (other.CompareTag("Water"))
-        {
-            StartCoroutine(WaterOverFire());
-        }
-        else if (other.CompareTag("Fire_Extinguisher"))
-        {
-            StartCoroutine(ExtinguisherOverFire());
+            if (other.CompareTag("Oil"))
+            {
+                //isOilOverFire = true;
+                StartCoroutine(OilOverFire());
+            }
+            else if (other.CompareTag("Water"))
+            {
+                StartCoroutine(WaterOverFire());
+            }
+            else if (other.CompareTag("Fire_Extinguisher"))
+            {
+                StartCoroutine(ExtinguisherOverFire());
+            }
         }
     }
 

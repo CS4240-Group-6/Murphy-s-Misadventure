@@ -14,9 +14,12 @@ public class OvenFireInteractions : MonoBehaviour
  
     public float extinguisherDurationThreshold; // Duration threshold for extinguisher
     public float waterThreshold; // Duration threshold for water over fire
+    public float ovenDurationThreshold; // Duration threshold for offing oven
 
     private float timer = 0f;
     private float waterTimer = 0f;
+    private float ovenTimer = 0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,18 +30,36 @@ public class OvenFireInteractions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GlobalState.GetLevel() == 4)
+        {
+            if (!KitchenInteractions.isOvenOn)
+            {
+                ovenTimer += Time.deltaTime;
+                if (ovenTimer > ovenDurationThreshold)
+                {
+                    StopFireParticles();
+                    KitchenSceneState.SetOvenTurnedOff(true);
+                }
+            }
+            else if (KitchenInteractions.isOvenOn)
+            {
+                ovenTimer = 0;
+            }
+        }
     }
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Fire_Extinguisher"))
+        if (GlobalState.GetLevel() == 4)
         {
-            StartCoroutine(ExtinguisherOverFire());
-        }
-        else if (other.CompareTag("Water"))
-        {
-            StartCoroutine(WaterOverFire());
+            if (other.CompareTag("Fire_Extinguisher"))
+            {
+                StartCoroutine(ExtinguisherOverFire());
+            }
+            else if (other.CompareTag("Water"))
+            {
+                StartCoroutine(WaterOverFire());
+            }
         }
     }
 
@@ -92,7 +113,7 @@ public class OvenFireInteractions : MonoBehaviour
         ovenFireBigParticles.Play();
     }
 
-    public void StopFireParticles()
+    void StopFireParticles()
     {
         GameObject parentOfOvenSmoke = ovenSmokeParticles.transform.parent.gameObject;
         GameObject parentOfOvenFire = ovenFireParticles.transform.parent.gameObject;

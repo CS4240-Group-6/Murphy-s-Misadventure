@@ -141,6 +141,22 @@ public static class KitchenSceneState
         return waterAddedToOven;
     }
 
+    public static bool Level4Complete()
+    {
+        if (waterAddedToOven)
+        {
+            return ovenTurnedOff && fireExtinguisherUsed;
+        }
+        else if (LevelTextManager.timeRemaining > 120.0f)
+        {
+            return ovenTurnedOff;
+        }
+        else
+        {
+            return ovenTurnedOff && fireExtinguisherUsed;
+        }
+    }
+
     public static void ResetLevel4()
     {
         ovenTurnedOff = false;

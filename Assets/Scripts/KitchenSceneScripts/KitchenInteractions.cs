@@ -41,8 +41,6 @@ public class KitchenInteractions : MonoBehaviour
 
     public static bool isOvenOn;
 
-    private float ovenTimer = 0f;
-    public float ovenDurationThreshold;
 
     /**
         STATES OF THE OVEN DOOR
@@ -108,19 +106,6 @@ public class KitchenInteractions : MonoBehaviour
         if (canRotateDoor)
         {
             openOvenDoor();
-        }
-
-        if (!isOvenOn)
-        {
-            ovenTimer += Time.deltaTime;
-            if (ovenTimer > ovenDurationThreshold)
-            {
-                KitchenSceneState.SetOvenTurnedOff(true);
-            }
-        }
-        else if (isOvenOn)
-        {
-            ovenTimer = 0;
         }
     }
 
