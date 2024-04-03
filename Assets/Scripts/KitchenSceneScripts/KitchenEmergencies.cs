@@ -9,6 +9,8 @@ public class KitchenEmergencies : MonoBehaviour
     public GameObject OilFireSpread;
 
     // OVEN FIRE
+    public GameObject OvenSwitch;
+
     public GameObject OvenSmoke;
     public GameObject OvenFireStart;
     public GameObject OvenExplosion;
@@ -47,6 +49,8 @@ public class KitchenEmergencies : MonoBehaviour
     */
     void StartOilFireScene()
     {
+        ToggleOvenOff();
+
         Invoke("StartOilFireEffect", 10.0f);
         Invoke("StartVoiceOver1", 10.0f);
         Invoke("StartVoiceOver2", 35.0f);
@@ -69,6 +73,13 @@ public class KitchenEmergencies : MonoBehaviour
     void StartVoiceOver3()
     {
         soundManager.PlayFireGotBiggerNeedToPour();
+    }
+
+    void ToggleOvenOff()
+    {
+        var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+        OvenSwitchRenderer.material.SetColor("_Color", Color.red);
+        KitchenInteractions.isOvenOn = false;
     }
 
     void StartOilFireEffect()
@@ -131,6 +142,7 @@ public class KitchenEmergencies : MonoBehaviour
     */
     void StartOvenFireScene()
     {
+        ToggleOvenOn();
         Invoke("StartOvenSmokeEffect", 15.0f);
         Invoke("StartVoiceOver4", 15.0f);
         Invoke("StartOvenFireEffect", 45.0f);
@@ -146,6 +158,13 @@ public class KitchenEmergencies : MonoBehaviour
     void StartVoiceOver5()
     {
         soundManager.PlayNeedToExtinguishFireSoon();
+    }
+
+    void ToggleOvenOn()
+    {
+        var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+        OvenSwitchRenderer.material.SetColor("_Color", Color.green);
+        KitchenInteractions.isOvenOn = true;
     }
 
     void StartOvenSmokeEffect()
