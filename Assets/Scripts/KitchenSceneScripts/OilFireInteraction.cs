@@ -16,8 +16,6 @@ public class OilFireInteraction : MonoBehaviour
 
     private float timer = 0f;
     private float waterTimer = 0f;
-    private bool isOilOverFire = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,29 +29,24 @@ public class OilFireInteraction : MonoBehaviour
 
     }
 
-    void LateUpdate()
-    {
-        isOilOverFire = false;
-    }
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Oil"))
+        if (GlobalState.GetLevel() == 3)
         {
-            //isOilOverFire = true;
-            StartCoroutine(OilOverFire());
-        }
-        else if (other.CompareTag("Water"))
-        {
-            StartCoroutine(WaterOverFire());
-        }
-        else if (other.CompareTag("Fire_Extinguisher"))
-        {
-            StartCoroutine(ExtinguisherOverFire());
-        }
-        else
-        {
-            isOilOverFire = false;
+            if (other.CompareTag("Oil"))
+            {
+                //isOilOverFire = true;
+                StartCoroutine(OilOverFire());
+            }
+            else if (other.CompareTag("Water"))
+            {
+                StartCoroutine(WaterOverFire());
+            }
+            else if (other.CompareTag("Fire_Extinguisher"))
+            {
+                StartCoroutine(ExtinguisherOverFire());
+            }
         }
     }
 
