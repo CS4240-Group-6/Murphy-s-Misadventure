@@ -73,21 +73,17 @@ public class DeathSceneManger : MonoBehaviour
     private string GetPlayerDeathLocation() {
         switch(GlobalState.GetLevel()) {
             case 1:
-                return PlayerPrefs.GetString("LocationOfDeath", "livingRoomFlowerPot");
+                return PlayerPrefs.GetString("LocationOfDeath", "livingRoomFire");
             case 2:
-                return  PlayerPrefs.GetString("LocationOfDeath", "livingRoomFire");
+                return  PlayerPrefs.GetString("LocationOfDeath", "livingRoomBreakIn");
             case 3:
-                return PlayerPrefs.GetString("LocationOfDeath", "kitchenGasLeak");
-            case 4:
                 return PlayerPrefs.GetString("LocationOfDeath", "kitchenOilFire");
-            case 5:
+            case 4:
                 return PlayerPrefs.GetString("LocationOfDeath", "kitchenOvenFire");
-            case 6:
+            case 5:
                 return PlayerPrefs.GetString("LocationOfDeath", "bedroomFire");
-            case 7:
+            case 6:
                 return PlayerPrefs.GetString("LocationOfDeath", "bedroomEarthquake");
-            case 8:
-                return PlayerPrefs.GetString("LocationOfDeath", "livingRoomBreakIn");
             default:
                 return PlayerPrefs.GetString("LocationOfDeath", "Unknown Location of Death");
         }
