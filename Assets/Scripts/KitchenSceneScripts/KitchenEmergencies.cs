@@ -47,7 +47,7 @@ public class KitchenEmergencies : MonoBehaviour
         1min later -> fire spreads to whole stove if unattended
         10s later -> stove fire strengthens
     */
-    void StartOilFireScene()
+    public void StartOilFireScene()
     {
         ToggleOvenOff();
 
@@ -140,7 +140,7 @@ public class KitchenEmergencies : MonoBehaviour
         45s later -> fire starts
         15s later -> fire strenghtens
     */
-    void StartOvenFireScene()
+    public void StartOvenFireScene()
     {
         ToggleOvenOn();
         Invoke("StartOvenSmokeEffect", 15.0f);

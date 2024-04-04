@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class LevelTextManager : MonoBehaviour
@@ -15,7 +16,7 @@ public class LevelTextManager : MonoBehaviour
     private GameObject nextLevelButton;
     public GameObject levelCanvas; // We can turn off or on the canvas at the start and end of a level
     private int previousLevel = 0;
-    public static float timeRemaining = 180; // 3 minute timer
+    public static float timeRemaining = 10; // 3 minute timer
 
     private bool timerIsRunning = false;
 
@@ -142,6 +143,20 @@ public class LevelTextManager : MonoBehaviour
         }
         
         GlobalState.IncrementLevel();
+
+        switch(nextLevel) {
+            case 2:
+                break;
+            case 4:
+                FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
+                break;
+            case 5:
+                SceneManager.LoadScene("BedroomScene");
+                break;
+            case 6:
+                FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
+                break;
+        }
     }
 
     // To update level information
