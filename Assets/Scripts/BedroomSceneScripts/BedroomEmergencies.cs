@@ -71,7 +71,8 @@ public class BedroomEmergencies : MonoBehaviour
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
-        // StartEarthquakeScene();
+        //StartEarthquakeScene();
+        
     }
 
     // Update is called once per frame
@@ -244,11 +245,26 @@ public class BedroomEmergencies : MonoBehaviour
         StartCoroutine(CollapseChunks());
     }
 
-    IEnumerator CollapseChunks() {
+    IEnumerator CollapseChunks()
+    {
         float startTime = Time.time;
+
+        // Collapse ceilingChunk(5) first
+        GameObject chunk = GameObject.Find("ceilingtest (5)");
+        if (chunk != null && !collapsedChunks.Contains(chunk))
+        {
+            Rigidbody rb = chunk.GetComponent<Rigidbody>();
+            rb.isKinematic = false; // Disable kinematic property
+            collapsedChunks.Add(chunk);
+        }
+
+        // Wait for a short delay before collapsing other chunks
+        yield return new WaitForSeconds(delayBetweenChunks);
+
+        // Collapse other chunks randomly
         while (Time.time - startTime < collapseDuration)
         {
-            GameObject chunk = GetRandomChunk();
+            chunk = GetRandomChunk();
             if (chunk != null && !collapsedChunks.Contains(chunk))
             {
                 Rigidbody rb = chunk.GetComponent<Rigidbody>();
@@ -262,8 +278,11 @@ public class BedroomEmergencies : MonoBehaviour
     GameObject GetRandomChunk() {
         if (ceilingChunks.Length == 0)
             return null;
-        int randomIndex = Random.Range(0, ceilingChunks.Length);
-        return ceilingChunks[randomIndex];
+        List<GameObject> availableChunks = new List<GameObject>(ceilingChunks);
+        availableChunks.Remove(GameObject.Find("ceilingtest (5)"));
+
+        int randomIndex = Random.Range(0, availableChunks.Count);
+        return availableChunks[randomIndex];
     }
 
     public void hoverOnBigTableForToolTip()

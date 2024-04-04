@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireExtinguisherInteraction : MonoBehaviour
 {
     private bool isExtinguisherInHand = false;
-    private float gasLevel = 6f; // Initial gas level in the extinguisher
+    private float gasLevel = 10.0f; // Initial gas level in the extinguisher
     private Camera mainCamera;
 
 

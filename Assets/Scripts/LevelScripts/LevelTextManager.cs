@@ -130,7 +130,7 @@ public class LevelTextManager : MonoBehaviour
             Invoke("HideCanvas", 5f);
         } else if (nextLevel == 5)
         {
-            // Regarding the doors we can set check if current level is the 2nd level of the scene and only then you can enter the room/ load new scene
+            // Regarding the doors we can set check if current level is the 4th level of the scene and only then you can enter the room/ load new scene
             levelText.text = "";
             descriptionText.text = "Please proceed to the Bedroom";
             Invoke("HideCanvas", 5f);

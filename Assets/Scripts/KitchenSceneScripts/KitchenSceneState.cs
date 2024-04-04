@@ -4,12 +4,22 @@ using UnityEngine;
 
 public static class KitchenSceneState
 {
+    // OIL FIRE STATES
     private static bool gasStoveTurnedOff = false;
     private static bool panCovered = false;
     private static bool oilAddedToPan = false;
     private static bool sodaAddedToPan = false;
     private static bool waterAddedToPan = false;
-    private static bool fireExtinguisherUsed = false;
+
+    private static bool fireExtinguisherUsed = false; // OVERLAPPING STATE BOTH LEVEL 3 & 4
+
+    // OVEN FIRE STATES
+    private static bool ovenTurnedOff = false;
+    private static bool waterAddedToOven = false;
+
+    /**
+        ================ OIL FIRE ===============
+    */
 
     // SMALL FIRE - 2:50 TO 2:00
     public static void SetPanCovered(bool isCovered)
@@ -85,11 +95,11 @@ public static class KitchenSceneState
         }
         else if (LevelTextManager.timeRemaining > 120.0f)
         {
-            return gasStoveTurnedOff && panCovered;
+            return gasStoveTurnedOff && (panCovered || oilAddedToPan || sodaAddedToPan || fireExtinguisherUsed);
         }
         else if (LevelTextManager.timeRemaining > 60.0f)
         {
-            return gasStoveTurnedOff && (oilAddedToPan || sodaAddedToPan);
+            return gasStoveTurnedOff && (oilAddedToPan || sodaAddedToPan || fireExtinguisherUsed);
         }
         else
         {
@@ -105,5 +115,52 @@ public static class KitchenSceneState
         sodaAddedToPan = false;
         waterAddedToPan = false;
         fireExtinguisherUsed = false;
+    }
+
+    /**
+        ================ OVEN FIRE ===============
+    */
+    public static void SetOvenTurnedOff(bool isTurnedOff)
+    {
+        ovenTurnedOff = isTurnedOff;
+    }
+
+    public static bool IsOvenTurnedOff()
+    {
+        return ovenTurnedOff;
+    }
+
+    // MISTAKE ACTION
+    public static void SetWaterAddedToOven(bool isAdded)
+    {
+        waterAddedToOven = isAdded;
+    }
+
+    public static bool IsWaterAddedToOven()
+    {
+        return waterAddedToOven;
+    }
+
+    public static bool Level4Complete()
+    {
+        if (waterAddedToOven)
+        {
+            return ovenTurnedOff && fireExtinguisherUsed;
+        }
+        else if (LevelTextManager.timeRemaining > 120.0f)
+        {
+            return ovenTurnedOff;
+        }
+        else
+        {
+            return ovenTurnedOff && fireExtinguisherUsed;
+        }
+    }
+
+    public static void ResetLevel4()
+    {
+        ovenTurnedOff = false;
+        waterAddedToOven = false;
+        fireExtinguisherUsed = false; 
     }
 }

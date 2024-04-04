@@ -9,7 +9,10 @@ public class KitchenEmergencies : MonoBehaviour
     public GameObject OilFireSpread;
 
     // OVEN FIRE
+    public GameObject OvenSwitch;
+
     public GameObject OvenSmoke;
+    public GameObject OvenFireStart;
     public GameObject OvenExplosion;
 
     // Sound Script
@@ -22,11 +25,12 @@ public class KitchenEmergencies : MonoBehaviour
         OilFireSpread.SetActive(false);
 
         OvenSmoke.SetActive(false);
+        OvenFireStart.SetActive(false);
         OvenExplosion.SetActive(false);
 
-        StartOilFireScene();
+        //StartOilFireScene();
 
-        // StartOvenFireScene();
+        StartOvenFireScene();
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class KitchenEmergencies : MonoBehaviour
     }
 
     /**
+        ================ OIL FIRE SCENE =================
         Scene starts
         10s later -> pan catches on fire
         50s later -> pan fire strenghtens
@@ -44,6 +49,8 @@ public class KitchenEmergencies : MonoBehaviour
     */
     void StartOilFireScene()
     {
+        ToggleOvenOff();
+
         Invoke("StartOilFireEffect", 10.0f);
         Invoke("StartVoiceOver1", 10.0f);
         Invoke("StartVoiceOver2", 35.0f);
@@ -66,6 +73,13 @@ public class KitchenEmergencies : MonoBehaviour
     void StartVoiceOver3()
     {
         soundManager.PlayFireGotBiggerNeedToPour();
+    }
+
+    void ToggleOvenOff()
+    {
+        var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+        OvenSwitchRenderer.material.SetColor("_Color", Color.red);
+        KitchenInteractions.isOvenOn = false;
     }
 
     void StartOilFireEffect()
@@ -119,9 +133,20 @@ public class KitchenEmergencies : MonoBehaviour
         OilFireSpread.SetActive(false);
     }
 
-    void StartOverFireScene()
+    /**
+        ================ OVEN FIRE SCENE ==================
+        Scene starts
+        15s later -> smoke comes out from oven
+        45s later -> fire starts
+        15s later -> fire strenghtens
+    */
+    void StartOvenFireScene()
     {
+        ToggleOvenOn();
+        Invoke("StartOvenSmokeEffect", 15.0f);
         Invoke("StartVoiceOver4", 15.0f);
+        Invoke("StartOvenFireEffect", 45.0f);
+        Invoke("StrenghtenOvenFireEffect", 60.0f);
         Invoke("StartVoiceOver5", 60.0f);
     }
 
@@ -135,4 +160,52 @@ public class KitchenEmergencies : MonoBehaviour
         soundManager.PlayNeedToExtinguishFireSoon();
     }
 
+    void ToggleOvenOn()
+    {
+        var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+        OvenSwitchRenderer.material.SetColor("_Color", Color.green);
+        KitchenInteractions.isOvenOn = true;
+    }
+
+    void StartOvenSmokeEffect()
+    {
+        OvenSmoke.SetActive(true);
+        Transform childTransform = OvenSmoke.transform.Find("OvenSmoketEffect");
+        if (childTransform != null)
+        {
+            ParticleSystem OvenSmoketEffect = childTransform.gameObject.GetComponent<ParticleSystem>();
+            OvenSmoketEffect.Play();
+            soundManager.PlayFireBurningSound();
+        }
+    }
+
+    void StartOvenFireEffect()
+    {
+        OvenFireStart.SetActive(true);
+        Transform childTransform = OvenFireStart.transform.Find("OvenFireStartEffect");
+        if (childTransform != null)
+        {
+            ParticleSystem OvenFireStartEffect = childTransform.gameObject.GetComponent<ParticleSystem>();
+            OvenFireStartEffect.Play();
+            soundManager.PlayFireBurningSound();
+        }
+    }
+
+    void StrenghtenOvenFireEffect()
+    {   
+        Transform childTransform = OvenFireStart.transform.Find("OvenFireStartEffect");
+        if (childTransform != null)
+        {
+            ParticleSystem OvenFireStartEffect = childTransform.gameObject.GetComponent<ParticleSystem>();
+            var Emission = OvenFireStartEffect.emission;
+            Emission.rateOverTime = 20.0f;
+        }
+    }
+
+    public void ExtinguishOvenFire()
+    {
+        OvenSmoke.SetActive(false);
+        OvenFireStart.SetActive(false);
+        OvenExplosion.SetActive(false);
+    }
 }

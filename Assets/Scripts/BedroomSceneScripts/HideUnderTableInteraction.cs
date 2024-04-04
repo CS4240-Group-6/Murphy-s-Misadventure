@@ -30,7 +30,8 @@ public class HideUnderTableInteraction : MonoBehaviour
             Vector3 crouchPosition = new Vector3(0.27f, 1f, 13.127f);
             cameraOffset.position = crouchPosition;
             BedroomSceneState.SetUnderCorrectTable(false);
-            Invoke("ExitFromUnderTable", 5f);
+            // GlobalState.SetGameOver(true);
+            // Invoke("ExitFromUnderTable", 5f);
         }
         // TODO: Set exit from under table to be somewhere else (like upon level complete or sth!!!)
     }  
