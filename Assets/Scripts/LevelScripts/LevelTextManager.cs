@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class LevelTextManager : MonoBehaviour
@@ -142,6 +143,20 @@ public class LevelTextManager : MonoBehaviour
         }
         
         GlobalState.IncrementLevel();
+
+        switch(nextLevel) {
+            case 2:
+                break;
+            case 4:
+                FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
+                break;
+            case 5:
+                SceneManager.LoadScene("BedroomScene");
+                break;
+            case 6:
+                FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
+                break;
+        }
     }
 
     // To update level information

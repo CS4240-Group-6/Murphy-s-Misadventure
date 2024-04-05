@@ -46,6 +46,7 @@ public class KitchenSceneLogicManager : MonoBehaviour
             gameOverTimer += Time.deltaTime;
             if (gameOverTimer >= gameOverDelay)
             {
+                gameOver = false; // Reset game over flag
                 // Load game over scene after the delay
                 SceneManager.LoadScene("DeathIsOnlyTheBeginning");
             }
