@@ -71,8 +71,7 @@ public class BedroomEmergencies : MonoBehaviour
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
-        //StartEarthquakeScene();
-        
+        // StartEarthquakeScene();        
     }
 
     // Update is called once per frame
@@ -116,7 +115,7 @@ public class BedroomEmergencies : MonoBehaviour
         every 10s -> Something catches fire
         60s limit -> YOU DIED
     */
-    void StartFireScene() {
+    public void StartFireScene() {
         sparksFlying.Play();
         Invoke("StartElectricityEffect", 10f);
         // Invoke("StartVoiceOver1", 10f);

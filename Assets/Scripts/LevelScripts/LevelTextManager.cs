@@ -118,6 +118,7 @@ public class LevelTextManager : MonoBehaviour
     public void MoveToNextLevel()
     {
         Debug.Log("Button click works!");
+        GlobalState.SetStartLevel(true);
 
         // If scene got another level, press button start new level
         // If the next level in another scene, then need lead them to the door
@@ -138,8 +139,8 @@ public class LevelTextManager : MonoBehaviour
         } else
         {
             // Call the other function in the scene for the next level
-
-            HideCanvas();
+            // FOR TESTING PURPOSE: LATER PLEASE CHANGE TO JUST HideCanvas();
+            Invoke("HideCanvas", 5f);
         }
         
         GlobalState.IncrementLevel();
@@ -196,7 +197,7 @@ public class LevelTextManager : MonoBehaviour
                                     : "The situation got heated, and the fire spread. In the deathroom, we'll go over how to safely deal with oven fires. Sharpen your skills, and come back stronger!";
                 break;
             case 5:
-                levelName = isStart ? "Bedroom- Electrical Fire" : isSuccess ? "Level Completed" : "Level Failed";
+                levelName = isStart ? "Bedroom - Electrical Fire" : isSuccess ? "Level Completed" : "Level Failed";
                 description = isStart ? "Welcome to Level 5. Sparks from an overloaded adapter? This could lead to an electrical fire. Stay calm and think about your next steps carefully." 
                                     : isSuccess ? "You did it! By turning off the circuit breaker first, then using the right extinguisher, you've safely extinguished the electrical fire. A true problem-solver in action!" 
                                     : "The sparks turned into a blaze, but don't lose heart. The deathroom is the place to brush up on handling electrical fires. Return to the challenge when you're ready!";
