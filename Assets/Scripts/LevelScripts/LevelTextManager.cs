@@ -16,7 +16,7 @@ public class LevelTextManager : MonoBehaviour
     private GameObject nextLevelButton;
     public GameObject levelCanvas; // We can turn off or on the canvas at the start and end of a level
     private int previousLevel = 0;
-    public static float timeRemaining = 10; // 3 minute timer
+    public static float timeRemaining = 180; // 3 minute timer
 
     private bool timerIsRunning = false;
 
