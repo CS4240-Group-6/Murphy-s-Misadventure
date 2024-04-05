@@ -550,12 +550,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnKnobRight2ForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
         m_MethodName: IsExitHoverRight2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffKnobRight2ForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -897,12 +921,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnOvenDoorForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
         m_MethodName: IsExitHoverOvenDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffOvenDoorForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1520,9 +1568,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnWaterBottleForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffWaterBottleForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1705,9 +1777,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7770122223122673655}
+  - {fileID: 1616074966}
+  - {fileID: 164649668}
+  - {fileID: 1219767922}
   - {fileID: 2103003807}
   - {fileID: 319142518}
-  - {fileID: 1984726001}
   - {fileID: 1194139795}
   - {fileID: 1832323148}
   - {fileID: 1431448948}
@@ -2346,6 +2420,93 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!1001 &164649667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 132102469}
+    m_Modifications:
+    - target: {fileID: 1055755329424801462, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.289
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093431207122098109, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 69288556}
+    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Name
+      value: TooltipForKnobRight2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -0.13600004
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+--- !u!4 &164649668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 164649667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &164649669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 164649667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170760784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7168276463004793546, guid: 158f818f5cdf7f54f8cb6f3b74f535c8, type: 3}
@@ -2402,12 +2563,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnKnobLeft1ForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
         m_MethodName: IsExitHoverLeft1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffKnobLeft1ForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3613,6 +3798,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7165463962243431538, guid: 4ff9bd62cd3d6764a96cb4fe11d27c2f, type: 3}
   m_PrefabInstance: {fileID: 248628968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &260166665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1832323147}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &283234272 stripped
 GameObject:
@@ -10614,6 +10804,11 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!1 &410354078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1194139794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &420452262
 GameObject:
   m_ObjectHideFlags: 0
@@ -12560,10 +12755,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnBakingSodaForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffBakingSodaForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -14785,7 +15004,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stove: {fileID: 745349756}
-  TooltipForKnob: {fileID: 7770122223122673654}
+  TooltipForKnobLeft2: {fileID: 7770122223122673654}
+  TooltipForKnobLeft1: {fileID: 1616074967}
+  TooltipForKnobRight2: {fileID: 164649669}
+  TooltipForKnobRight1: {fileID: 1219767923}
+  TooltipForOvenDoor: {fileID: 2018966460}
+  TooltipForOvenSwitch: {fileID: 984944840}
+  TooltipForTray: {fileID: 1688172277}
+  TooltipForOil: {fileID: 410354078}
+  TooltipForBakingSoda: {fileID: 260166665}
+  TooltipForWaterBottle: {fileID: 1866337515}
 --- !u!114 &788498311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14854,7 +15082,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15609,6 +15837,11 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!1 &984944840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 319142517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &988881563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19010,12 +19243,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnOvenSwitchForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
         m_MethodName: IsExitHoverOvenSwitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffOvenSwitchForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19106,6 +19363,93 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0.000061035156}
+--- !u!1001 &1219767921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 132102469}
+    m_Modifications:
+    - target: {fileID: 1055755329424801462, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093431207122098109, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 69288556}
+    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Name
+      value: TooltipForKnobRight1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: -0.06700003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -0.58300006
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+--- !u!4 &1219767922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1219767921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1219767923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1219767921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1229713189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23662,6 +24006,93 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8507456354768450394, guid: 4a4c05095ad17514892d3081d358525f, type: 3}
   m_PrefabInstance: {fileID: 1616025497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1616074965
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 132102469}
+    m_Modifications:
+    - target: {fileID: 1055755329424801462, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.587
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093431207122098109, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 69288556}
+    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Name
+      value: TooltipForKnobLeft1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: -1.322
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -1.838
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+--- !u!4 &1616074966 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1616074965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1616074967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1616074965}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620748161
 PrefabInstance:
@@ -29886,6 +30317,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1688172277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 2117719672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1690973362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30315,7 +30751,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
-        m_MethodName: hoverOnKnobForToolTip
+        m_MethodName: hoverOnKnobLeft2ForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30342,7 +30778,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
-        m_MethodName: hoverOffKnobForToolTip
+        m_MethodName: hoverOffKnobLeft2ForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30999,12 +31435,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnKnobRight1ForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
         m_MethodName: IsExitHoverRight1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffKnobRight1ForToolTip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33255,6 +33715,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855858420}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1866337515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 1431448947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1870816284
 GameObject:
   m_ObjectHideFlags: 0
@@ -33636,7 +34101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1397272277}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -33662,10 +34127,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOnTrayForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788498309}
+        m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
+        m_MethodName: hoverOffTrayForToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -34200,92 +34689,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.08, y: 5.3}
   m_SizeDelta: {x: 824, y: 486}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1984726000
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 132102469}
-    m_Modifications:
-    - target: {fileID: 1055755329424801462, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.256
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.217
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093431207122098109, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 69288556}
-    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_Name
-      value: TooltipForTrayToCoverPan
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_text
-      value: USE TRAY TO COVER PAN
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_Positions.Array.data[0].x
-      value: -0.69200003
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-      propertyPath: m_Positions.Array.data[1].x
-      value: -1.208
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
---- !u!4 &1984726001 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
-  m_PrefabInstance: {fileID: 1984726000}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1993132718
 GameObject:
   m_ObjectHideFlags: 0
@@ -34412,6 +34815,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &2018966460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
+  m_PrefabInstance: {fileID: 2103003806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2033985491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35439,7 +35847,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
-        m_MethodName: RotateStoveKnobLeft2
+        m_MethodName: OpenOvenDoor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35451,7 +35859,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 788498309}
         m_TargetAssemblyTypeName: KitchenInteractions, Assembly-CSharp
-        m_MethodName: OpenOvenDoor
+        m_MethodName: RotateStoveKnobLeft2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37291,16 +37699,52 @@ PrefabInstance:
       value: Oil
       objectReference: {fileID: 0}
     - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 788498309}
     - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 788498309}
     - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: hoverOffOilForToolTip
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: hoverOnOilForToolTip
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KitchenInteractions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KitchenInteractions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37655,8 +38099,8 @@ SceneRoots:
   - {fileID: 1423410820}
   - {fileID: 1397272279}
   - {fileID: 1846031500}
-  - {fileID: 1584545819}
   - {fileID: 788498308}
+  - {fileID: 1584545819}
   - {fileID: 109306933}
   - {fileID: 2074206045}
   - {fileID: 446623624}
