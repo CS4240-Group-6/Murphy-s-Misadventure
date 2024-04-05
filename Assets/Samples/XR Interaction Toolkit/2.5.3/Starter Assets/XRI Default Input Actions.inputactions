@@ -1756,30 +1756,8 @@
                 },
                 {
                     "name": "",
-                    "id": "2262cf6d-30bf-436d-aa1f-19ff05a4ff4c",
-                    "path": "<XRController>{RightHand}/{PrimaryAction}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Secondary Action Button",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7c70a9a8-13f5-42f3-babe-fbc51fb0aa0e",
-                    "path": "<XRController>{RightHand}/{PrimaryButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Secondary Action Button",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "86b0d494-e352-4b07-98b6-76381f75ec01",
-                    "path": "<OculusTouchController>/primaryButton",
+                    "id": "3886d8ad-63b0-4474-a449-9cd2250f73b1",
+                    "path": "<OculusTouchController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
