@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1397272277}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -12729,7 +12729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1397272277}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -37698,6 +37698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oil
       objectReference: {fileID: 0}
+    - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1397272277}
     - target: {fileID: 8578330342550043091, guid: 93ddb9f0928aff948ad119b59c0a6ef9, type: 3}
       propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.size
       value: 1
