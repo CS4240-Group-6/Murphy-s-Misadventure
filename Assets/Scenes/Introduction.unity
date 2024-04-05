@@ -10837,7 +10837,7 @@ MonoBehaviour:
   m_Camera: {fileID: 2076525695}
   m_OriginBaseGameObject: {fileID: 829134523}
   m_CameraFloorOffsetObject: {fileID: 2007480713}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 5
 --- !u!4 &829134525
 Transform:
@@ -18135,11 +18135,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4759262865471542, guid: 6825a3fe8a1605f42a0d0589e582ac40, type: 3}
   m_PrefabInstance: {fileID: 1439650323}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1455724365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2400710834252226187, guid: 7b63c270351c27b499b5cb9de8cc2c03, type: 3}
-  m_PrefabInstance: {fileID: 5355236776726523736}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1461257480
 PrefabInstance:
@@ -26795,23 +26790,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3227546777498104549, guid: 7b63c270351c27b499b5cb9de8cc2c03, type: 3}
   m_PrefabInstance: {fileID: 5355236776726523736}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2076525698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455724365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2483b9bd782f9449a5972b61b7d51a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CameraFloorOffsetObject: {fileID: 0}
-  m_RequestedTrackingMode: 0
-  m_TrackingOriginMode: 1
-  m_TrackingSpace: 0
-  m_CameraYOffset: 5
 --- !u!1001 &2095252192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27361,10 +27339,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2400710834252226187, guid: 7b63c270351c27b499b5cb9de8cc2c03, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2076525698}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b63c270351c27b499b5cb9de8cc2c03, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
