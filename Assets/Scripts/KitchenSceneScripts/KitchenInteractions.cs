@@ -6,7 +6,21 @@ using TMPro;
 public class KitchenInteractions : MonoBehaviour
 {
     [SerializeField] private GameObject Stove;
-    [SerializeField] private GameObject TooltipForKnob;
+
+    [Header("Tooltips")]
+    [SerializeField] private GameObject TooltipForKnobLeft2;
+    [SerializeField] private GameObject TooltipForKnobLeft1;
+
+    [SerializeField] private GameObject TooltipForKnobRight2;    
+    [SerializeField] private GameObject TooltipForKnobRight1;
+    [SerializeField] private GameObject TooltipForOvenDoor;
+    [SerializeField] private GameObject TooltipForOvenSwitch;
+    [SerializeField] private GameObject TooltipForTray;
+
+    [SerializeField] private GameObject TooltipForOil;
+    [SerializeField] private GameObject TooltipForBakingSoda;
+
+    [SerializeField] private GameObject TooltipForWaterBottle;
     
     private static float STOVE_ON_ANGLE = 90f;
     private static float STOVE_OFF_ANGLE = 0f;
@@ -332,14 +346,104 @@ public class KitchenInteractions : MonoBehaviour
         else Debug.Log("no child with stove knob right 2 found");
     }
 
-    public void hoverOnKnobForToolTip()
+    public void hoverOnKnobLeft1ForToolTip()
     {
-        TooltipForKnob.SetActive(true);
+        TooltipForKnobLeft1.SetActive(true);
     }
 
-    public void hoverOffKnobForToolTip()
+    public void hoverOffKnobLeft1ForToolTip()
     {
-        TooltipForKnob.SetActive(false);
+        TooltipForKnobLeft1.SetActive(false);
+    }
+
+    public void hoverOnKnobLeft2ForToolTip()
+    {
+        TooltipForKnobLeft2.SetActive(true);
+    }
+
+    public void hoverOffKnobLeft2ForToolTip()
+    {
+        TooltipForKnobLeft2.SetActive(false);
+    }
+
+    public void hoverOnKnobRight2ForToolTip()
+    {
+        TooltipForKnobRight2.SetActive(true);
+    }
+
+    public void hoverOffKnobRight2ForToolTip()
+    {
+        TooltipForKnobRight2.SetActive(false);
+    }
+
+    public void hoverOnKnobRight1ForToolTip()
+    {
+        TooltipForKnobRight1.SetActive(true);
+    }
+
+    public void hoverOffKnobRight1ForToolTip()
+    {
+        TooltipForKnobRight1.SetActive(false);
+    }
+
+    public void hoverOnOvenDoorForToolTip()
+    {
+        TooltipForOvenDoor.SetActive(true);
+    }
+
+    public void hoverOffOvenDoorForToolTip()
+    {
+        TooltipForOvenDoor.SetActive(false);
+    }
+
+    public void hoverOnOvenSwitchForToolTip()
+    {
+        TooltipForOvenSwitch.SetActive(true);
+    }
+
+    public void hoverOffOvenSwitchForToolTip()
+    {
+        TooltipForOvenSwitch.SetActive(false);
+    }
+
+    public void hoverOnTrayForToolTip()
+    {
+        TooltipForTray.SetActive(true);
+    }
+
+    public void hoverOffTrayForToolTip()
+    {
+        TooltipForTray.SetActive(false);
+    }
+
+    public void hoverOnOilForToolTip()
+    {
+        TooltipForOil.SetActive(true);
+    }
+
+    public void hoverOffOilForToolTip()
+    {
+        TooltipForOil.SetActive(false);
+    }
+
+    public void hoverOnBakingSodaForToolTip()
+    {
+        TooltipForBakingSoda.SetActive(true);
+    }
+
+    public void hoverOffBakingSodaForToolTip()
+    {
+        TooltipForBakingSoda.SetActive(false);
+    }
+
+    public void hoverOnWaterBottleForToolTip()
+    {
+        TooltipForWaterBottle.SetActive(true);
+    }
+
+    public void hoverOffWaterBottleForToolTip()
+    {
+        TooltipForWaterBottle.SetActive(false);
     }
 
     /**

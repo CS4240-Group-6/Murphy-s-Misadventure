@@ -14,6 +14,7 @@ public class BedroomSceneLogicManager : MonoBehaviour
     private bool gameOver = false;
     private float gameOverTimer = 0f;
     private float gameOverDelay = 1f; // 1 second delay before changing scene
+    private bool levelCompleted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,17 +36,18 @@ public class BedroomSceneLogicManager : MonoBehaviour
 
     private void CheckLevelComplete() {
         // Check if the level is complete
-        if (BedroomSceneState.Level6Complete()) 
+        if (BedroomSceneState.Level6Complete() && !levelCompleted) 
         {
+            levelCompleted = true;
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             bedroomEmergencies.StopEarthquake();
             // bedroomEmergencies.ExtinguishElectricalFire();
-            // Click some button on the UI to increment to next level?
         }
-        if (BedroomSceneState.Level5Complete()) {
+        if (BedroomSceneState.Level5Complete() && !levelCompleted) {
+            levelCompleted = true;
+            GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
-            // Increment level to 6 on button click
         }
     }
 
