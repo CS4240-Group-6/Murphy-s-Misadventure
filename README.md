@@ -1,6 +1,6 @@
 # Murphy-s-Misadventures
 
-![Murphy’s Misadventures vr](https://github.com/CS4240-Group-6/Murphy-s-Misadventure/assets/69337196/9621ba1e-0223-42c4-b948-a50830dff6d7)
+![Poster for CS4240](https://github.com/CS4240-Group-6/Murphy-s-Misadventure/assets/69337196/09de28de-c3de-4537-897c-8220b9ebb0ea)
 
 ## Storyline 📖
 Murphy, an unassuming office worker, returns home each evening to his quaint but chaotically arranged abode. After years of working diligently, Murphy has become oblivious to the looming hazards scattered throughout his home. Unbeknownst to him, each night is a covert dance with disaster, as common household items teeter on the brink of causing mayhem. In "Murphy’s Misadventures," players must guide Murphy through his nightly routine, identifying and mitigating these dangers before time runs out or catastrophe strikes.
