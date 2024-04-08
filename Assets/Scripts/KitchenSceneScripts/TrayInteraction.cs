@@ -22,31 +22,7 @@ public class TrayInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /**
-        if (isTrayOverPan)
-        {
-            Debug.Log(timer);
-            timer += Time.deltaTime;
-            if (timer >= durationThreshold)
-            {
-                StopFireParticles();
-            }
-        }
-        else if (wasTrayOverPan)
-        {
-            // Tray has exited, reset timer
-            timer = 0f;
-            wasTrayOverPan = false;
-        }
-        else {
-            // Tray has exited, reset timer
-            timer = 0f;
-            wasTrayOverPan = false;
-        }
 
-        wasTrayOverPan = isTrayOverPan;
-        isTrayOverPan = false;
-        */
     }
 
     void OnCollisionEnter(Collision collision)
@@ -63,6 +39,7 @@ public class TrayInteraction : MonoBehaviour
             if (timer >= durationThreshold)
             {
                 StopFireParticles();
+                Debug.Log("Done tray");
                 KitchenSceneState.SetPanCovered(true);
             }
         }

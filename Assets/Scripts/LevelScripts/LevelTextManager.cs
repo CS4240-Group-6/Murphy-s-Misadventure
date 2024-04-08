@@ -149,6 +149,7 @@ public class LevelTextManager : MonoBehaviour
             case 2:
                 break;
             case 4:
+                KitchenSceneState.ResetLevel4();
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
                 break;
             case 5:

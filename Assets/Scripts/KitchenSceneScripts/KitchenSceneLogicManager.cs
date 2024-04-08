@@ -58,6 +58,7 @@ public class KitchenSceneLogicManager : MonoBehaviour
         // Check if the level is complete
         if (KitchenSceneState.Level3Complete())
         {
+            Debug.Log("level complete");
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             kitchenEmergencies.ExtinguishOilFire();

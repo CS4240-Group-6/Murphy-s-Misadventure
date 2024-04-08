@@ -24,6 +24,7 @@ public static class KitchenSceneState
     // SMALL FIRE - 2:50 TO 2:00
     public static void SetPanCovered(bool isCovered)
     {
+        Debug.Log("pan covered");
         panCovered = isCovered;
     }
 
