@@ -24,6 +24,7 @@ public static class KitchenSceneState
     // SMALL FIRE - 2:50 TO 2:00
     public static void SetPanCovered(bool isCovered)
     {
+        Debug.Log("pan covered");
         panCovered = isCovered;
     }
 
@@ -96,6 +97,7 @@ public static class KitchenSceneState
         else if (LevelTextManager.timeRemaining > 120.0f)
         {
             return gasStoveTurnedOff && (panCovered || oilAddedToPan || sodaAddedToPan || fireExtinguisherUsed);
+            // || oilAddedToPan || sodaAddedToPan || fireExtinguisherUsed)
         }
         else if (LevelTextManager.timeRemaining > 60.0f)
         {

@@ -7,6 +7,8 @@ public class KitchenEmergencies : MonoBehaviour
     // OIL FIRE
     public GameObject OilFireStart;
     public GameObject OilFireSpread;
+    public GameObject OilFireExplosion;
+    public GameObject OilFireBig;
 
     // OVEN FIRE
     public GameObject OvenSwitch;
@@ -14,6 +16,8 @@ public class KitchenEmergencies : MonoBehaviour
     public GameObject OvenSmoke;
     public GameObject OvenFireStart;
     public GameObject OvenExplosion;
+    public GameObject OvenFireBig;
+    public GameObject OvenSmallExplosion;
 
     // Sound Script
     public SoundManager soundManager;
@@ -28,9 +32,9 @@ public class KitchenEmergencies : MonoBehaviour
         OvenFireStart.SetActive(false);
         OvenExplosion.SetActive(false);
 
-        //StartOilFireScene();
+        StartOilFireScene();
 
-        StartOvenFireScene();
+        //StartOvenFireScene();
     }
 
     // Update is called once per frame
@@ -131,6 +135,8 @@ public class KitchenEmergencies : MonoBehaviour
     {
         OilFireStart.SetActive(false);
         OilFireSpread.SetActive(false);
+        OilFireExplosion.SetActive(false);
+        OilFireBig.SetActive(false);
     }
 
     /**
@@ -207,5 +213,7 @@ public class KitchenEmergencies : MonoBehaviour
         OvenSmoke.SetActive(false);
         OvenFireStart.SetActive(false);
         OvenExplosion.SetActive(false);
+        OvenFireBig.SetActive(false);
+        OvenSmallExplosion.SetActive(false);
     }
 }

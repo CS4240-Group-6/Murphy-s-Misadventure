@@ -56,11 +56,19 @@ public class KitchenSceneLogicManager : MonoBehaviour
     private void CheckLevelComplete()
     {
         // Check if the level is complete
-        if (KitchenSceneState.Level3Complete())
+        if (GlobalState.GetLevel() == 3 &&  KitchenSceneState.Level3Complete())
         {
+            Debug.Log("level 3 complete");
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             kitchenEmergencies.ExtinguishOilFire();
+        }
+        if (GlobalState.GetLevel() == 4 && KitchenSceneState.Level4Complete()) 
+        {
+            Debug.Log("level 4 complete");
+            GlobalState.SetStartLevel(false); // Reset start level flag
+            levelTextManager.DisplayLevelTexts();
+            kitchenEmergencies.ExtinguishOvenFire();
         }
     }
 }
