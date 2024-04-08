@@ -33,10 +33,10 @@ public class KitchenInteractions : MonoBehaviour
     /**
         STATES OF THE KNOBS
     */
-    private bool isHoverLeft1;
-    private bool isHoverLeft2;
-    private bool isHoverRight1;
-    private bool isHoverRight2;
+    public bool isHoverLeft1;
+    public bool isHoverLeft2;
+    public bool isHoverRight1;
+    public bool isHoverRight2;
 
     private static float StoveKnobLeft1_state;
     private static float StoveKnobLeft2_state;
@@ -51,7 +51,7 @@ public class KitchenInteractions : MonoBehaviour
     /**
         STATES OF OVEN
     */
-    private bool isHoverOvenSwitch;
+    public bool isHoverOvenSwitch;
 
     public static bool isOvenOn;
 
@@ -59,7 +59,7 @@ public class KitchenInteractions : MonoBehaviour
     /**
         STATES OF THE OVEN DOOR
     */
-    private bool isHoverOvenDoor;
+    public bool isHoverOvenDoor;
 
     private static float OvenDoor_state;
 
@@ -190,6 +190,7 @@ public class KitchenInteractions : MonoBehaviour
             StoveKnobLeft1_state = STOVE_ON_ANGLE;
         }
 
+        
         if (isHoverLeft1)
         {
             canRotateLeft1 = true;
@@ -198,6 +199,7 @@ public class KitchenInteractions : MonoBehaviour
         {
             canRotateLeft1 = false;
         }
+        
     }
 
     public void RotateStoveKnobLeft2() 
