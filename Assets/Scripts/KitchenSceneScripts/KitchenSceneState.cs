@@ -97,6 +97,7 @@ public static class KitchenSceneState
         else if (LevelTextManager.timeRemaining > 120.0f)
         {
             return gasStoveTurnedOff && (panCovered || oilAddedToPan || sodaAddedToPan || fireExtinguisherUsed);
+            // || oilAddedToPan || sodaAddedToPan || fireExtinguisherUsed)
         }
         else if (LevelTextManager.timeRemaining > 60.0f)
         {

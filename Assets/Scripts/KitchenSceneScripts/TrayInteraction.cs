@@ -40,6 +40,7 @@ public class TrayInteraction : MonoBehaviour
             {
                 StopFireParticles();
                 Debug.Log("Done tray");
+                Debug.Log(KitchenSceneState.IsPanCovered());
                 KitchenSceneState.SetPanCovered(true);
             }
         }

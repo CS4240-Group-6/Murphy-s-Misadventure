@@ -14981,10 +14981,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OilFireStart: {fileID: 639726951}
   OilFireSpread: {fileID: 1230573676}
+  OilFireExplosion: {fileID: 999610922}
+  OilFireBig: {fileID: 652831951}
   OvenSwitch: {fileID: 1203759869}
   OvenSmoke: {fileID: 1993132718}
   OvenFireStart: {fileID: 612979563}
   OvenExplosion: {fileID: 544703782}
+  OvenFireBig: {fileID: 2112675670}
+  OvenSmallExplosion: {fileID: 1431513737}
   soundManager: {fileID: 1290338120}
 --- !u!4 &788498308
 Transform:

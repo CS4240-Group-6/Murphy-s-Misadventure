@@ -299,9 +299,9 @@ public class KitchenInteractions : MonoBehaviour
 
             StoveKnobLeft2.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
 
-            if (currentRot.eulerAngles.z == targetRot.eulerAngles.z)
+            if (targetRot.eulerAngles.z-0.1 <= currentRot.eulerAngles.z && currentRot.eulerAngles.z <= targetRot.eulerAngles.z+0.1)
             {
-                if (currentRot.eulerAngles == new Vector3(0, 0, STOVE_ON_ANGLE))
+                if (STOVE_OFF_ANGLE-1 <= currentRot.eulerAngles.z && currentRot.eulerAngles.z <= STOVE_OFF_ANGLE+1)
                 {
                     KitchenSceneState.SetGasStoveTurnedOff(true);
                 }
