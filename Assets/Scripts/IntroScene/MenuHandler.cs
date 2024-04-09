@@ -15,4 +15,9 @@ public class MenuHandler : MonoBehaviour
         // Will only work when the game is built and the option is chosen
         Application.Quit();
     }
+
+    public void EnterShowCaseRoom()
+    {
+        SceneManager.LoadScene("ShowcaseOfStuff");  
+    }
 }
