@@ -124,39 +124,40 @@ public class LevelTextManager : MonoBehaviour
         // If the next level in another scene, then need lead them to the door
         int nextLevel = GlobalState.GetLevel() + 1;
 
-        if (nextLevel == 3)
-        {
-            // Regarding the doors we can set check if current level is the 2nd level of the scene and only then you can enter the room/ load new scene
-            levelText.text = "";
-            descriptionText.text = "Please proceed to the Kitchen";
-            Invoke("HideCanvas", 5f);
-        } else if (nextLevel == 5)
-        {
-            // Regarding the doors we can set check if current level is the 4th level of the scene and only then you can enter the room/ load new scene
-            levelText.text = "";
-            descriptionText.text = "Please proceed to the Bedroom";
-            Invoke("HideCanvas", 5f);
-        } else
-        {
-            // Call the other function in the scene for the next level
-            // FOR TESTING PURPOSE: LATER PLEASE CHANGE TO JUST HideCanvas();
-            Invoke("HideCanvas", 5f);
-        }
-        
+        // Call the other function in the scene for the next level
+        // FOR TESTING PURPOSE: LATER PLEASE CHANGE TO JUST HideCanvas();
+        Invoke("HideCanvas", 5f);
+
         GlobalState.IncrementLevel();
 
         switch(nextLevel) {
             case 2:
+                // FindObjectOfType<LevelManager>().ResetLevel();
+                // LivingRoomSceneState.ResetLevel2();
+                // FindObjectOfType<LivingRoomEmergencies>().StartThiefScene();
+                break;
+            case 3:
+                levelText.text = "";
+                descriptionText.text = "Please proceed to the Kitchen";
+                Invoke("HideCanvas", 5f);
                 break;
             case 4:
-                KitchenSceneState.ResetLevel4();
+                // FindObjectOfType<LevelManager>().ResetLevel();
+                KitchenSceneState.ResetLevel3();
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
                 break;
             case 5:
-                SceneManager.LoadScene("BedroomScene");
+                levelText.text = "";
+                descriptionText.text = "Please proceed to the Bedroom";
+                Invoke("HideCanvas", 5f);
                 break;
             case 6:
+                // FindObjectOfType<LevelManager>().ResetLevel();
+                BedroomSceneState.ResetLevel5();
                 FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
+                break;
+            case 7:
+                SceneManager.LoadScene("EndCreditScene");
                 break;
         }
     }

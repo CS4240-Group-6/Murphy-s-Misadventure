@@ -21,6 +21,7 @@ public class KitchenInteractions : MonoBehaviour
     [SerializeField] private GameObject TooltipForBakingSoda;
 
     [SerializeField] private GameObject TooltipForWaterBottle;
+    [SerializeField] private GameObject TooltipForBedroom;
     
     private static float STOVE_ON_ANGLE = 90f;
     private static float STOVE_OFF_ANGLE = 0f;
@@ -542,4 +543,14 @@ public class KitchenInteractions : MonoBehaviour
         else Debug.Log("no child with stove front door found");
     }
 
+    // To move to next level
+    public void hoverOnBedroomDoorForToolTip()
+    {
+        TooltipForBedroom.SetActive(true);
+    }
+
+    public void hoverOffBedroomDoorForToolTip()
+    {
+        TooltipForBedroom.SetActive(false);
+    }
 }

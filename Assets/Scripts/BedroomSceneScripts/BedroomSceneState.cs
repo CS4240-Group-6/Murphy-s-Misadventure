@@ -53,6 +53,13 @@ public static class BedroomSceneState
         return isBlueFireExtinguished && isGreenFireExtinguished && isYellowFireExtinguished && isCircuitBreakerOff;
     }
 
+    public static void ResetLevel5() {
+        isBlueFireExtinguished = false;
+        isGreenFireExtinguished = false;
+        isYellowFireExtinguished = false;
+        isCircuitBreakerOff = false;
+    }
+
     /*
     Level related
     */
