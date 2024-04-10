@@ -57,6 +57,10 @@ public class ActionButtonControllerKitchen : MonoBehaviour
             {
                 kitchenInteractions.OpenOvenDoor();
             }
+            if (kitchenInteractions.isHoverBedroom)
+            {
+                kitchenInteractions.LoadBedroomScene();
+            }
         }
     }
 }

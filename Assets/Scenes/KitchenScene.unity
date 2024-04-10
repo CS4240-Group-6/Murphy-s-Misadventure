@@ -10972,7 +10972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.68
+      value: 1.551
       objectReference: {fileID: 0}
     - target: {fileID: 1535778066239720603, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11016,7 +11016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
@@ -11027,7 +11027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontSize
-      value: 97.5
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontAsset
@@ -11039,7 +11039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontSizeBase
-      value: 97.5
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_sharedMaterial
@@ -15304,6 +15304,7 @@ MonoBehaviour:
   TooltipForBakingSoda: {fileID: 260166665}
   TooltipForWaterBottle: {fileID: 1866337515}
   TooltipForBedroom: {fileID: 403945009}
+  isHoverBedroom: 0
   isHoverLeft1: 0
   isHoverLeft2: 0
   isHoverRight1: 0

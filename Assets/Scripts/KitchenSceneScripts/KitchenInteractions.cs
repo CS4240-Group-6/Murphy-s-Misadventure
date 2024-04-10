@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -30,6 +31,9 @@ public class KitchenInteractions : MonoBehaviour
     private static float OVEN_CLOSED_ANGLE = 0f;
 
     private static float SPEED = 5.0f;
+
+    // Bedroom
+    public bool isHoverBedroom;
 
     /**
         STATES OF THE KNOBS
@@ -86,6 +90,7 @@ public class KitchenInteractions : MonoBehaviour
         canRotateRight2 = false;
 
         canRotateDoor = false;
+
 
         // STATES
         StoveKnobLeft1_state = STOVE_OFF_ANGLE;
@@ -546,11 +551,18 @@ public class KitchenInteractions : MonoBehaviour
     // To move to next level
     public void hoverOnBedroomDoorForToolTip()
     {
+        isHoverBedroom = true;
         TooltipForBedroom.SetActive(true);
     }
 
     public void hoverOffBedroomDoorForToolTip()
     {
+        isHoverBedroom = false;
         TooltipForBedroom.SetActive(false);
+    }
+
+    public void LoadBedroomScene() 
+    {
+        SceneManager.LoadScene("BedroomScene");
     }
 }

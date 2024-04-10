@@ -132,7 +132,7 @@ public class LevelTextManager : MonoBehaviour
 
         switch(nextLevel) {
             case 2:
-                // FindObjectOfType<LevelManager>().ResetLevel();
+                FindObjectOfType<LevelManager>().ResetLevel();
                 // LivingRoomSceneState.ResetLevel2();
                 // FindObjectOfType<LivingRoomEmergencies>().StartThiefScene();
                 break;
@@ -142,7 +142,7 @@ public class LevelTextManager : MonoBehaviour
                 Invoke("HideCanvas", 5f);
                 break;
             case 4:
-                // FindObjectOfType<LevelManager>().ResetLevel();
+                FindObjectOfType<LevelManager>().ResetLevel();
                 KitchenSceneState.ResetLevel3();
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
                 break;
@@ -152,7 +152,7 @@ public class LevelTextManager : MonoBehaviour
                 Invoke("HideCanvas", 5f);
                 break;
             case 6:
-                // FindObjectOfType<LevelManager>().ResetLevel();
+                FindObjectOfType<LevelManager>().ResetLevel();
                 BedroomSceneState.ResetLevel5();
                 FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
                 break;
