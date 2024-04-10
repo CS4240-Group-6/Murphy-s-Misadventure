@@ -11016,11 +11016,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6974504677972976341, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: "OPEN DOOR \n\nTO ENTER THE BEDROOM"
+      value: 'LEVEL UNLOCKED
+
+
+        OPEN BEDROOM DOOR'
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontSize
