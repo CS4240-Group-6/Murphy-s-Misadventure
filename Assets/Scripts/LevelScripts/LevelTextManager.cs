@@ -102,6 +102,11 @@ public class LevelTextManager : MonoBehaviour
         }
     }
 
+    public void SetTimeRemaining(float time)
+    {
+        timeRemaining = time;
+    }
+
     public void DisplayLevelTexts() 
     {
         if (GlobalState.IsGameOver()) {

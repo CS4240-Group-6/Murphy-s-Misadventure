@@ -15469,6 +15469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8c0f816acf84414a6fcdf1f54cfd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 760996928}
+  resetStove: {fileID: 1742229255}
 --- !u!82 &788498312
 AudioSource:
   m_ObjectHideFlags: 0
