@@ -101,6 +101,15 @@ public class OvenFireInteractions : MonoBehaviour
         yield return null;
     }
 
+    public void StartOvenExplosion()
+    {
+        GameObject parentOfOvenExplosionParticles = ovenExplosionParticles.transform.parent.gameObject;
+
+        parentOfOvenExplosionParticles.SetActive(true);
+
+        ovenExplosionParticles.Play();
+    }
+
     void StartFireBigParticles()
     {
         GameObject parentOfOvenFireBigParticles = ovenFireBigParticles.transform.parent.gameObject;

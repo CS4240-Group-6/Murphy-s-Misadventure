@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         ResetObject[] foundObjects = GetComponentsInChildren<ResetObject>();
+        Debug.Log("objs to be resetted: " + foundObjects);
         resetObjects.AddRange(foundObjects);
 
         StartCoroutine(CheckGameOver());

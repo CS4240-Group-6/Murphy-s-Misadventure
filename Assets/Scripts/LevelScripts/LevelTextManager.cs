@@ -144,6 +144,11 @@ public class LevelTextManager : MonoBehaviour
             case 4:
                 FindObjectOfType<LevelManager>().ResetLevel();
                 KitchenSceneState.ResetLevel3();
+                // Start time again
+                timeRemaining = 180;
+                timerIsRunning = true;
+                timeText.gameObject.SetActive(true);
+                nextLevelButton.SetActive(false);
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
                 break;
             case 5:
@@ -154,6 +159,11 @@ public class LevelTextManager : MonoBehaviour
             case 6:
                 FindObjectOfType<LevelManager>().ResetLevel();
                 BedroomSceneState.ResetLevel5();
+                // Start time again
+                timeRemaining = 180;
+                timerIsRunning = true;
+                timeText.gameObject.SetActive(true);
+                nextLevelButton.SetActive(false);
                 FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
                 break;
             case 7:
