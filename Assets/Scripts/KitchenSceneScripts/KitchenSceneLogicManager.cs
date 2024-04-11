@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class KitchenSceneLogicManager : MonoBehaviour
 {
+    private LevelManager levelManager;
+    private ResetStove resetStove;
     private LevelTextManager levelTextManager;
     private KitchenEmergencies kitchenEmergencies;  
     private bool gameOver = false;
@@ -16,6 +18,8 @@ public class KitchenSceneLogicManager : MonoBehaviour
     void Start()
     {
         // Assuming you have references to other managers/components
+        levelManager = GetComponent<LevelManager>();
+        resetStove = GetComponent<ResetStove>();
         levelTextManager = GetComponent<LevelTextManager>();
         kitchenEmergencies = GetComponent<KitchenEmergencies>();
     }
@@ -33,7 +37,10 @@ public class KitchenSceneLogicManager : MonoBehaviour
         if (!gameOver && GlobalState.IsGameOver())
         {
             // levelObjectManager.ResetLevel();
+            levelManager.ResetLevel();
+            resetStove.ResetStoveObjects();
             KitchenSceneState.ResetLevel3();
+            KitchenSceneState.ResetLevel4();
             gameOver = true; // Set game over flag
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
