@@ -24,7 +24,7 @@ public class KitchenInteractions : MonoBehaviour
     [SerializeField] private GameObject TooltipForWaterBottle;
     [SerializeField] private GameObject TooltipForBedroom;
 
-    private OvenFireInteractions ovenFireInteractions;
+    [SerializeField] private OvenFireInteractions ovenFireInteractions;
     
     private static float STOVE_ON_ANGLE = 90f;
     private static float STOVE_OFF_ANGLE = 0f;
@@ -544,7 +544,7 @@ public class KitchenInteractions : MonoBehaviour
             OvenDoor.rotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * SPEED);
             if (targetRot.eulerAngles.x-0.1 <= currentRot.eulerAngles.x && currentRot.eulerAngles.x <= targetRot.eulerAngles.x+0.1)
             {
-                if (OVEN_OPEN_ANGLE-1 <= currentRot.eulerAngles.x && currentRot.eulerAngles.x <= OVEN_OPEN_ANGLE+1)
+                if (GlobalState.GetLevel() == 4 && OVEN_OPEN_ANGLE-1 <= currentRot.eulerAngles.x && currentRot.eulerAngles.x <= OVEN_OPEN_ANGLE+1)
                 {
                     Debug.Log("oven door opened, game over");
                     ovenFireInteractions.StartOvenExplosion();

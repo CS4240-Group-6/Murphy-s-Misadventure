@@ -143,6 +143,7 @@ public class LevelTextManager : MonoBehaviour
                 break;
             case 4:
                 FindObjectOfType<LevelManager>().ResetLevel();
+                FindObjectOfType<ResetStove>().ResetStoveObjects();
                 KitchenSceneState.ResetLevel3();
                 // Start time again
                 timeRemaining = 180;

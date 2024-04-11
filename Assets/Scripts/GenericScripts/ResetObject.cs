@@ -23,5 +23,10 @@ public class ResetObject : MonoBehaviour
     {
         transform.position = originalPos;
         transform.rotation = originalRot;
+
+        if (gameObject.name == "Stove-FrontDoor")
+        {
+            Debug.Log("rotating to: " + transform.rotation);
+        }
     }
 }
