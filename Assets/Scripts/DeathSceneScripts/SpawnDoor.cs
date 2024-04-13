@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnDoor : MonoBehaviour
 {
-    public GameObject doorPlaceholder;
+    // public GameObject doorPlaceholder;
     public GameObject door;
     public AudioSource audioSource;
 
@@ -14,7 +14,7 @@ public class SpawnDoor : MonoBehaviour
     void Start()
     {
         door.SetActive(false);
-        doorPlaceholder.SetActive(true);
+        // doorPlaceholder.SetActive(true);
         
     }
 
@@ -41,7 +41,7 @@ public class SpawnDoor : MonoBehaviour
     public void SpawnDoorAction() {
         Debug.Log("spawn door action");
         // Deactivate the GameObject to which this script is attached
-        doorPlaceholder.SetActive(false);
+        // doorPlaceholder.SetActive(false);
         door.SetActive(true);
 
 
