@@ -36,6 +36,7 @@ public class SoundManager : MonoBehaviour
     // Level 1
     public AudioClip smellBurning;
     public AudioClip fireOnTheAdaptor;
+    public AudioClip fireExtinguisherRunOut;
 
     // Level 2
     public AudioClip roomShaking;
@@ -210,6 +211,12 @@ public class SoundManager : MonoBehaviour
     {
         subtitleText.text = "Intruder: “Hello? Delivery service. Anyone home?";
         audioSource.PlayOneShot(intruderDialogue);
+    }
+
+    public void PlayFireExtinguisherRunOut()
+    {        
+        subtitleText.text = "Murphy: Oh no... It looks like the fire extinguisher has run out. I'll have to find another way to put out the fire";
+        audioSource.PlayOneShot(fireExtinguisherRunOut);
     }
 }
 

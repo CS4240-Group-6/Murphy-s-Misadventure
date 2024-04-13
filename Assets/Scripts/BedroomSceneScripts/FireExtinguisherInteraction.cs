@@ -8,10 +8,12 @@ public class FireExtinguisherInteraction : MonoBehaviour
     private float gasLevel = 10.0f; // Initial gas level in the extinguisher
     private Camera mainCamera;
 
-
     [SerializeField] private GameObject fireExtinguisher;
     [SerializeField] private ParticleSystem fireExtinguisherParticleEffect;
     [SerializeField] private AudioSource extinguisherAudio;
+    
+    // Sound Manager
+    public SoundManager soundManager;
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class FireExtinguisherInteraction : MonoBehaviour
             if (gasLevel <= 0f)
             {
                 StopExtinguisher();
-                // TODO: KISHOR'S VOICE OVER "Oh no... it looks like the fire extinguisher has run out... I'll have to find another way to put out the fire!
+                soundManager.PlayFireExtinguisherRunOut();
             }
         }
     }
