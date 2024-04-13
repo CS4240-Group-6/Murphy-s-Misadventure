@@ -35,7 +35,7 @@ public class FireExtinguisherInteraction : MonoBehaviour
         isExtinguisherInHand = true;
         Vector3 cameraForward = mainCamera.transform.forward;
         cameraForward.y = 0f; // Keep the extinguisher level with the ground
-        fireExtinguisher.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        fireExtinguisher.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
     }
 
     public void SelectExitExtinguisher() {
