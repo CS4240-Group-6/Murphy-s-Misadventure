@@ -152,9 +152,10 @@ public class LivingRoomEmergencies : MonoBehaviour
     {
         Invoke("StartKnockingSound", 5.0f);
         Invoke("StartVoiceOver6", 10.0f);
-        Invoke("StartKnockingSound", 15.0f);
-        // lock picking sounds
-        // door unlock sound
+        Invoke("StartVoiceOver4", 15.0f);
+        Invoke("StartKnockingSound", 20.0f);
+        Invoke("StartLockPickingSound", 25.0f);
+        Invoke("StartDoorUnlockingSound", 39.0f);
         Invoke("OpenDoor", 40.0f);
     }
 
@@ -163,6 +164,7 @@ public class LivingRoomEmergencies : MonoBehaviour
         soundManager.PlayIDidntOrderDelivery();
     }
 
+    // Use this on clicking the door to win
     void StartVoiceOver5()
     {
         soundManager.PlayLeaveOrICallPolice();
@@ -176,6 +178,16 @@ public class LivingRoomEmergencies : MonoBehaviour
     void StartKnockingSound()
     {
         soundManager.PlayDoorKnockSound();
+    }
+
+    void StartLockPickingSound()
+    {
+        soundManager.PlayLockPickingSound();
+    }
+
+    void StartDoorUnlockingSound()
+    {
+        soundManager.PlayDoorUnlockSound();
     }
 
     void OpenDoor()

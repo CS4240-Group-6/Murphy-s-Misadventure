@@ -28,6 +28,9 @@ public class SoundManager : MonoBehaviour
     public AudioSource doorKnockSound;
 
     public AudioSource lightsOffSound;
+    public AudioSource doorUnlockSound;
+
+    public AudioSource lockPickSound;
 
     // Voice Audios
 
@@ -121,6 +124,16 @@ public class SoundManager : MonoBehaviour
     public void PlayLightsOffSound()
     {
         lightsOffSound.Play();
+    }
+
+    public void PlayDoorUnlockSound()
+    {
+        doorUnlockSound.Play();
+    }
+
+    public void PlayLockPickingSound()
+    {
+        lockPickSound.Play();
     }
 
     public void PlaySmellBurning()

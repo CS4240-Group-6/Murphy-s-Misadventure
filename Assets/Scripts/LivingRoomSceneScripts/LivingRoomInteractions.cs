@@ -13,6 +13,7 @@ public class LivingRoomInteractions : MonoBehaviour
     [SerializeField] private GameObject tooltipForFireExtinguisher;
     [SerializeField] private GameObject tooltipForWetExtensionCord;
     [SerializeField] private GameObject tooltipForLightSwitch;
+    [SerializeField] private GameObject tooltipForSocket;
 
 
     // Start is called before the first frame update
@@ -76,5 +77,12 @@ public class LivingRoomInteractions : MonoBehaviour
     }
     public void HoverOffLightSwitchToolTip() {
         tooltipForLightSwitch.SetActive(false);
+    }
+
+    public void HoverOnSocketToolTip() {
+        tooltipForSocket.SetActive(true);
+    }
+    public void HoverOffSocketToolTip() {
+        tooltipForSocket.SetActive(false);
     }
 }
