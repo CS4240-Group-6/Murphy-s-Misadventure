@@ -50,6 +50,7 @@ public class BedroomEmergencies : MonoBehaviour
     [SerializeField] private GameObject tooltipForBigTable;
     [SerializeField] private GameObject tooltipForBakingSoda;
     [SerializeField] private GameObject tooltipForCircuitBreaker;
+    [SerializeField] private GameObject tooltipForExtinguisher;
 
     // Sound Manager
     public SoundManager soundManager;
@@ -304,4 +305,12 @@ public class BedroomEmergencies : MonoBehaviour
     public void HoverOffCircuitBreakerToolTip() {
         tooltipForCircuitBreaker.SetActive(false);
     }
+    
+    public void HoverOnExtinguisherToolTip() {
+        tooltipForExtinguisher.SetActive(true);
+    }
+    public void HoverOffExtinguisherToolTip() {
+        tooltipForExtinguisher.SetActive(false);
+    }
+
 }
