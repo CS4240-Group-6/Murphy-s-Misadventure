@@ -18,13 +18,16 @@ public class LivingRoomEmergencies : MonoBehaviour
     public float flickerIntervalLong;
     private bool isFlicker = false;
 
+    // INTRUDER
+    public GameObject MainDoor;
+
     // Start is called before the first frame update
     void Start()
     {
         ExtensionSmoke.SetActive(false);
 
-        StartLightFuseScene();
-        // StartIntruderScene();
+        //StartLightFuseScene();
+        StartIntruderScene();
     }
 
     // Update is called once per frame
@@ -139,13 +142,20 @@ public class LivingRoomEmergencies : MonoBehaviour
     /**
         Scene starts
         5s later -> door knocking
-        25s later -> knocking stops and lockpicking starts
-        35s later -> door is unlocked
+        5s later -> voice at door "delivery"
+        5s later -> knocking continues
+        10s later -> knocking stops and lockpicking starts
+        10s later -> door is unlocked
+        5s later -> door swings open
     */
     public void StartIntruderScene()
     {
         Invoke("StartKnockingSound", 5.0f);
         Invoke("StartVoiceOver6", 10.0f);
+        Invoke("StartKnockingSound", 15.0f);
+        // lock picking sounds
+        // door unlock sound
+        Invoke("OpenDoor", 40.0f);
     }
 
     void StartVoiceOver4()
@@ -171,6 +181,8 @@ public class LivingRoomEmergencies : MonoBehaviour
     void OpenDoor()
     {
         //  Add animation logic here
+        Animator doorSwingAnimation = MainDoor.gameObject.GetComponent<Animator>();
+        doorSwingAnimation.Play("OpenDoor", -1);
     }
 
 }
