@@ -566,7 +566,9 @@ public class KitchenInteractions : MonoBehaviour
     public void hoverOffBedroomDoorForToolTip()
     {
         isHoverBedroom = false;
-        TooltipForBedroom.SetActive(false);
+        if (TooltipForBedroom) {
+            TooltipForBedroom.SetActive(false);
+        }
     }
 
     public void LoadBedroomScene() 

@@ -13,16 +13,12 @@ public class KitchenSceneLogicManager : MonoBehaviour
     private float gameOverTimer = 0f;
     private float gameOverDelay = 3f; // 2 second delay before changing scene
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        // Assuming you have references to other managers/components
         levelTextManager = GetComponent<LevelTextManager>();
         kitchenEmergencies = GetComponent<KitchenEmergencies>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckGameOver();
@@ -34,7 +30,6 @@ public class KitchenSceneLogicManager : MonoBehaviour
         // Check if the game is over
         if (!gameOver && GlobalState.IsGameOver())
         {
-            // levelObjectManager.ResetLevel();
             levelManager.ResetLevel();
             resetStove.ResetStoveObjects();
             KitchenSceneState.ResetLevel3();
@@ -62,12 +57,13 @@ public class KitchenSceneLogicManager : MonoBehaviour
     private void CheckLevelComplete()
     {
         // Check if the level is complete
-        if (GlobalState.GetLevel() == 3 &&  KitchenSceneState.Level3Complete())
+        if (GlobalState.GetLevel() == 3 && KitchenSceneState.Level3Complete())
         {
             Debug.Log("level 3 complete");
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             kitchenEmergencies.ExtinguishOilFire();
+            GlobalState.IncrementLevel();
         }
         if (GlobalState.GetLevel() == 4 && KitchenSceneState.Level4Complete()) 
         {

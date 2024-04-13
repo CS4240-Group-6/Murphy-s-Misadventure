@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class KitchenEmergencies : MonoBehaviour
@@ -215,5 +216,11 @@ public class KitchenEmergencies : MonoBehaviour
         OvenExplosion.SetActive(false);
         OvenFireBig.SetActive(false);
         OvenSmallExplosion.SetActive(false);
+    }
+
+    public void LoadBedroomScene() 
+    {
+        SceneManager.LoadScene("BedroomScene");
+        GlobalState.IncrementLevel();
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BedroomSceneLogicManager : MonoBehaviour
 {
+    [SerializeField] private LevelManager levelManager;
     public Transform sturdyTableTransform;
     public Transform playerTransform;
     private LevelTextManager levelTextManager;
@@ -16,17 +17,11 @@ public class BedroomSceneLogicManager : MonoBehaviour
     private float gameOverDelay = 1f; // 1 second delay before changing scene
     private bool levelCompleted = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         levelTextManager = GetComponent<LevelTextManager>();
         bedroomEmergencies = GetComponent<BedroomEmergencies>();
     }
-
-    /*
-    Earthquake scene related
-    */
-
 
     void Update()
     {
@@ -34,32 +29,17 @@ public class BedroomSceneLogicManager : MonoBehaviour
         CheckLevelComplete();
     }
 
-    private void CheckLevelComplete() {
-        // Check if the level is complete
-        if (BedroomSceneState.Level6Complete() && !levelCompleted) 
-        {
-            levelCompleted = true;
-            GlobalState.SetStartLevel(false); // Reset start level flag
-            levelTextManager.DisplayLevelTexts();
-            bedroomEmergencies.StopEarthquake();
-            // bedroomEmergencies.ExtinguishElectricalFire();
-        }
-        if (BedroomSceneState.Level5Complete() && !levelCompleted) {
-            levelCompleted = true;
-            GlobalState.SetStartLevel(false); // Reset start level flag
-            levelTextManager.DisplayLevelTexts();
-        }
-    }
-
     private void CheckGameOver()
     {
         // Check if the game is over
         if (!gameOver && GlobalState.IsGameOver())
         {
-            // levelObjectManager.ResetLevel();
+            levelManager.ResetLevel();
+            BedroomSceneState.ResetLevel5();
             BedroomSceneState.ResetLevel6();
             gameOver = true; // Set game over flag
             GlobalState.SetStartLevel(false); // Reset start level flag
+            levelTextManager.SetTimeRemaining(180);
             levelTextManager.DisplayLevelTexts();
             gameOverTimer = 0f; // Reset timer
         }
@@ -70,16 +50,30 @@ public class BedroomSceneLogicManager : MonoBehaviour
             gameOverTimer += Time.deltaTime;
             if (gameOverTimer >= gameOverDelay)
             {
+                gameOver = false; // Reset game over flag
                 // Load game over scene after the delay
                 SceneManager.LoadScene("DeathIsOnlyTheBeginning");
             }
         }
     }
 
-
-
-    /*
-    Electrical Fire scene related
-    */
-
+    private void CheckLevelComplete() 
+    {
+        // Check if the level is complete
+        if (BedroomSceneState.Level5Complete() && GlobalState.GetLevel() == 5) 
+        {
+            Debug.Log("level 5 complete");
+            GlobalState.SetStartLevel(false); // Reset start level flag
+            levelTextManager.DisplayLevelTexts();
+            bedroomEmergencies.SelectFuseBox();
+            GlobalState.IncrementLevel();
+        }
+        if (BedroomSceneState.Level6Complete() && GlobalState.GetLevel() == 6) 
+        {
+            Debug.Log("level 6 complete");
+            GlobalState.SetStartLevel(false); // Reset start level flag
+            levelTextManager.DisplayLevelTexts();
+            bedroomEmergencies.StopEarthquake();
+        }
+    }
 }

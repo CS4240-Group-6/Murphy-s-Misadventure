@@ -19,6 +19,7 @@ public class LevelTextManager : MonoBehaviour
     public static float timeRemaining = 180; // 3 minute timer
 
     private bool timerIsRunning = false;
+    public bool customTextSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,8 @@ public class LevelTextManager : MonoBehaviour
         descriptionText.text = "";
         timerIsRunning = true;
         nextLevelButton.SetActive(false);
+        customTextSet = false;
+        Debug.Log("Description: " + descriptionText.text);
 
         StartCoroutine(LevelIntro());
         ShowCanvas();
@@ -133,8 +136,6 @@ public class LevelTextManager : MonoBehaviour
         // FOR TESTING PURPOSE: LATER PLEASE CHANGE TO JUST HideCanvas();
         Invoke("HideCanvas", 5f);
 
-        GlobalState.IncrementLevel();
-
         switch(nextLevel) {
             case 2:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -142,25 +143,36 @@ public class LevelTextManager : MonoBehaviour
                 // FindObjectOfType<LivingRoomEmergencies>().StartThiefScene();
                 break;
             case 3:
-                levelText.text = "";
-                descriptionText.text = "Please proceed to the Kitchen";
-                Invoke("HideCanvas", 5f);
+                // levelText.text = "";
+                // descriptionText.text = "Please proceed to the Kitchen";
+                GlobalState.IncrementLevel();
+                // Invoke("HideCanvas", 5f);
                 break;
             case 4:
                 FindObjectOfType<LevelManager>().ResetLevel();
                 FindObjectOfType<ResetStove>().ResetStoveObjects();
                 KitchenSceneState.ResetLevel3();
                 // Start time again
-                timeRemaining = 180;
+                SetTimeRemaining(180);
                 timerIsRunning = true;
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
+                GlobalState.IncrementLevel();
                 break;
             case 5:
-                levelText.text = "";
-                descriptionText.text = "Please proceed to the Bedroom";
-                Invoke("HideCanvas", 5f);
+                FindObjectOfType<LevelManager>().ResetLevel();
+                SetInstructionTexts();
+
+                // Start time again
+                if (SceneManager.GetActiveScene().name != "KitchenScene") {
+                    timeRemaining = 180;
+                    timerIsRunning = true;
+                    timeText.gameObject.SetActive(true);
+                }
+                nextLevelButton.SetActive(false);
+                UpdateLevelTexts();
+                GlobalState.IncrementLevel();
                 break;
             case 6:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -171,6 +183,7 @@ public class LevelTextManager : MonoBehaviour
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
+                GlobalState.IncrementLevel();
                 break;
             case 7:
                 SceneManager.LoadScene("EndCreditScene");
@@ -179,8 +192,15 @@ public class LevelTextManager : MonoBehaviour
     }
 
     // To update level information
-    private void UpdateLevelTexts()
+    public void UpdateLevelTexts()
     {
+        if (customTextSet) 
+        {
+            nextLevelButton.SetActive(false);
+            // customTextSet = false;
+            return;
+        }
+        
         int level = GlobalState.GetLevel();
         bool isStart = GlobalState.IsStartLevel(); // Global boolean indicating if the level is at the intro stage or the end
         bool isSuccess = !GlobalState.IsGameOver(); // Global boolean indicating if the level was passed successfully or failed
@@ -228,9 +248,29 @@ public class LevelTextManager : MonoBehaviour
                 break;
         }
 
+        Debug.Log(descriptionText.text);
+
         levelText.text = levelName;
         levelText.color = isStart ? Color.white : isSuccess ? Color.green : Color.red;
         descriptionText.text = description;
+        Debug.Log($"UpdateLevelTexts setting descriptionText: {description}");
     }
 
+    public void SetInstructionTexts() 
+    {
+        ShowCanvas();
+        nextLevelButton.SetActive(false);
+        customTextSet = true;
+        if (SceneManager.GetActiveScene().name == "KitchenScene")
+        {
+            descriptionText.text = "Please proceed to the Bedroom";
+            levelText.text = "";
+        }
+        
+        if (SceneManager.GetActiveScene().name == "LivingRoomScene")
+        {
+            descriptionText.text = "Please proceed to the Kitchen";
+            levelText.text = "";           
+        }
+    }
 }

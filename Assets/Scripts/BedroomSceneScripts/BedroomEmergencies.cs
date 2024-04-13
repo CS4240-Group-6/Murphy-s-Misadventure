@@ -64,6 +64,7 @@ public class BedroomEmergencies : MonoBehaviour
         smallTableFire.SetActive(false);
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
+
         StartFireScene();
 
         originalObjectPositions = new Vector3[objectsToShake.Length];
@@ -71,6 +72,7 @@ public class BedroomEmergencies : MonoBehaviour
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
+
         // StartEarthquakeScene();        
     }
 
@@ -118,9 +120,7 @@ public class BedroomEmergencies : MonoBehaviour
     public void StartFireScene() {
         sparksFlying.Play();
         Invoke("StartElectricityEffect", 10f);
-        // Invoke("StartVoiceOver1", 10f);
         InvokeRepeating("StartPlugFireEffect", 5, 10);
-        // Invoke("StartVoiceOver2", 20f);
         Invoke("LightFlickering", 20f);
         Invoke("StartSmallTableFireEffect", 35f);
         Invoke("StartComTableFireEffect", 45f);
@@ -196,7 +196,6 @@ public class BedroomEmergencies : MonoBehaviour
         Invoke("StartCollapse", collapseDelay);
         Invoke("StartVoiceOver3", 0.01f);
         Invoke("StartVoiceOver4", 10f);
-        // Invoke("TestEndEarthquakeLevel", 30f);
         Invoke("StopEarthquake", 60);
 
     }
@@ -234,7 +233,6 @@ public class BedroomEmergencies : MonoBehaviour
         // } else {
         //     EndGame(false);
         // }
-        
     }
 
     void StartCollapse() {
@@ -306,5 +304,4 @@ public class BedroomEmergencies : MonoBehaviour
     public void HoverOffCircuitBreakerToolTip() {
         tooltipForCircuitBreaker.SetActive(false);
     }
-
 }
