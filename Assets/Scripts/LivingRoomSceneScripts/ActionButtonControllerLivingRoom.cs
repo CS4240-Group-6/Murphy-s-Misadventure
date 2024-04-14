@@ -41,6 +41,10 @@ public class ActionButtonControllerLivingRoom : MonoBehaviour
                 livingRoomInteractions.TurnOnLights();
                 // livingRoomInteractions.OpenCircuitBreaker();
             }
+            if (GlobalState.GetLevel() == 2) {
+                livingRoomInteractions.LockDoor();
+                // livingRoomInteractions.CloseCircuitBreaker();
+            }
         }
     }
 }

@@ -66,7 +66,7 @@ public class LivingRoomSceneLogicManager : MonoBehaviour
             Debug.Log("level 2 complete");
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
-            // kitchenEmergencies.ExtinguishOvenFire();
+            livingRoomEmergencies.StopIntruderScene();
         }
     }
 }

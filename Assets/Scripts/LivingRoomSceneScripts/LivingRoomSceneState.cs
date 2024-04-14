@@ -10,6 +10,7 @@ public static class LivingRoomSceneState
     private static bool isCircuitBreakerOn = false;
 
     /** Level 2 state */
+    private static bool isDoorLocked = false;
 
     public static void SetExtensionCordPulled()
     {
@@ -46,26 +47,19 @@ public static class LivingRoomSceneState
     }
 
     /** Level 2 state functions */
+    public static void SetDoorLocked()
+    {
+        isDoorLocked = true;
+    }
+    
     public static bool Level2Complete()
     {
-        return true;
-        // if (waterAddedToOven)
-        // {
-        //     return ovenTurnedOff && fireExtinguisherUsed;
-        // }
-        // else if (LevelTextManager.timeRemaining > 120.0f)
-        // {
-        //     return ovenTurnedOff;
-        // }
-        // else
-        // {
-        //     return ovenTurnedOff && fireExtinguisherUsed;
-        // }
+        return isDoorLocked;
     }
 
     public static void ResetLevel2()
     {
         // Reset the state of the main door
-        // PlayerPrefs.SetInt("MainDoorState", 0);
+        isDoorLocked = false;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LivingRoomInteractions : MonoBehaviour
@@ -15,13 +16,16 @@ public class LivingRoomInteractions : MonoBehaviour
     [SerializeField] private GameObject tooltipForLightSwitch;
     [SerializeField] private GameObject tooltipForSocket;
 
-    private ShieldAnimation shieldAnimation;
+    [SerializeField] private SoundManager soundManager;
+
+    // GameObjects
+    [SerializeField] private GameObject MainDoor;
+    [SerializeField] private GameObject CircuitBreakerDoor;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        shieldAnimation = GetComponent<ShieldAnimation>();
     }
 
     // Update is called once per frame
@@ -109,6 +113,16 @@ public class LivingRoomInteractions : MonoBehaviour
             Debug.Log("Lights turned on");
             
             LivingRoomSceneState.SetCircuitBreakerOn();
+        }
+    }
+
+    public void LockDoor() {
+        if (tooltipForMainDoor.activeSelf) {
+            Debug.Log("Main door locked");
+            MainDoor.GetComponent<DoorAnimation>().OnDoorLockGrabbed();
+            soundManager.PlayDoorUnlockSound();
+            soundManager.PlayLeaveOrICallPolice();
+            LivingRoomSceneState.SetDoorLocked();
         }
     }
 

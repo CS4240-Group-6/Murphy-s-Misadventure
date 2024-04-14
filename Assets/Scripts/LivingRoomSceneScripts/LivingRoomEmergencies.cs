@@ -26,8 +26,8 @@ public class LivingRoomEmergencies : MonoBehaviour
     {
         ExtensionSmoke.SetActive(false);
 
-        StartLightFuseScene();
-        // StartIntruderScene();
+        // StartLightFuseScene();
+        StartIntruderScene();
     }
 
     // Update is called once per frame
@@ -167,6 +167,19 @@ public class LivingRoomEmergencies : MonoBehaviour
         Invoke("StartLockPickingSound", 25.0f);
         Invoke("StartDoorUnlockingSound", 39.0f);
         Invoke("OpenDoor", 40.0f);
+        Invoke("FailLevel", 42.0f);
+    }
+
+    public void StopIntruderScene()
+    {
+        CancelInvoke("StartKnockingSound");
+        CancelInvoke("StartVoiceOver6");
+        CancelInvoke("StartVoiceOver4");
+        CancelInvoke("StartKnockingSound");
+        CancelInvoke("StartLockPickingSound");
+        CancelInvoke("StartDoorUnlockingSound");
+        CancelInvoke("OpenDoor");
+        CancelInvoke("FailLevel");
     }
 
     void StartVoiceOver4()
@@ -205,6 +218,16 @@ public class LivingRoomEmergencies : MonoBehaviour
         //  Add animation logic here
         Animator doorSwingAnimation = MainDoor.gameObject.GetComponent<Animator>();
         doorSwingAnimation.Play("OpenDoor", -1);
+    }
+
+    void FailLevel()
+    {
+        // Add fail level logic here
+        if (!LivingRoomSceneState.Level2Complete()) {
+            // Play a scary kidnap sound here
+            // soundManager.PlayFailLevel();
+            GlobalState.SetGameOver(true);
+        } 
     }
 
 }
