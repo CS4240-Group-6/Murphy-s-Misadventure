@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LivingRoomInteractions : MonoBehaviour
@@ -15,11 +16,16 @@ public class LivingRoomInteractions : MonoBehaviour
     [SerializeField] private GameObject tooltipForLightSwitch;
     [SerializeField] private GameObject tooltipForSocket;
 
+    [SerializeField] private SoundManager soundManager;
+
+    // GameObjects
+    [SerializeField] private GameObject MainDoor;
+    [SerializeField] private GameObject CircuitBreakerDoor;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -85,4 +91,39 @@ public class LivingRoomInteractions : MonoBehaviour
     public void HoverOffSocketToolTip() {
         tooltipForSocket.SetActive(false);
     }
+
+    public void PullOutExtensionCord() {
+        if (tooltipForSocket.activeSelf) {
+            Debug.Log("Extension cord pulled out");
+            // tooltipForSocket.SetActive(false);
+            // tooltipForWetExtensionCord.SetActive(true);
+            
+            LivingRoomSceneState.SetExtensionCordPulled();
+        }
+    }
+
+    public void TurnOnLights() {
+        if (tooltipForLightSwitch.activeSelf && !LivingRoomSceneState.IsExtensionCordPulled()) {
+            Debug.Log("Extension cord is wet, lights cannot be turned on");
+
+            // Turn on lights for a while then off with a bang
+            
+        }
+        else if(tooltipForLightSwitch.activeSelf && LivingRoomSceneState.IsExtensionCordPulled()) {
+            Debug.Log("Lights turned on");
+            
+            LivingRoomSceneState.SetCircuitBreakerOn();
+        }
+    }
+
+    public void LockDoor() {
+        if (tooltipForMainDoor.activeSelf) {
+            Debug.Log("Main door locked");
+            MainDoor.GetComponent<DoorAnimation>().OnDoorLockGrabbed();
+            soundManager.PlayDoorUnlockSound();
+            soundManager.PlayLeaveOrICallPolice();
+            LivingRoomSceneState.SetDoorLocked();
+        }
+    }
+
 }
