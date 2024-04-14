@@ -19,12 +19,14 @@ public class LivingRoomEmergencies : MonoBehaviour
     private bool isFlicker = false;
 
     // INTRUDER
+    public GameObject Intruder;
     public GameObject MainDoor;
 
     // Start is called before the first frame update
     void Start()
     {
         ExtensionSmoke.SetActive(false);
+        Intruder.SetActive(false);
 
         // StartLightFuseScene();
         StartIntruderScene();
@@ -160,6 +162,7 @@ public class LivingRoomEmergencies : MonoBehaviour
     */
     public void StartIntruderScene()
     {
+        Intruder.SetActive(true);
         Invoke("StartKnockingSound", 5.0f);
         Invoke("StartVoiceOver6", 10.0f);
         Invoke("StartVoiceOver4", 15.0f);
@@ -220,7 +223,7 @@ public class LivingRoomEmergencies : MonoBehaviour
         doorSwingAnimation.Play("OpenDoor", -1);
     }
 
-    void FailLevel()
+    public void FailLevel()
     {
         // Add fail level logic here
         if (!LivingRoomSceneState.Level2Complete()) {
