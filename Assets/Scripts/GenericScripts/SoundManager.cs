@@ -150,7 +150,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayRoomShaking()
     {
-        subtitleText.text = "Murphy: Is the room shaking?";
+        subtitleText.text = "Murphy: Is the room shaking? I think it's an earthquake!";
         audioSource.PlayOneShot(roomShaking);
     }
 
@@ -230,6 +230,33 @@ public class SoundManager : MonoBehaviour
     {        
         subtitleText.text = "Murphy: Oh no... It looks like the fire extinguisher has run out. I'll have to find another way to put out the fire";
         audioSource.PlayOneShot(fireExtinguisherRunOut);
+    }
+
+    public void StopAllLvl3Sounds()
+    {
+        subtitleText.text = "";
+        fireBurningSound.Stop();
+        fireExplosionSound.Stop();
+        audioSource.Stop();
+    }
+
+    public void StopAllLvl4Sounds()
+    {
+        subtitleText.text = "";
+        fireBurningSound.Stop();
+        audioSource.Stop();
+    }
+
+    public void StopAllLvl5Sounds()
+    {
+        subtitleText.text = "";
+        audioSource.Stop();
+    }
+
+    public void StopAllLvl6Sounds()
+    {
+        subtitleText.text = "";
+        audioSource.Stop();
     }
 }
 

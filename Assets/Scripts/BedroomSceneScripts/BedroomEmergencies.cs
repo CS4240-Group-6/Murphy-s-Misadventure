@@ -66,7 +66,7 @@ public class BedroomEmergencies : MonoBehaviour
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
 
-        StartFireScene();
+        // StartFireScene();
 
         originalObjectPositions = new Vector3[objectsToShake.Length];
         for (int i = 0; i < objectsToShake.Length; i++)
@@ -74,12 +74,23 @@ public class BedroomEmergencies : MonoBehaviour
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
 
-        // StartEarthquakeScene();        
+        StartEarthquakeScene();        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (BedroomSceneState.Level5Complete())
+        {
+            soundManager.StopAllLvl5Sounds();
+        }
+
+        if(BedroomSceneState.Level6Complete())
+        {
+            soundManager.StopAllLvl6Sounds();
+        }
+
         if (flickerLight)
             LightFlickering();
 
@@ -193,6 +204,7 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void StartEarthquakeScene()
     {
+        soundManager.PlayEarthquakeSound();
         InvokeRepeating("ShakeObjects", 0, 0.01f);
         Invoke("StartCollapse", collapseDelay);
         Invoke("StartVoiceOver3", 0.01f);
@@ -203,6 +215,7 @@ public class BedroomEmergencies : MonoBehaviour
 
     void StartVoiceOver3() {
         soundManager.PlayRoomShaking();
+        soundManager.PlayObjectFallSound();
     }
 
     void StartVoiceOver4() {

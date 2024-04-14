@@ -35,7 +35,6 @@ public class LevelTextManager : MonoBehaviour
         StartCoroutine(LevelIntro());
         ShowCanvas();
 
-        // UpdateLevelText();
         UpdateLevelTexts();
     }
 

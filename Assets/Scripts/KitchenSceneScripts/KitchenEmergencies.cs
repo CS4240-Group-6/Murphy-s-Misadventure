@@ -41,7 +41,15 @@ public class KitchenEmergencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (KitchenSceneState.Level3Complete())
+        {
+            soundManager.StopAllLvl3Sounds();
+        }
+
+        if(KitchenSceneState.Level4Complete())
+        {
+            soundManager.StopAllLvl4Sounds();
+        }
     }
 
     /**
