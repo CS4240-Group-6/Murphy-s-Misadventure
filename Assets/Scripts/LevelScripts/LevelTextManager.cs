@@ -24,6 +24,7 @@ public class LevelTextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeRemaining = 180;
         levelText.text = "";
         descriptionText.text = "";
         timerIsRunning = true;
