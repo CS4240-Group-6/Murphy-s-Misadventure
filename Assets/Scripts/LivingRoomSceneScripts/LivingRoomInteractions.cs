@@ -15,11 +15,13 @@ public class LivingRoomInteractions : MonoBehaviour
     [SerializeField] private GameObject tooltipForLightSwitch;
     [SerializeField] private GameObject tooltipForSocket;
 
+    private ShieldAnimation shieldAnimation;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        shieldAnimation = GetComponent<ShieldAnimation>();
     }
 
     // Update is called once per frame
@@ -85,4 +87,29 @@ public class LivingRoomInteractions : MonoBehaviour
     public void HoverOffSocketToolTip() {
         tooltipForSocket.SetActive(false);
     }
+
+    public void PullOutExtensionCord() {
+        if (tooltipForSocket.activeSelf) {
+            Debug.Log("Extension cord pulled out");
+            // tooltipForSocket.SetActive(false);
+            // tooltipForWetExtensionCord.SetActive(true);
+            
+            LivingRoomSceneState.SetExtensionCordPulled();
+        }
+    }
+
+    public void TurnOnLights() {
+        if (tooltipForLightSwitch.activeSelf && !LivingRoomSceneState.IsExtensionCordPulled()) {
+            Debug.Log("Extension cord is wet, lights cannot be turned on");
+
+            // Turn on lights for a while then off with a bang
+            
+        }
+        else if(tooltipForLightSwitch.activeSelf && LivingRoomSceneState.IsExtensionCordPulled()) {
+            Debug.Log("Lights turned on");
+            
+            LivingRoomSceneState.SetCircuitBreakerOn();
+        }
+    }
+
 }

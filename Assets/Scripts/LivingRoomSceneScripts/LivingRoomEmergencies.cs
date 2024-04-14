@@ -26,8 +26,8 @@ public class LivingRoomEmergencies : MonoBehaviour
     {
         ExtensionSmoke.SetActive(false);
 
-        //StartLightFuseScene();
-        StartIntruderScene();
+        StartLightFuseScene();
+        // StartIntruderScene();
     }
 
     // Update is called once per frame
@@ -137,6 +137,16 @@ public class LivingRoomEmergencies : MonoBehaviour
             soundManager.PlayLightsOffSound();
             yield return new WaitForSeconds(flickerIntervalShort);
         }
+    }
+
+    public void StopLightFuseScene()
+    {
+        CancelInvoke("StartVoiceOver1");
+        CancelInvoke("StartSmokeEffect");
+        CancelInvoke("StartVoiceOver2");
+        CancelInvoke("LightsFlickerEffect");
+        CancelInvoke("PowerOutageEffect");
+        CancelInvoke("StartVoiceOver3");
     }
 
     /**
