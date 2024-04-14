@@ -35,7 +35,12 @@ public class LivingRoomEmergencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (LivingRoomSceneState.Level1Complete()) {
+            soundManager.StopAllLvl1Sounds();
+        }
+        if (LivingRoomSceneState.Level2Complete()) {
+            soundManager.StopAllLvl2Sounds();
+        }
     }
 
     /**

@@ -32,6 +32,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource lockPickSound;
 
+    public AudioClip kidnapSound;
+
     // Voice Audios
 
     // Bedroom Scene
@@ -136,6 +138,11 @@ public class SoundManager : MonoBehaviour
         lockPickSound.Play();
     }
 
+    public void PlayKidnapSound()
+    {
+        audioSource.PlayOneShot(kidnapSound);
+    }
+
     public void PlaySmellBurning()
     {
         subtitleText.text = "Murphy: I’m smelling something burning";
@@ -230,6 +237,18 @@ public class SoundManager : MonoBehaviour
     {        
         subtitleText.text = "Murphy: Oh no... It looks like the fire extinguisher has run out. I'll have to find another way to put out the fire";
         audioSource.PlayOneShot(fireExtinguisherRunOut);
+    }
+
+    public void StopAllLvl1Sounds()
+    {
+        subtitleText.text = "";
+        audioSource.Stop();
+    }
+    
+    public void StopAllLvl2Sounds()
+    {
+        subtitleText.text = "";
+        audioSource.Stop();
     }
 
     public void StopAllLvl3Sounds()
