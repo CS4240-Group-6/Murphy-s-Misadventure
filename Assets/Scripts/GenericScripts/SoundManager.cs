@@ -256,33 +256,7 @@ public class SoundManager : MonoBehaviour
     public void StopAllLvl6Sounds()
     {
         subtitleText.text = "";
-        audioSource.Stop();
+        earthquakeSound.Stop();
+        objectFallSound.Stop();
     }
 }
-
-
-
-/**
-Kitchen
-subtitleText.text = “I’m smelling something burning”
-subtitleText.text = “Hmm maybe I should turn something off and need to find a way to cover the pan”
-subtitleText.text = “Oh no! The fire has gotten bigger now I should turn off something and pour something on top it”
-
-subtitleText.text = “Is that smoke? I have to find where its coming from and turn it off quick”
-subtitleText.text = “Wow! Ok i need to extinguish the fire soon before it explodes”
-
-Bedroom
-subtitleText.text = “I’m smelling something burning”
-subtitleText.text = “Oh no there’s fire on the adaptor! I need to find a way to cut the electricity and extinguish the flame”
-
-subtitleText.text = “Is the room shaking?”
-subtitleText.text = “Oh god! This is bad. I need to find a safe spot where I wont get hit?”
-
-Living Room
-subtitleText.text = “Another long day… I’m finally home”
-subtitleText.text = “What’s that sound?”
-subtitleText.text = “Ah! The lights went out! I should find a way to turn the lights back on…”
-
-subtitleText.text = “Who’s that.. I didn’t order any delivery…”
-subtitleText.text = “Sorry, I didn’t order anything. Please leave or I’ll call the police”
-**/
