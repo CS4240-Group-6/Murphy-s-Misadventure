@@ -1234,7 +1234,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15482,7 +15482,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -15584,6 +15584,7 @@ MonoBehaviour:
   descriptionText: {fileID: 1603704268}
   nextLevelButton: {fileID: 420452262}
   levelCanvas: {fileID: 2035228521}
+  customTextSet: 0
 --- !u!114 &788498314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17561,7 +17562,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -20933,8 +20934,11 @@ MonoBehaviour:
   fireExplosionSound: {fileID: 544703784}
   doorKnockSound: {fileID: 0}
   lightsOffSound: {fileID: 0}
+  doorUnlockSound: {fileID: 0}
+  lockPickSound: {fileID: 0}
   smellBurning: {fileID: 0}
   fireOnTheAdaptor: {fileID: 0}
+  fireExtinguisherRunOut: {fileID: 0}
   roomShaking: {fileID: 0}
   findASafeSpot: {fileID: 0}
   smellSomethingBurning: {fileID: 8300000, guid: a1d96e11dd69464478ceffb028f1e486, type: 3}
@@ -26109,7 +26113,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -26164,6 +26168,7 @@ MonoBehaviour:
   fireExtinguisher: {fileID: 1673293372}
   fireExtinguisherParticleEffect: {fileID: 1682085932}
   extinguisherAudio: {fileID: 1673293373}
+  soundManager: {fileID: 0}
 --- !u!114 &1673293375
 MonoBehaviour:
   m_ObjectHideFlags: 0
