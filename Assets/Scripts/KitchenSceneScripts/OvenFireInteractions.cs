@@ -11,6 +11,8 @@ public class OvenFireInteractions : MonoBehaviour
 
     [SerializeField] private ParticleSystem ovenSmallExplosionParticles;
     [SerializeField] private ParticleSystem ovenFireBigParticles;
+
+    [SerializeField] private KitchenInteractions kitchenInteractions;
  
     public float extinguisherDurationThreshold; // Duration threshold for extinguisher
     public float waterThreshold; // Duration threshold for water over fire
@@ -32,7 +34,7 @@ public class OvenFireInteractions : MonoBehaviour
     {
         if (GlobalState.GetLevel() == 4)
         {
-            if (!KitchenInteractions.isOvenOn)
+            if (!kitchenInteractions.GetOvenState())
             {
                 ovenTimer += Time.deltaTime;
                 if (ovenTimer > ovenDurationThreshold)
@@ -40,8 +42,12 @@ public class OvenFireInteractions : MonoBehaviour
                     StopFireParticles();
                     KitchenSceneState.SetOvenTurnedOff(true);
                 }
+                else
+                {
+                    KitchenSceneState.SetOvenTurnedOff(false);
+                }
             }
-            else if (KitchenInteractions.isOvenOn)
+            else if (kitchenInteractions.GetOvenState())
             {
                 ovenTimer = 0;
             }
