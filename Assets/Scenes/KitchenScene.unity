@@ -2644,7 +2644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS B
+      value: 'PRESS A
 
 
         Turn Knob'
@@ -4730,7 +4730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS B
+      value: 'PRESS A
 
 
         SWITCH ON/OFF OVEN'
@@ -11155,6 +11155,9 @@ PrefabInstance:
       value: 'LEVEL UNLOCKED
 
 
+        PRESS A
+
+
         OPEN BEDROOM DOOR'
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
@@ -11183,7 +11186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_Positions.Array.data[0].x
-      value: -14.222
+      value: -13.459001
       objectReference: {fileID: 0}
     - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_Positions.Array.data[0].y
@@ -11191,11 +11194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_Positions.Array.data[0].z
-      value: -7.7950006
+      value: -7.9240003
       objectReference: {fileID: 0}
     - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_Positions.Array.data[1].x
-      value: -14.222
+      value: -13.459001
       objectReference: {fileID: 0}
     - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_Positions.Array.data[1].y
@@ -11203,7 +11206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748736101778764599, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_Positions.Array.data[1].z
-      value: -7.1242003
+      value: -7.2532005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20086,7 +20089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS B
+      value: 'PRESS A
 
 
         Turn Knob'
@@ -20936,6 +20939,7 @@ MonoBehaviour:
   lightsOffSound: {fileID: 0}
   doorUnlockSound: {fileID: 0}
   lockPickSound: {fileID: 0}
+  kidnapSound: {fileID: 0}
   smellBurning: {fileID: 0}
   fireOnTheAdaptor: {fileID: 0}
   fireExtinguisherRunOut: {fileID: 0}
@@ -24977,7 +24981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS B
+      value: 'PRESS A
 
 
         Turn Knob'
@@ -37524,7 +37528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS B
+      value: 'PRESS A
 
 
         OPEN/CLOSE OVEN DOOR'
@@ -39158,7 +39162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS B
+      value: 'PRESS A
 
 
         Turn Knob'
