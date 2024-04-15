@@ -37,8 +37,7 @@ public class DeathSceneManger : MonoBehaviour
         for (int i = 0; i < manequinnsToShow.Count; i++) {
             manequinnsToShow[i].SetActive(i < numDeaths);
         }
-        string playerDiedAt = GetPlayerDeathLocation();
-        SetTextToDisplay(playerDiedAt);
+        SetTextToDisplay();
     }
 
     // Update is called once per frame
@@ -70,46 +69,39 @@ public class DeathSceneManger : MonoBehaviour
         }
     }
 
-    private string GetPlayerDeathLocation() {
-        switch(GlobalState.GetLevel()) {
-            case 1:
-                return PlayerPrefs.GetString("LocationOfDeath", "livingRoomFire");
-            case 2:
-                return  PlayerPrefs.GetString("LocationOfDeath", "livingRoomBreakIn");
-            case 3:
-                return PlayerPrefs.GetString("LocationOfDeath", "kitchenOilFire");
-            case 4:
-                return PlayerPrefs.GetString("LocationOfDeath", "kitchenOvenFire");
-            case 5:
-                return PlayerPrefs.GetString("LocationOfDeath", "bedroomFire");
-            case 6:
-                return PlayerPrefs.GetString("LocationOfDeath", "bedroomEarthquake");
-            default:
-                return PlayerPrefs.GetString("LocationOfDeath", "Unknown Location of Death");
-        }
-    }
-
-    void SetTextToDisplay(string sceneWherePlayerDiedAt) {
+    void SetTextToDisplay() {
         string textOnPaper = "";
-        switch (sceneWherePlayerDiedAt) {
-            case "bedroomFire":
-                textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+        switch (GlobalState.GetLevel()) {
+            case 1:
+                // textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+                textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
-            case "bedroomEarthquake":
-                textOnPaper = "Rumble rumble! Brace yourself, it's the earth shaking! Quick, find cover and hold on tight!";
+            case 2:
+                // textOnPaper = "Ding Dong! Someone suspicious at the door? Better lock it and call the police!";
+                textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
-            case "kitchenOilFire":
-                textOnPaper = "Watch out! The oil's ignited in the kitchen! Water will only make it worse! Cut off the heat and add cool oil before it's too late...";
+            case 3:
+                // textOnPaper = "Watch out! The oil's ignited in the kitchen! Water will only make it worse! Cut off the heat and add cool oil before it's too late...";
+                textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
-            case "kitchenGasLeak":
-                textOnPaper = "Careful now, that's not just a gas stove leak, it's a ticking time bomb. Move fast!";
+            case 4:
+                // textOnPaper = "Careful, oven fires are tricky. You can't just throw water on them. You need to smother the flames with the right extinguisher!";
+                textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
-            case "kitchenOvenFire":
-                textOnPaper = "Careful, oven fires are tricky. You can't just throw water on them. You need to smother the flames with the right extinguisher!";
+            case 5:
+                // textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+                textOnPaper = GlobalState.GetLevel().ToString();
+                break;
+            case 6:
+                // textOnPaper = "Oh no! The ceiling's coming down! You need to find a strong cover, fast!";
+                textOnPaper = GlobalState.GetLevel().ToString();
+                break;
+            default:
+                textOnPaper = GlobalState.GetLevel().ToString();
                 break;
         }
         textAnimation.textToDisplay.text = textOnPaper;
