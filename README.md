@@ -22,9 +22,9 @@ If players survive all these levels, they WIN the game else they will be put in 
 Left Controller
 - Teleport (Left Trigger)
 - Movement (Left Joystick)
-- Canvas Interaction (Right Trigger)
   
 Right Controller
+- Canvas Interaction (Right Trigger)
 - Rotation (Right Joystick)
 - Grab (Right Grip)
 - Action Button (Right Controller 'A')
