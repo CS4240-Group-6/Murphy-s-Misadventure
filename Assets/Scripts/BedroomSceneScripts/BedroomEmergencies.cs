@@ -81,15 +81,15 @@ public class BedroomEmergencies : MonoBehaviour
     void Update()
     {
 
-        if (BedroomSceneState.Level5Complete())
-        {
-            soundManager.StopAllLvl5Sounds();
-        }
+        // if (BedroomSceneState.Level5Complete())
+        // {
+        //     soundManager.StopAllLvl5Sounds();
+        // }
 
-        if(BedroomSceneState.Level6Complete())
-        {
-            soundManager.StopAllLvl6Sounds();
-        }
+        // if(BedroomSceneState.Level6Complete())
+        // {
+        //     soundManager.StopAllLvl6Sounds();
+        // }
 
         if (flickerLight)
             LightFlickering();

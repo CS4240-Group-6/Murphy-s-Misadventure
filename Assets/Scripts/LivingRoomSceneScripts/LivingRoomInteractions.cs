@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LivingRoomInteractions : MonoBehaviour
@@ -21,6 +22,9 @@ public class LivingRoomInteractions : MonoBehaviour
     // GameObjects
     [SerializeField] private GameObject MainDoor;
     [SerializeField] private GameObject CircuitBreakerDoor;
+
+    // Kitchen
+    public bool isHoverKitchen;
 
 
     // Start is called before the first frame update
@@ -51,10 +55,15 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void HoverOnKitchenDoorToolTip() {
+        isHoverKitchen = true;
         tooltipForKitchenDoor.SetActive(true);
     }
     public void HoverOffKitchenDoorToolTip() {
-        tooltipForKitchenDoor.SetActive(false);
+        isHoverKitchen = false;
+        if (tooltipForKitchenDoor)
+        {
+            tooltipForKitchenDoor.SetActive(false);
+        }
     }
     
     public void HoverOnBedroomDoorToolTip() {
@@ -126,4 +135,9 @@ public class LivingRoomInteractions : MonoBehaviour
         }
     }
 
+    public void LoadKitchenScene() 
+    {
+        SceneManager.LoadScene("KitchenScene");
+        GlobalState.IncrementLevel();
+    }
 }

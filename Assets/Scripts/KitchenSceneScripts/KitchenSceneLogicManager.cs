@@ -11,7 +11,7 @@ public class KitchenSceneLogicManager : MonoBehaviour
     private KitchenEmergencies kitchenEmergencies;  
     private bool gameOver = false;
     private float gameOverTimer = 0f;
-    private float gameOverDelay = 3f; // 2 second delay before changing scene
+    private float gameOverDelay = 8f; // 2 second delay before changing scene
 
     void Start()
     {
@@ -63,7 +63,7 @@ public class KitchenSceneLogicManager : MonoBehaviour
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             kitchenEmergencies.ExtinguishOilFire();
-            GlobalState.IncrementLevel();
+            // GlobalState.IncrementLevel();
         }
         if (GlobalState.GetLevel() == 4 && KitchenSceneState.Level4Complete()) 
         {

@@ -128,6 +128,8 @@ public class LevelTextManager : MonoBehaviour
         Debug.Log("Button click works!");
         GlobalState.SetStartLevel(true);
 
+        Debug.Log("Level: " + GlobalState.GetLevel());
+
         // If scene got another level, press button start new level
         // If the next level in another scene, then need lead them to the door
         int nextLevel = GlobalState.GetLevel() + 1;
@@ -139,14 +141,27 @@ public class LevelTextManager : MonoBehaviour
         switch(nextLevel) {
             case 2:
                 FindObjectOfType<LevelManager>().ResetLevel();
-                // LivingRoomSceneState.ResetLevel2();
-                // FindObjectOfType<LivingRoomEmergencies>().StartThiefScene();
+                LivingRoomSceneState.ResetLevel1();
+                SetTimeRemaining(180);
+                timerIsRunning = true;
+                timeText.gameObject.SetActive(true);
+                nextLevelButton.SetActive(false);
+                FindObjectOfType<LivingRoomEmergencies>().StartIntruderScene();
+                // GlobalState.IncrementLevel();
                 break;
             case 3:
-                // levelText.text = "";
-                // descriptionText.text = "Please proceed to the Kitchen";
-                GlobalState.IncrementLevel();
-                // Invoke("HideCanvas", 5f);
+                FindObjectOfType<LevelManager>().ResetLevel();
+                SetInstructionTexts();
+
+                // Start time again
+                if (SceneManager.GetActiveScene().name != "LivingRoomScene") {
+                    timeRemaining = 180;
+                    timerIsRunning = true;
+                    timeText.gameObject.SetActive(true);
+                }
+                nextLevelButton.SetActive(false);
+                UpdateLevelTexts();
+                // GlobalState.IncrementLevel();
                 break;
             case 4:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -158,7 +173,7 @@ public class LevelTextManager : MonoBehaviour
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
-                GlobalState.IncrementLevel();
+                // GlobalState.IncrementLevel();
                 break;
             case 5:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -172,7 +187,7 @@ public class LevelTextManager : MonoBehaviour
                 }
                 nextLevelButton.SetActive(false);
                 UpdateLevelTexts();
-                GlobalState.IncrementLevel();
+                // GlobalState.IncrementLevel();
                 break;
             case 6:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -183,7 +198,7 @@ public class LevelTextManager : MonoBehaviour
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
-                GlobalState.IncrementLevel();
+                // GlobalState.IncrementLevel();
                 break;
             case 7:
                 SceneManager.LoadScene("EndCreditScene");

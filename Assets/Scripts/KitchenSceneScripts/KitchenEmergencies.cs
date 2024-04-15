@@ -33,6 +33,8 @@ public class KitchenEmergencies : MonoBehaviour
         OvenFireStart.SetActive(false);
         OvenExplosion.SetActive(false);
 
+        GlobalState.SetStartLevel(true);
+
         StartOilFireScene();
 
         //StartOvenFireScene();
@@ -41,15 +43,15 @@ public class KitchenEmergencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (KitchenSceneState.Level3Complete())
-        {
-            soundManager.StopAllLvl3Sounds();
-        }
+        // if (KitchenSceneState.Level3Complete())
+        // {
+        //     soundManager.StopAllLvl3Sounds();
+        // }
 
-        if(KitchenSceneState.Level4Complete())
-        {
-            soundManager.StopAllLvl4Sounds();
-        }
+        // if(KitchenSceneState.Level4Complete())
+        // {
+        //     soundManager.StopAllLvl4Sounds();
+        // }
     }
 
     /**
@@ -229,6 +231,6 @@ public class KitchenEmergencies : MonoBehaviour
     public void LoadBedroomScene() 
     {
         SceneManager.LoadScene("BedroomScene");
-        GlobalState.IncrementLevel();
+        // GlobalState.IncrementLevel();
     }
 }

@@ -33,6 +33,10 @@ public class ActionButtonControllerLivingRoom : MonoBehaviour
         if (aButton.action.triggered)
         {
             Debug.Log("A button pressed");
+            if (livingRoomInteractions.isHoverKitchen)
+            {
+                livingRoomInteractions.LoadKitchenScene();
+            }
         }
         if (bButton.action.triggered)
         {

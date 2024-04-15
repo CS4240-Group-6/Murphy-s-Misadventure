@@ -14,7 +14,7 @@ public class BedroomSceneLogicManager : MonoBehaviour
     private float elapsedTime = 0f;
     private bool gameOver = false;
     private float gameOverTimer = 0f;
-    private float gameOverDelay = 1f; // 1 second delay before changing scene
+    private float gameOverDelay = 8f; // 1 second delay before changing scene
     private bool levelCompleted = false;
 
     void Start()
@@ -66,7 +66,7 @@ public class BedroomSceneLogicManager : MonoBehaviour
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             bedroomEmergencies.SelectFuseBox();
-            GlobalState.IncrementLevel();
+            // GlobalState.IncrementLevel();
         }
         if (BedroomSceneState.Level6Complete() && GlobalState.GetLevel() == 6) 
         {

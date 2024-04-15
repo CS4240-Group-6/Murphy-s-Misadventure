@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource lockPickSound;
 
-    public AudioClip kidnapSound;
+    public AudioSource kidnapSound;
 
     // Voice Audios
 
@@ -140,7 +140,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayKidnapSound()
     {
-        audioSource.PlayOneShot(kidnapSound);
+        kidnapSound.Play();
     }
 
     public void PlaySmellBurning()
@@ -224,7 +224,7 @@ public class SoundManager : MonoBehaviour
     public void PlayLeaveOrICallPolice()
     {
         subtitleText.text = "Murphy: Sorry, I didn’t order anything. Please leave or I’ll call the police"; 
-        audioSource.PlayOneShot(leaveOrICallPolice);          
+        audioSource.PlayOneShot(leaveOrICallPolice);       
     }
     
     public void PlayIntruderDialogue()
@@ -239,43 +239,43 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(fireExtinguisherRunOut);
     }
 
-    public void StopAllLvl1Sounds()
-    {
-        subtitleText.text = "";
-        audioSource.Stop();
-    }
+    // public void StopAllLvl1Sounds()
+    // {
+    //     subtitleText.text = "";
+    //     audioSource.Stop();
+    // }
     
-    public void StopAllLvl2Sounds()
-    {
-        subtitleText.text = "";
-        audioSource.Stop();
-    }
+    // public void StopAllLvl2Sounds()
+    // {
+    //     subtitleText.text = "";
+    //     audioSource.Stop();
+    // }
 
-    public void StopAllLvl3Sounds()
-    {
-        subtitleText.text = "";
-        fireBurningSound.Stop();
-        fireExplosionSound.Stop();
-        audioSource.Stop();
-    }
+    // public void StopAllLvl3Sounds()
+    // {
+    //     subtitleText.text = "";
+    //     fireBurningSound.Stop();
+    //     fireExplosionSound.Stop();
+    //     audioSource.Stop();
+    // }
 
-    public void StopAllLvl4Sounds()
-    {
-        subtitleText.text = "";
-        fireBurningSound.Stop();
-        audioSource.Stop();
-    }
+    // public void StopAllLvl4Sounds()
+    // {
+    //     subtitleText.text = "";
+    //     fireBurningSound.Stop();
+    //     audioSource.Stop();
+    // }
 
-    public void StopAllLvl5Sounds()
-    {
-        subtitleText.text = "";
-        audioSource.Stop();
-    }
+    // public void StopAllLvl5Sounds()
+    // {
+    //     subtitleText.text = "";
+    //     audioSource.Stop();
+    // }
 
-    public void StopAllLvl6Sounds()
-    {
-        subtitleText.text = "";
-        earthquakeSound.Stop();
-        objectFallSound.Stop();
-    }
+    // public void StopAllLvl6Sounds()
+    // {
+    //     subtitleText.text = "";
+    //     earthquakeSound.Stop();
+    //     objectFallSound.Stop();
+    // }
 }

@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LivingRoomSceneLogicManager : MonoBehaviour
 {
+    [SerializeField] private LevelManager levelManager;
     private LevelTextManager levelTextManager;
     private LivingRoomEmergencies livingRoomEmergencies;
     private bool gameOver = false;
     private float gameOverTimer = 0f;
-    private float gameOverDelay = 3f; // 2 second delay before changing scene
+    private float gameOverDelay = 8f; // 2 second delay before changing scene
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class LivingRoomSceneLogicManager : MonoBehaviour
         // Check if the game is over
         if (!gameOver && GlobalState.IsGameOver())
         {
-            // levelManager.ResetLevel();
+            levelManager.ResetLevel();
             LivingRoomSceneState.ResetLevel1();
             LivingRoomSceneState.ResetLevel2();
             gameOver = true; // Set game over flag
@@ -44,9 +45,9 @@ public class LivingRoomSceneLogicManager : MonoBehaviour
             gameOverTimer += Time.deltaTime;
             if (gameOverTimer >= gameOverDelay)
             {
-                gameOver = false; // Reset game over flag
                 // Load game over scene after the delay
                 SceneManager.LoadScene("DeathIsOnlyTheBeginning");
+                gameOver = false; // Reset game over flag
             }
         }
     }
@@ -59,7 +60,7 @@ public class LivingRoomSceneLogicManager : MonoBehaviour
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             livingRoomEmergencies.StopLightFuseScene();
-            // GlobalState.IncrementLevel();
+            GlobalState.IncrementLevel();
         }
         if (GlobalState.GetLevel() == 2 && LivingRoomSceneState.Level2Complete()) 
         {

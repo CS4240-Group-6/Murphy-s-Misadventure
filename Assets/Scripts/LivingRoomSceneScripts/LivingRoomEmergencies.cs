@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LivingRoomEmergencies : MonoBehaviour
@@ -35,12 +36,12 @@ public class LivingRoomEmergencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LivingRoomSceneState.Level1Complete()) {
-            soundManager.StopAllLvl1Sounds();
-        }
-        if (LivingRoomSceneState.Level2Complete()) {
-            soundManager.StopAllLvl2Sounds();
-        }
+        // if (LivingRoomSceneState.Level1Complete()) {
+        //     soundManager.StopAllLvl1Sounds();
+        // }
+        // if (LivingRoomSceneState.Level2Complete()) {
+        //     soundManager.StopAllLvl2Sounds();
+        // }
     }
 
     /**
@@ -195,12 +196,6 @@ public class LivingRoomEmergencies : MonoBehaviour
         soundManager.PlayIDidntOrderDelivery();
     }
 
-    // Use this on clicking the door to win
-    void StartVoiceOver5()
-    {
-        soundManager.PlayLeaveOrICallPolice();
-    }
-
     void StartVoiceOver6()
     {
         soundManager.PlayIntruderDialogue();
@@ -232,10 +227,14 @@ public class LivingRoomEmergencies : MonoBehaviour
     {
         // Add fail level logic here
         if (!LivingRoomSceneState.Level2Complete()) {
-            // Play a scary kidnap sound here
-            // soundManager.PlayFailLevel();
+            soundManager.PlayKidnapSound();
             GlobalState.SetGameOver(true);
         } 
     }
 
+    public void LoadKitchenScene() 
+    {
+        SceneManager.LoadScene("KitchenScene");
+        // GlobalState.IncrementLevel();
+    }
 }
