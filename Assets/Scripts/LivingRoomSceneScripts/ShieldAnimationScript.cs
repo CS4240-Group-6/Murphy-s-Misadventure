@@ -54,6 +54,7 @@ public class ShieldAnimation : MonoBehaviour
             isGrabbingSwitch = true;
             Debug.Log("playing");
             shieldAnimator.Play("TurnOnSwitch");
+            LivingRoomSceneState.SetCircuitBreakerOn();
         }
         Debug.Log("grab on1 " + isGrabbingSwitch);
     }

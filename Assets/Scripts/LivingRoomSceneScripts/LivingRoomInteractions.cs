@@ -104,8 +104,6 @@ public class LivingRoomInteractions : MonoBehaviour
     public void PullOutExtensionCord() {
         if (tooltipForSocket.activeSelf) {
             Debug.Log("Extension cord pulled out");
-            // tooltipForSocket.SetActive(false);
-            // tooltipForWetExtensionCord.SetActive(true);
             
             LivingRoomSceneState.SetExtensionCordPulled();
         }
