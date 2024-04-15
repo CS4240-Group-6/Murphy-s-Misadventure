@@ -14,6 +14,7 @@ public class DeathSceneManger : MonoBehaviour
     float exitSignTimer;
     public Light spotLight;
     public Light exitSignLight;
+    public bool isHoverDoor;
 
     public List<GameObject> manequinnsToShow;
 
@@ -120,11 +121,13 @@ public class DeathSceneManger : MonoBehaviour
 
     public void hoverOnDoorForToolTip()
     {
+        isHoverDoor = true;
         TooltipForDoor.SetActive(true);
     }
 
     public void hoverOffDoorForToolTip()
     {
+        isHoverDoor = false;
         TooltipForDoor.SetActive(false);
     }
 

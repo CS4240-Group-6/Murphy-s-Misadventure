@@ -9590,6 +9590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1449764316}
   - component: {fileID: 1449764315}
+  - component: {fileID: 1449764317}
   m_Layer: 0
   m_Name: DeathSceneManager
   m_TagString: Untagged
@@ -9616,6 +9617,7 @@ MonoBehaviour:
   Timer: 0
   spotLight: {fileID: 865477013}
   exitSignLight: {fileID: 1097089754}
+  isHoverDoor: 0
   manequinnsToShow:
   - {fileID: 770388105}
   - {fileID: 857162771}
@@ -9641,6 +9643,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1449764317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449764314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b104c9f9354f04e87ee4cb2c1182c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aButton: {fileID: 1333348060227018993, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  doorScript: {fileID: 1365816749}
+  deathSceneManager: {fileID: 1449764315}
 --- !u!1 &1489956488
 GameObject:
   m_ObjectHideFlags: 0
