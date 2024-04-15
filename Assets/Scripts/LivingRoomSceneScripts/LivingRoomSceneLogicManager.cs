@@ -60,7 +60,7 @@ public class LivingRoomSceneLogicManager : MonoBehaviour
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             livingRoomEmergencies.StopLightFuseScene();
-            GlobalState.IncrementLevel();
+            // GlobalState.IncrementLevel();
         }
         if (GlobalState.GetLevel() == 2 && LivingRoomSceneState.Level2Complete()) 
         {

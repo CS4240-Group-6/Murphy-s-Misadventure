@@ -147,7 +147,7 @@ public class LevelTextManager : MonoBehaviour
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<LivingRoomEmergencies>().StartIntruderScene();
-                // GlobalState.IncrementLevel();
+                GlobalState.IncrementLevel();
                 break;
             case 3:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -161,7 +161,7 @@ public class LevelTextManager : MonoBehaviour
                 }
                 nextLevelButton.SetActive(false);
                 UpdateLevelTexts();
-                // GlobalState.IncrementLevel();
+                GlobalState.IncrementLevel();
                 break;
             case 4:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -173,7 +173,7 @@ public class LevelTextManager : MonoBehaviour
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<KitchenEmergencies>().StartOvenFireScene();
-                // GlobalState.IncrementLevel();
+                GlobalState.IncrementLevel();
                 break;
             case 5:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -187,7 +187,7 @@ public class LevelTextManager : MonoBehaviour
                 }
                 nextLevelButton.SetActive(false);
                 UpdateLevelTexts();
-                // GlobalState.IncrementLevel();
+                GlobalState.IncrementLevel();
                 break;
             case 6:
                 FindObjectOfType<LevelManager>().ResetLevel();
@@ -198,7 +198,7 @@ public class LevelTextManager : MonoBehaviour
                 timeText.gameObject.SetActive(true);
                 nextLevelButton.SetActive(false);
                 FindObjectOfType<BedroomEmergencies>().StartEarthquakeScene();
-                // GlobalState.IncrementLevel();
+                GlobalState.IncrementLevel();
                 break;
             case 7:
                 SceneManager.LoadScene("EndCreditScene");
