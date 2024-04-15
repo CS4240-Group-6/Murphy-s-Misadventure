@@ -7,6 +7,8 @@ using TMPro;
 public class KitchenInteractions : MonoBehaviour
 {
     [SerializeField] private GameObject Stove;
+    [SerializeField] private GameObject OvenSwitch;
+    [SerializeField] private GameObject OvenState;
 
     [Header("Tooltips")]
     [SerializeField] private GameObject TooltipForKnobLeft2;
@@ -32,7 +34,7 @@ public class KitchenInteractions : MonoBehaviour
     private static float OVEN_OPEN_ANGLE = 90f;
     private static float OVEN_CLOSED_ANGLE = 0f;
 
-    private static float SPEED = 5.0f;
+    private float SPEED = 5.0f;
 
     // Bedroom
     public bool isHoverBedroom;
@@ -313,6 +315,10 @@ public class KitchenInteractions : MonoBehaviour
                 {
                     KitchenSceneState.SetGasStoveTurnedOff(true);
                 }
+                else
+                {
+                    KitchenSceneState.SetGasStoveTurnedOff(false);
+                }
                 canRotateLeft2 = false;
             }
 
@@ -469,33 +475,38 @@ public class KitchenInteractions : MonoBehaviour
         isHoverOvenSwitch = false;
     }
 
+    public bool GetOvenState()
+    {
+        return isOvenOn;
+    }
+
+    public void ToggleOvenOff()
+    {
+        var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+        OvenSwitchRenderer.material.SetColor("_Color", Color.red);
+        OvenState.GetComponent<TextMeshPro>().text = "OFF";
+        isOvenOn = false;
+    }
+
+    public void ToggleOvenOn()
+    {
+        var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
+        OvenSwitchRenderer.material.SetColor("_Color", Color.green);
+        OvenState.GetComponent<TextMeshPro>().text = "ON";
+        isOvenOn = true;
+    }
+
     public void ToggleOven()
     {
         if (isHoverOvenSwitch)
         {
             if (isOvenOn)
             {
-                GameObject OvenSwitch = Stove.transform.Find("Stove-OvenSwitch").gameObject;
-                if (OvenSwitch != null)
-                {
-                    var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
-
-                    OvenSwitchRenderer.material.SetColor("_Color", Color.red);
-                    isOvenOn = false;
-                }
-                else Debug.Log("no child with oven switch found");
+                ToggleOvenOff();
             } 
             else
             {
-                GameObject OvenSwitch = Stove.transform.Find("Stove-OvenSwitch").gameObject;
-                if (OvenSwitch != null)
-                {
-                    var OvenSwitchRenderer = OvenSwitch.GetComponent<Renderer>();
-
-                    OvenSwitchRenderer.material.SetColor("_Color", Color.green);
-                    isOvenOn = true;
-                }
-                else Debug.Log("no child with oven switch found");
+                ToggleOvenOn();
             }
         }
     }
