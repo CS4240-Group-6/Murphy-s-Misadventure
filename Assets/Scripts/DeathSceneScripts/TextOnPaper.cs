@@ -22,6 +22,7 @@ public class TextAnimation : MonoBehaviour
     }
 
     public void DisplayTextOnPaper() {
+        lines = textToDisplay.text.Split('\n');
         StartCoroutine(AnimateText());
     }
 
