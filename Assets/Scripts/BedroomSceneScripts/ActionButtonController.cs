@@ -14,9 +14,12 @@ public class ActionButtonController : MonoBehaviour
 
     [SerializeField]
     private FireExtinguisherInteraction fireExtinguisherInteraction; // Reference to the FireExtinguisherInteraction script
+    
+    private BedroomEmergencies bedroomEmergencies; // Reference to the BedroomEmergencies script    
 
     private void Awake()
     {
+        bedroomEmergencies = GetComponent<BedroomEmergencies>(); // Get the BedroomEmergencies script component
         secondaryActionButton.action.Enable(); // Enable the secondary action button
         // testText.SetActive(false); // Set the testText GameObject to be inactive
     }
@@ -33,6 +36,7 @@ public class ActionButtonController : MonoBehaviour
         {
             if (GlobalState.GetLevel() == 5) {
                 fireExtinguisherInteraction.EjectParticles(); // Call the EjectParticles method from the FireExtinguisherInteraction script
+                bedroomEmergencies.SelectFuseBox(); // Call the SelectFuseBox method from the BedroomEmergencies script
             }
             if (GlobalState.GetLevel() == 6) {
                 hideUnderTableInteraction.SetPlayerUnderSturdyTable(); // Call the SetPlayerUnderSturdyTable method from the HideUnderTableInteraction script   
