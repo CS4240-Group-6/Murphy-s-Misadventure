@@ -73,35 +73,35 @@ public class DeathSceneManger : MonoBehaviour
         string textOnPaper = "";
         switch (GlobalState.GetLevel()) {
             case 1:
-                // textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+                // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
             case 2:
-                // textOnPaper = "Ding Dong! Someone suspicious at the door? Better lock it and call the police!";
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Ding Dong! Someone suspicious at the door? Better lock it and call the police!";
+                // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
             case 3:
-                // textOnPaper = "Watch out! The oil's ignited in the kitchen! Water will only make it worse! Cut off the heat and add cool oil before it's too late...";
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Watch out! The oil's ignited in the kitchen! Water will only make it worse! Cut off the heat and add cool oil before it's too late...";
+                // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
             case 4:
-                // textOnPaper = "Careful, oven fires are tricky. You can't just throw water on them. You need to smother the flames with the right extinguisher!";
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Careful, oven fires are tricky. You can't just throw water on them. You need to smother the flames with the right extinguisher!";
+                // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
             case 5:
-                // textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+                // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
             case 6:
-                // textOnPaper = "Oh no! The ceiling's coming down! You need to find a strong cover, fast!";
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Oh no! The ceiling's coming down! You need to find a strong cover, fast!";
+                // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
             default:
-                textOnPaper = GlobalState.GetLevel().ToString();
+                textOnPaper = "Level: " + GlobalState.GetLevel().ToString();
                 break;
         }
         textAnimation.textToDisplay.text = textOnPaper;
