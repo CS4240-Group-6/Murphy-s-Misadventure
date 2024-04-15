@@ -37,18 +37,16 @@ public class ActionButtonControllerLivingRoom : MonoBehaviour
             {
                 livingRoomInteractions.LoadKitchenScene();
             }
+            if (GlobalState.GetLevel() == 1) {
+                livingRoomInteractions.PullOutExtensionCord();
+            }
+            if (GlobalState.GetLevel() == 2) {
+                livingRoomInteractions.LockDoor();
+            }
         }
         if (bButton.action.triggered)
         {
             Debug.Log("B button pressed");
-            if (GlobalState.GetLevel() == 1) {
-                livingRoomInteractions.TurnOnLights();
-                // livingRoomInteractions.OpenCircuitBreaker();
-            }
-            if (GlobalState.GetLevel() == 2) {
-                livingRoomInteractions.LockDoor();
-                // livingRoomInteractions.CloseCircuitBreaker();
-            }
         }
     }
 }

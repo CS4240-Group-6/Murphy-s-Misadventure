@@ -29,8 +29,8 @@ public class LivingRoomEmergencies : MonoBehaviour
         ExtensionSmoke.SetActive(false);
         Intruder.SetActive(false);
 
-        // StartLightFuseScene();
-        StartIntruderScene();
+        StartLightFuseScene();
+        // StartIntruderScene();
     }
 
     // Update is called once per frame
@@ -155,6 +155,13 @@ public class LivingRoomEmergencies : MonoBehaviour
         CancelInvoke("LightsFlickerEffect");
         CancelInvoke("PowerOutageEffect");
         CancelInvoke("StartVoiceOver3");
+        
+        StopCoroutine(ToggleLights());
+        CeilingLight1.SetActive(true);
+        CeilingLight2.SetActive(true);
+        CeilingLight3.SetActive(true);
+        CeilingLight4.SetActive(true);
+        CeilingLight5.SetActive(true);
     }
 
     /**
