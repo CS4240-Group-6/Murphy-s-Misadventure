@@ -35,9 +35,15 @@ public class KitchenEmergencies : MonoBehaviour
 
         GlobalState.SetStartLevel(true);
 
-        StartOilFireScene();
+        if (GlobalState.GetLevel() == 3)
+        {
+            StartOilFireScene();
+        }
+        else if (GlobalState.GetLevel() == 4)
+        {
+            StartOvenFireScene();
+        }
 
-        //StartOvenFireScene();
     }
 
     // Update is called once per frame

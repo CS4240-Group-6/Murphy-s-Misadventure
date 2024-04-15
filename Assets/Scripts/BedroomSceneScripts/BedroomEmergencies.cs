@@ -66,15 +66,22 @@ public class BedroomEmergencies : MonoBehaviour
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
 
-        StartFireScene();
+        if (GlobalState.GetLevel() == 5)
+        {
+            StartFireScene();
+        }
+        else if (GlobalState.GetLevel() == 6)
+        {
+            StartEarthquakeScene();
+        }
+        
 
         originalObjectPositions = new Vector3[objectsToShake.Length];
         for (int i = 0; i < objectsToShake.Length; i++)
         {
             originalObjectPositions[i] = objectsToShake[i].transform.position;
         }
-
-        // StartEarthquakeScene();        
+   
     }
 
     // Update is called once per frame
