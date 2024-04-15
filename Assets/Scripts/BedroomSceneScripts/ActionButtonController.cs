@@ -17,7 +17,6 @@ public class ActionButtonController : MonoBehaviour
 
     private void Awake()
     {
-        hideUnderTableInteraction = GetComponent<HideUnderTableInteraction>(); // Get the HideUnderTableInteraction script
         secondaryActionButton.action.Enable(); // Enable the secondary action button
         // testText.SetActive(false); // Set the testText GameObject to be inactive
     }
