@@ -19,21 +19,28 @@ public class LivingRoomEmergencies : MonoBehaviour
     private bool isFlicker = false;
 
     // INTRUDER
+    public GameObject Intruder;
     public GameObject MainDoor;
 
     // Start is called before the first frame update
     void Start()
     {
         ExtensionSmoke.SetActive(false);
+        Intruder.SetActive(false);
 
-        //StartLightFuseScene();
+        // StartLightFuseScene();
         StartIntruderScene();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (LivingRoomSceneState.Level1Complete()) {
+            soundManager.StopAllLvl1Sounds();
+        }
+        if (LivingRoomSceneState.Level2Complete()) {
+            soundManager.StopAllLvl2Sounds();
+        }
     }
 
     /**
@@ -139,6 +146,16 @@ public class LivingRoomEmergencies : MonoBehaviour
         }
     }
 
+    public void StopLightFuseScene()
+    {
+        CancelInvoke("StartVoiceOver1");
+        CancelInvoke("StartSmokeEffect");
+        CancelInvoke("StartVoiceOver2");
+        CancelInvoke("LightsFlickerEffect");
+        CancelInvoke("PowerOutageEffect");
+        CancelInvoke("StartVoiceOver3");
+    }
+
     /**
         Scene starts
         5s later -> door knocking
@@ -150,6 +167,7 @@ public class LivingRoomEmergencies : MonoBehaviour
     */
     public void StartIntruderScene()
     {
+        Intruder.SetActive(true);
         Invoke("StartKnockingSound", 5.0f);
         Invoke("StartVoiceOver6", 10.0f);
         Invoke("StartVoiceOver4", 15.0f);
@@ -157,6 +175,19 @@ public class LivingRoomEmergencies : MonoBehaviour
         Invoke("StartLockPickingSound", 25.0f);
         Invoke("StartDoorUnlockingSound", 39.0f);
         Invoke("OpenDoor", 40.0f);
+        Invoke("FailLevel", 42.0f);
+    }
+
+    public void StopIntruderScene()
+    {
+        CancelInvoke("StartKnockingSound");
+        CancelInvoke("StartVoiceOver6");
+        CancelInvoke("StartVoiceOver4");
+        CancelInvoke("StartKnockingSound");
+        CancelInvoke("StartLockPickingSound");
+        CancelInvoke("StartDoorUnlockingSound");
+        CancelInvoke("OpenDoor");
+        CancelInvoke("FailLevel");
     }
 
     void StartVoiceOver4()
@@ -195,6 +226,16 @@ public class LivingRoomEmergencies : MonoBehaviour
         //  Add animation logic here
         Animator doorSwingAnimation = MainDoor.gameObject.GetComponent<Animator>();
         doorSwingAnimation.Play("OpenDoor", -1);
+    }
+
+    public void FailLevel()
+    {
+        // Add fail level logic here
+        if (!LivingRoomSceneState.Level2Complete()) {
+            // Play a scary kidnap sound here
+            // soundManager.PlayFailLevel();
+            GlobalState.SetGameOver(true);
+        } 
     }
 
 }

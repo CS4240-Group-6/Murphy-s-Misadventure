@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -284,7 +284,11 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8806310}
+<<<<<<< HEAD
   m_Mesh: {fileID: 1251837466}
+=======
+  m_Mesh: {fileID: 692007532}
+>>>>>>> 28d8bd176ef2a7f0ace63f191aece3fdd67b6df3
 --- !u!114 &8806314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6988,6 +6992,7 @@ MonoBehaviour:
   lightsOffSound: {fileID: 1536693022}
   doorUnlockSound: {fileID: 1172860246}
   lockPickSound: {fileID: 1507143056}
+  kidnapSound: {fileID: 8300000, guid: 37afa9bac0b184f6893f303b0a603c05, type: 3}
   smellBurning: {fileID: 0}
   fireOnTheAdaptor: {fileID: 0}
   fireExtinguisherRunOut: {fileID: 0}
@@ -7084,6 +7089,171 @@ Transform:
   - {fileID: 1696288555}
   m_Father: {fileID: 392179143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &692007532
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 11
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 252
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 42
+    localAABB:
+      m_Center: {x: 5.251836, y: 0.05445304, z: 14.054983}
+      m_Extent: {x: 0.046818733, y: 0.016080257, z: 0.29869652}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 00000700060001000700000001000800070002000800010002000900080003000900020003000a00090004000a00030004000b000a0005000b000400050006000b0000000600050006000d000c0007000d00060007000e000d0008000e00070008000f000e0009000f000800090010000f000a00100009000a00110010000b0011000a000b000c00110006000c000b000c00130012000d0013000c000d00140013000e0014000d000e00150014000f0015000e000f0016001500100016000f001000170016001100170010001100120017000c001200110012001900180013001900120013001a00190014001a00130014001b001a0015001b00140015001c001b0016001c00150016001d001c0017001d001600170018001d0012001800170018001f001e0019001f001800190020001f001a00200019001a00210020001b0021001a001b00220021001c0022001b001c00230022001d0023001c001d001e00230018001e001d001e00250024001f0025001e001f0026002500200026001f002000270026002100270020002100280027002200280021002200290028002300290022002300240029001e0024002300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 42
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 1344
+    _typelessdata: 1702a940c0915c3dc0195c41c56f6abf6287c33e1c33ffbd000000000000000022fda84010b0333d451a5c41abbf49bfaff71bbf6e3db4bdcdcc4c3e00000000e640a940c82c1d3d0d1f5c4148bf023e52bb7dbfceea153dcdcccc3e000000009f89a9402e8b2f3d50235c41c56f6a3f6187c3be1f33ff3d9a99193f00000000948ea940de6c583dcb225c41aabf493fb0f71b3f6c3db43dcdcc4c3f00000000d04aa94026f06e3d031e5c4148bf02be52bb7d3fc6ea15bd0000803f000000007c9aa840a4e5643dfaaf5d4112c453bf6db40c3f291defbd00000000abaa2a3e8795a840f5033c3d7fb05d41474263bf9c9ce5beef03d5bdcdcc4c3eabaa2a3e4bd9a840ad80253d47b55d41a3e677bd87827fbfd7c7503ccdcccc3eabaa2a3e0422a94014df373d8ab95d4112c4533f6db40cbf291def3d9a99193fabaa2a3ef926a940c3c0603d05b95d414742633f9e9ce53eef03d53dcdcc4c3fabaa2a3e35e3a8400b44773d3db45d41a3e6773d89827f3fe3c750bc0000803fabaa2a3ee132a8408a396d3d34465f4112c453bf6db40c3f291defbd00000000abaaaa3eec2da840da57443db9465f41484263bf9a9ce5beef03d5bdcdcc4c3eabaaaa3eb071a84092d42d3d814b5f41b4e677bd87827fbfdac7503ccdcccc3eabaaaa3e69baa840f832403dc44f5f4112c4533f6db40cbf281def3d9a99193fabaaaa3e5ebfa840a814693d3f4f5f414842633f9a9ce53eef03d53dcdcc4c3fabaaaa3e9a7ba840f0977f3d774a5f41a8e6773d89827f3fe3c750bc0000803fabaaaa3e46cba7406e8d753d6edc604112c453bf6db40c3f2b1defbd000000000000003f51c6a740bfab4c3df3dc6041474263bf9c9ce5beef03d5bdcdcc4c3e0000003f150aa8407728363dbbe16041a3e677bd87827fbfd7c7503ccdcccc3e0000003fce52a840de86483dfee5604112c4533f6db40cbf291def3d9a99193f0000003fc357a8408d68713d79e560414842633f9c9ce53ef003d53dcdcc4c3f0000003fff13a840ebf5833db1e06041a8e6773d89827f3fe0c750bc0000803f0000003fab63a74054e17d3da872624112c453bf6db40c3f281defbd00000000abaa2a3fb65ea740a4ff543d2d736241484263bf9a9ce5beef03d5bdcdcc4c3eabaa2a3f7aa2a7405c7c3e3df5776241b4e677bd87827fbfdac7503ccdcccc3eabaa2a3f33eba740c2da503d387c624113c4533f6cb40cbf271def3d9a99193fabaa2a3f28f0a74072bc793db37b62414842633f9c9ce53eed03d53dcdcc4c3fabaa2a3f64aca740dd1f883deb766241b4e6773d89827f3fcac750bc0000803fabaa2a3f10fca6409c1a833de208644112c453bf6db40c3f291defbd000000005555553f1bf7a64089535d3d67096441484263bf9a9ce5beed03d5bdcdcc4c3e5555553fdf3aa74041d0463d2f0e6441a3e677bd87827fbfd7c7503ccdcccc3e5555553f9883a740a82e593d7212644113c4533f6cb40cbf2a1def3d9a99193f5555553f8d88a7402c08813ded1164414942633f989ce53eee03d53dcdcc4c3f5555553fc944a740d0498c3d250d644156e6773d89827f3f2ac850bc0000803f5555553f7594a6408f44873d1c9f65419f7635bfff92323f2369d6bd000000000000803f808fa6406fa7653da19f65413d9474bf6b038bbe321deebdcdcc4c3e0000803f44d3a64026244f3d69a46541d2767cbe6e1478bf91a13dbccdcccc3e0000803ffd1ba7408c82613daca865419c76353f019332bf1d69d63d9a99193f0000803ff220a7401e32853d27a865413d94743f68038b3e351dee3dcdcc4c3f0000803f2edda640c373903d5fa36541c6767c3e6f14783f7ea13d3c0000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 5.251836, y: 0.05445304, z: 14.054983}
+    m_Extent: {x: 0.046818733, y: 0.016080257, z: 0.29869652}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &702534903
 GameObject:
   m_ObjectHideFlags: 0
@@ -9743,14 +9913,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_text
-      value: 'PRESS A
+      value: 'GRAB & PULL
 
+        to
 
-        Open Main Door'
+        Open Main Door
+
+        B
+
+        to
+
+        LOCK
+        DOOR
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontSize
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontAsset
@@ -9762,7 +9942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_fontSizeBase
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7015296670599576065, guid: dc55b03f7e4516547be0f956d049b0f9, type: 3}
       propertyPath: m_sharedMaterial
@@ -21525,10 +21705,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063791619}
+        m_TargetAssemblyTypeName: LivingRoomInteractions, Assembly-CSharp
+        m_MethodName: HoverOnMainDoorToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063791619}
+        m_TargetAssemblyTypeName: LivingRoomInteractions, Assembly-CSharp
+        m_MethodName: HoverOffMainDoorToolTip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -21776,6 +21980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorAnimator: {fileID: 1507143053}
+  sceneManager: {fileID: 2063791615}
 --- !u!1 &1439726249
 GameObject:
   m_ObjectHideFlags: 0
@@ -22774,9 +22979,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1010033139664216, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1507143053}
-    - targetCorrespondingSourceObject: {fileID: 1010033139664216, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1507143054}
     - targetCorrespondingSourceObject: {fileID: 1706462579219580, guid: 97b10c95ce8e2d64f9cebc43b086df00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1507143046}
@@ -23020,132 +23222,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1507143054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507143045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 2068069063}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2063791619}
-        m_TargetAssemblyTypeName: LivingRoomInteractions, Assembly-CSharp
-        m_MethodName: HoverOnMainDoorToolTip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2063791619}
-        m_TargetAssemblyTypeName: LivingRoomInteractions, Assembly-CSharp
-        m_MethodName: HoverOffMainDoorToolTip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!82 &1507143056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24580,7 +24656,6 @@ GameObject:
   - component: {fileID: 1591118936}
   - component: {fileID: 1591118935}
   - component: {fileID: 1591118934}
-  - component: {fileID: 1591118940}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -25332,100 +25407,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1591118940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591118932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 76f4cfaf-5aeb-4f66-87d2-a63aa567764a
-    m_ActionName: Controller/Axis 2D[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 42778bc8-d1b8-438d-9618-e41a28b3dc56
-    m_ActionName: Controller/Resting Hand Axis 2D[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l,/Mouse/forwardButton,/Mouse/backButton,/Keyboard/q,/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c7937c78-cea4-4888-8feb-8d9da13005f2
-    m_ActionName: Controller/Grip[/Keyboard/g]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3808b2c1-2f77-4a89-bc2a-34c0e0ef0ad3
-    m_ActionName: Controller/Trigger[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1431069595}
-        m_TargetAssemblyTypeName: DoorAnimation, Assembly-CSharp
-        m_MethodName: OnDoorLockGrabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 54068f2e-4569-46ab-9864-63b23fb9c26a
-    m_ActionName: Controller/Primary Button[/Keyboard/b]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 970b4191-957d-4a7f-ba64-e0e701950d99
-    m_ActionName: Controller/Secondary Button[/Keyboard/n]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ccb35b49-777b-460f-bca8-3168c41cc779
-    m_ActionName: Controller/Menu[/Keyboard/m]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 22416e35-4897-43a8-b712-74381678af80
-    m_ActionName: Controller/Primary 2D Axis Click[/Keyboard/4]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b3a541b3-564a-4213-8a9a-a4417b3de5cf
-    m_ActionName: Controller/Secondary 2D Axis Click[/Keyboard/5]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9b069098-df41-435e-9a59-ce43682df020
-    m_ActionName: Controller/Primary 2D Axis Touch[/Keyboard/6]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cf4b67af-47c4-43d7-b748-b69c7709d64b
-    m_ActionName: Controller/Secondary 2D Axis Touch[/Keyboard/7]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 04a0ca31-1719-49b1-9e4c-bc95a9905486
-    m_ActionName: Controller/Primary Touch[/Keyboard/8]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 613de0bf-5bc1-4b53-a4b8-0ae20fb87272
-    m_ActionName: Controller/Secondary Touch[/Keyboard/9]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Controller
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1001 &1593505273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31642,7 +31623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1680169075}
   m_Layer: 0
-  m_Name: Movable objects
+  m_Name: Interactable objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33794,6 +33775,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a679c4e227894e069686c5a2e1b2243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1837445512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4132312772176831909, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
+  m_PrefabInstance: {fileID: 560624077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1895055400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37086,6 +37072,10 @@ GameObject:
   - component: {fileID: 2063791617}
   - component: {fileID: 2063791618}
   - component: {fileID: 2063791619}
+  - component: {fileID: 2063791620}
+  - component: {fileID: 2063791621}
+  - component: {fileID: 2063791622}
+  - component: {fileID: 2063791623}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -37129,6 +37119,7 @@ MonoBehaviour:
   CeilingLight5: {fileID: 1150825487}
   flickerIntervalShort: 0.4
   flickerIntervalLong: 1.2
+  Intruder: {fileID: 1837445512}
   MainDoor: {fileID: 1507143045}
 --- !u!114 &2063791618
 MonoBehaviour:
@@ -37168,6 +37159,62 @@ MonoBehaviour:
   tooltipForWetExtensionCord: {fileID: 1390510973}
   tooltipForLightSwitch: {fileID: 393476206}
   tooltipForSocket: {fileID: 752290236}
+  soundManager: {fileID: 669022342}
+  MainDoor: {fileID: 1431069584}
+  CircuitBreakerDoor: {fileID: 1921674746}
+--- !u!114 &2063791620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063791615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f872637c20a8d49699bc905901b7797a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2063791621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063791615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a7bcb4004274ea2a431059e0da3461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2063791622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063791615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ded2ea3dad54c8a85fe92d2489be0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aButton: {fileID: 1333348060227018993, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  bButton: {fileID: -7293147558144967466, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  livingRoomInteractions: {fileID: 2063791619}
+--- !u!114 &2063791623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063791615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d4be02d5e53a44bae92b8898cad5d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoorAnimator: {fileID: 1507143053}
+  sceneManager: {fileID: 0}
 --- !u!1 &2068069062
 GameObject:
   m_ObjectHideFlags: 0

@@ -1586,6 +1586,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "B Button",
+                    "type": "Button",
+                    "id": "74b04c4d-665f-4e09-8095-f1296f4dfae4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1773,6 +1782,28 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Secondary Action Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2151cc0a-a642-4436-90bd-7d03dcfa3c0c",
+                    "path": "<OculusTouchController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "B Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a76b370f-b520-498c-96b9-416ea15ff46e",
+                    "path": "<XRSimulatedController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "B Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

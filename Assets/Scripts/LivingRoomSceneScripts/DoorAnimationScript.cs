@@ -7,6 +7,7 @@ public class DoorAnimation : MonoBehaviour
     private bool isOpen = false;
     private bool isGrabbingDoor = false; 
     private bool isLocked = false;
+    [SerializeField] private GameObject sceneManager;
 
     void Start()
     {
@@ -48,6 +49,9 @@ public class DoorAnimation : MonoBehaviour
             else
             {
                 DoorAnimator.Play("OpenDoor");
+                if (GlobalState.GetLevel() == 2) {
+                    sceneManager.GetComponent<LivingRoomEmergencies>().FailLevel();
+                }
             }
             isOpen = !isOpen;
         }
