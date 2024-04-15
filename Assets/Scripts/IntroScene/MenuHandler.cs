@@ -7,7 +7,7 @@ public class MenuHandler : MonoBehaviour
 {
     public void StartGame() 
     {
-        SceneManager.LoadScene("KitchenScene");
+        SceneManager.LoadScene("LivingRoomScene");
     }
 
     public void EndGame()
