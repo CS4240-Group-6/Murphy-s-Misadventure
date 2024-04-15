@@ -12,11 +12,13 @@ public class FireExtinguisherInteraction : MonoBehaviour
     [SerializeField] private ParticleSystem fireExtinguisherParticleEffect;
     [SerializeField] private AudioSource extinguisherAudio;
     
+    private bool hasSoundPlayed = false; // Flag to check if the sound has been played
     // Sound Manager
     public SoundManager soundManager;
 
     private void Start()
     {
+        hasSoundPlayed = false;
         // Find the main camera in the scene
         mainCamera = Camera.main;
     }
@@ -29,7 +31,11 @@ public class FireExtinguisherInteraction : MonoBehaviour
             if (gasLevel <= 0f)
             {
                 StopExtinguisher();
-                soundManager.PlayFireExtinguisherRunOut();
+                if (!hasSoundPlayed)
+                {
+                    soundManager.PlayFireExtinguisherRunOut();
+                    hasSoundPlayed = true; // Set the flag so it doesn't play again
+                }
             }
         }
     }
