@@ -23,6 +23,7 @@ public class VideoPlayerForHoverOnTablet : MonoBehaviour
         videoPlayerGameObject.SetActive(false);
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+        videoPlayer.loopPointReached += OnVideoFinished;
 
     }
 
@@ -49,12 +50,14 @@ public class VideoPlayerForHoverOnTablet : MonoBehaviour
             videoPlayer.Play();
         }
     }
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        Invoke("StopVideo", 1f);
+        // videoPlayerGameObject.SetActive(false);
+    }
 
     public void StopVideo() {
-        if (videoPlayer.isPlaying) {
-            videoPlayer.Stop();
-            videoPlayerGameObject.SetActive(false);
-        }
+        videoPlayerGameObject.SetActive(false);
     }
 
     void SelectVideoIndex(string deathLocation) {

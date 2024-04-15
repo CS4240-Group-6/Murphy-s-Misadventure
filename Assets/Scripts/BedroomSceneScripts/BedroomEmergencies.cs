@@ -34,7 +34,7 @@ public class BedroomEmergencies : MonoBehaviour
     public GameObject[] objectsToShake;
     private Vector3[] originalObjectPositions;
     public GameObject[] ceilingChunks; 
-    public float collapseDelay = 15f; // time for ceiling to collapse once things start shakin
+    public float collapseDelay = 10f; // time for ceiling to collapse once things start shakin
     public float collapseDuration = 60f; 
     public float delayBetweenChunks = 3f; 
     private List<GameObject> collapsedChunks = new List<GameObject>();
@@ -65,7 +65,6 @@ public class BedroomEmergencies : MonoBehaviour
         smallTableFire.SetActive(false);
         comTableFire.SetActive(false);
         Timer = Random.Range(MinTime, MaxTime);
-
         if (GlobalState.GetLevel() == 5)
         {
             StartFireScene();
@@ -215,7 +214,7 @@ public class BedroomEmergencies : MonoBehaviour
         InvokeRepeating("ShakeObjects", 0, 0.01f);
         Invoke("StartCollapse", collapseDelay);
         Invoke("StartVoiceOver3", 0.01f);
-        Invoke("StartVoiceOver4", 10f);
+        Invoke("StartVoiceOver4", 8f);
         Invoke("StopEarthquake", 60);
 
     }
