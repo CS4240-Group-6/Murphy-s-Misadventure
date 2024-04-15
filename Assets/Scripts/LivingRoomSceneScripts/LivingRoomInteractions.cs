@@ -136,6 +136,6 @@ public class LivingRoomInteractions : MonoBehaviour
     public void LoadKitchenScene() 
     {
         SceneManager.LoadScene("KitchenScene");
-        GlobalState.IncrementLevel();
+        // GlobalState.IncrementLevel();
     }
 }
