@@ -34,14 +34,14 @@ public class DoorScript1 : XRGrabInteractable
         Debug.Log("It works");
         // Add change scene logic here Jonny
         int previousLevel = GlobalState.GetLevel();
-        if (previousLevel == 1 || previousLevel == 2 || previousLevel == 8) {
-            SceneManager.LoadScene("BedroomScene");
+        if (previousLevel == 1 || previousLevel == 2) {
+            SceneManager.LoadScene("LivingRoomScene");
         }
-        else if (previousLevel == 3 || previousLevel == 4 || previousLevel == 5) {
+        else if (previousLevel == 3 || previousLevel == 4) {
             SceneManager.LoadScene("KitchenScene");
             Debug.Log("It reaches the go to KitchenScene code");
         }
-        else if (previousLevel == 6 || previousLevel == 7) {
+        else if (previousLevel == 5 || previousLevel == 6) {
             SceneManager.LoadScene("BedroomScene");
         }
     }
