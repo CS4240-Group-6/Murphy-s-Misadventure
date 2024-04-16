@@ -9,8 +9,8 @@ public class ActionButtonControllerKitchen : MonoBehaviour
     [SerializeField] 
     private InputActionReference secondaryActionButton; // Reference to the secondary action button
 
-    //[SerializeField]
-    //private GameObject testText;
+    [SerializeField]
+    private FireExtinguisherInteraction fireExtinguisherInteraction;
 
     [SerializeField]
     KitchenInteractions kitchenInteractions;
@@ -31,6 +31,7 @@ public class ActionButtonControllerKitchen : MonoBehaviour
         // Check if the secondary action button is pressed
         if (secondaryActionButton.action.triggered)
         {
+            fireExtinguisherInteraction.EjectParticles();
             // Toggle the visibility of the testText GameObject
             //testText.SetActive(!testText.activeSelf); 
             if (kitchenInteractions.isHoverLeft1)
