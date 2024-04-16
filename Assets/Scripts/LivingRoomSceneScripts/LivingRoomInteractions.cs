@@ -23,8 +23,8 @@ public class LivingRoomInteractions : MonoBehaviour
     [SerializeField] private GameObject MainDoor;
     [SerializeField] private GameObject CircuitBreakerDoor;
 
-    // Kitchen
-    public bool isHoverKitchen;
+    // For Action Button
+    public bool isHoverKitchen = false;
 
 
     // Start is called before the first frame update
@@ -55,13 +55,15 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void HoverOnKitchenDoorToolTip() {
-        isHoverKitchen = true;
-        tooltipForKitchenDoor.SetActive(true);
+        if (LivingRoomSceneState.Level2Complete()) {
+            isHoverKitchen = true;
+            tooltipForKitchenDoor.SetActive(true);
+        }   
     }
     public void HoverOffKitchenDoorToolTip() {
-        isHoverKitchen = false;
         if (tooltipForKitchenDoor)
         {
+            isHoverKitchen = false;
             tooltipForKitchenDoor.SetActive(false);
         }
     }
@@ -80,12 +82,12 @@ public class LivingRoomInteractions : MonoBehaviour
         tooltipForFireExtinguisher.SetActive(false);
     }
 
-    public void HoverOnWetExtensionCordTip() {
-        tooltipForWetExtensionCord.SetActive(true);
-    }
-    public void HoverOffWetExtensionCordToolTip() {
-        tooltipForWetExtensionCord.SetActive(false);
-    }
+    // public void HoverOnWetExtensionCordTip() {
+    //     tooltipForWetExtensionCord.SetActive(true);
+    // }
+    // public void HoverOffWetExtensionCordToolTip() {
+    //     tooltipForWetExtensionCord.SetActive(false);
+    // }
 
     public void HoverOnLightSwitchToolTip() {
         tooltipForLightSwitch.SetActive(true);
@@ -124,7 +126,7 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void LockDoor() {
-        if (tooltipForMainDoor.activeSelf) {
+        if (tooltipForMainDoor.activeSelf && !GlobalState.IsGameOver() && !LivingRoomSceneState.Level2Complete()) {
             Debug.Log("Main door locked");
             MainDoor.GetComponent<DoorAnimation>().OnDoorLockGrabbed();
             soundManager.PlayDoorUnlockSound();
