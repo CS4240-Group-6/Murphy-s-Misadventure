@@ -570,8 +570,10 @@ public class KitchenInteractions : MonoBehaviour
     // To move to next level
     public void hoverOnBedroomDoorForToolTip()
     {
-        isHoverBedroom = true;
-        TooltipForBedroom.SetActive(true);
+        if (KitchenSceneState.Level4Complete()) {
+            isHoverBedroom = true;
+            TooltipForBedroom.SetActive(true);
+        }
     }
 
     public void hoverOffBedroomDoorForToolTip()
