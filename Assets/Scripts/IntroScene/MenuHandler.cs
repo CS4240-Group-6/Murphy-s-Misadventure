@@ -10,6 +10,11 @@ public class MenuHandler : MonoBehaviour
         SceneManager.LoadScene("LivingRoomScene");
     }
 
+    public void EnterTutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void EndGame()
     {
         // Will only work when the game is built and the option is chosen
