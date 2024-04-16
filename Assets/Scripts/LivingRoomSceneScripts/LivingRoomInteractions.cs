@@ -23,6 +23,7 @@ public class LivingRoomInteractions : MonoBehaviour
     [SerializeField] private GameObject MainDoor;
     [SerializeField] private GameObject CircuitBreakerDoor;
     [SerializeField] private GameObject CircuitBreakerSwitch;
+    [SerializeField] private GameObject ExtensionCord;
 
     // For Action Button
     public bool isHoverKitchen = false;
@@ -110,6 +111,7 @@ public class LivingRoomInteractions : MonoBehaviour
     public void PullOutExtensionCord() {
         if (tooltipForSocket.activeSelf) {
             Debug.Log("Extension cord pulled out");
+            ExtensionCord.GetComponent<PlugAnimationScript>().PlugOut();
             
             LivingRoomSceneState.SetExtensionCordPulled();
         }
