@@ -49,15 +49,6 @@ public class KitchenEmergencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (KitchenSceneState.Level3Complete())
-        // {
-        //     soundManager.StopAllLvl3Sounds();
-        // }
-
-        // if(KitchenSceneState.Level4Complete())
-        // {
-        //     soundManager.StopAllLvl4Sounds();
-        // }
     }
 
     /**
@@ -143,6 +134,14 @@ public class KitchenEmergencies : MonoBehaviour
 
     public void ExtinguishOilFire()
     {
+        CancelInvoke("StartOilFireEffect");
+        CancelInvoke("StartVoiceOver1");
+        CancelInvoke("StartVoiceOver2");
+        CancelInvoke("StrenghtenOilFireEffect");
+        CancelInvoke("StartVoiceOver3");
+        CancelInvoke("StartOilFireSpreadEffect");
+        CancelInvoke("StrenghtenOilFireSpreadEffect");
+
         OilFireStart.SetActive(false);
         OilFireSpread.SetActive(false);
         OilFireExplosion.SetActive(false);
@@ -213,6 +212,12 @@ public class KitchenEmergencies : MonoBehaviour
 
     public void ExtinguishOvenFire()
     {
+        CancelInvoke("StartOvenSmokeEffect");
+        CancelInvoke("StartVoiceOver4");
+        CancelInvoke("StartOvenFireEffect");
+        CancelInvoke("StrenghtenOvenFireEffect");
+        CancelInvoke("StartVoiceOver5");
+
         OvenSmoke.SetActive(false);
         OvenFireStart.SetActive(false);
         OvenExplosion.SetActive(false);

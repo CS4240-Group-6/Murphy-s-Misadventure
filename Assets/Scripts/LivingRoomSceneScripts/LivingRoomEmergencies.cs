@@ -34,18 +34,11 @@ public class LivingRoomEmergencies : MonoBehaviour
         } else if (GlobalState.GetLevel() == 2) {
             StartIntruderScene();
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (LivingRoomSceneState.Level1Complete()) {
-        //     soundManager.StopAllLvl1Sounds();
-        // }
-        // if (LivingRoomSceneState.Level2Complete()) {
-        //     soundManager.StopAllLvl2Sounds();
-        // }
     }
 
     /**
@@ -153,12 +146,12 @@ public class LivingRoomEmergencies : MonoBehaviour
 
     public void StopLightFuseScene()
     {
-        // CancelInvoke("StartVoiceOver1");
-        // CancelInvoke("StartSmokeEffect");
-        // CancelInvoke("StartVoiceOver2");
-        // CancelInvoke("LightsFlickerEffect");
-        // CancelInvoke("PowerOutageEffect");
-        // CancelInvoke("StartVoiceOver3");
+        CancelInvoke("StartVoiceOver1");
+        CancelInvoke("StartSmokeEffect");
+        CancelInvoke("StartVoiceOver2");
+        CancelInvoke("LightsFlickerEffect");
+        CancelInvoke("PowerOutageEffect");
+        CancelInvoke("StartVoiceOver3");
 
         ExtensionSmoke.SetActive(false);
         

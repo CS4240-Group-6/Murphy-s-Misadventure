@@ -63,7 +63,6 @@ public class KitchenSceneLogicManager : MonoBehaviour
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             kitchenEmergencies.ExtinguishOilFire();
-            // GlobalState.IncrementLevel();
         }
         if (GlobalState.GetLevel() == 4 && KitchenSceneState.Level4Complete()) 
         {

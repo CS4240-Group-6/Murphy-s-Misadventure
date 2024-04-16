@@ -86,24 +86,8 @@ public class BedroomEmergencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // if (BedroomSceneState.Level5Complete())
-        // {
-        //     soundManager.StopAllLvl5Sounds();
-        // }
-
-        // if(BedroomSceneState.Level6Complete())
-        // {
-        //     soundManager.StopAllLvl6Sounds();
-        // }
-
         if (flickerLight)
             LightFlickering();
-
-        // for earthquake level
-        // if (!isEarthquakeLevelOver) {
-        //     CheckPlayerUnderSturdyTable();
-        // }
 
         // Check if the object is tilted more than 90 degrees
         if (Vector3.Angle(bakingSoda.transform.up, Vector3.up) > 90f)
@@ -203,6 +187,13 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void SelectFuseBox() {
         Debug.Log("fusebox selected");
+
+        CancelInvoke("StartElectricityEffect");
+        CancelInvoke("StartPlugFireEffect");
+        CancelInvoke("LightFlickering");
+        CancelInvoke("StartSmallTableFireEffect");
+        CancelInvoke("StartComTableFireEffect");
+
         BedroomSceneState.SetCircuitBreakerOff(true);
         fuseBoxAudio.Play();
         bigSparks.Stop();
@@ -242,17 +233,9 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void StopEarthquake() {
         CancelInvoke("ShakeObjects");
-        // for (int i = 0; i < objectsToShake.Length; i++)
-        // {
-        //     objectsToShake[i].transform.position = originalObjectPositions[i];
-        // }
-
-        // Shifted End game check to logic manager
-        // if (BedroomSceneState.IsPlayerUnderCorrectTable()) {
-        //     EndGame(true);
-        // } else {
-        //     EndGame(false);
-        // }
+        CancelInvoke("StartCollapse");
+        CancelInvoke("StartVoiceOver3");
+        CancelInvoke("StartVoiceOver4");
     }
 
     void StartCollapse() {

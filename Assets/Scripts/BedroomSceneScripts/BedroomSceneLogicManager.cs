@@ -66,7 +66,6 @@ public class BedroomSceneLogicManager : MonoBehaviour
             GlobalState.SetStartLevel(false); // Reset start level flag
             levelTextManager.DisplayLevelTexts();
             bedroomEmergencies.SelectFuseBox();
-            // GlobalState.IncrementLevel();
         }
         if (BedroomSceneState.Level6Complete() && GlobalState.GetLevel() == 6) 
         {
