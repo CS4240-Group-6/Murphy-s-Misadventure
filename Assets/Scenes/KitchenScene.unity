@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15604,6 +15604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondaryActionButton: {fileID: 1333348060227018993, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  fireExtinguisherInteraction: {fileID: 1673293374}
   kitchenInteractions: {fileID: 788498309}
 --- !u!1001 &789572051
 PrefabInstance:
@@ -26175,7 +26176,7 @@ MonoBehaviour:
   fireExtinguisher: {fileID: 1673293372}
   fireExtinguisherParticleEffect: {fileID: 1682085932}
   extinguisherAudio: {fileID: 1673293373}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 1290338120}
 --- !u!114 &1673293375
 MonoBehaviour:
   m_ObjectHideFlags: 0
