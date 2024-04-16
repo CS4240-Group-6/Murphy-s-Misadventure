@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GlobalState
 {
-    private static int level = 3;
+    private static int level = 1;
     private static bool isGameOver = false;
     
     private static bool isStartLevel = true;

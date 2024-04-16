@@ -22,9 +22,11 @@ public class LivingRoomInteractions : MonoBehaviour
     // GameObjects
     [SerializeField] private GameObject MainDoor;
     [SerializeField] private GameObject CircuitBreakerDoor;
+    [SerializeField] private GameObject CircuitBreakerSwitch;
+    [SerializeField] private GameObject ExtensionCord;
 
-    // Kitchen
-    public bool isHoverKitchen;
+    // For Action Button
+    public bool isHoverKitchen = false;
 
 
     // Start is called before the first frame update
@@ -55,37 +57,42 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void HoverOnKitchenDoorToolTip() {
-        isHoverKitchen = true;
-        tooltipForKitchenDoor.SetActive(true);
+        if (LivingRoomSceneState.Level2Complete()) {
+            isHoverKitchen = true;
+            tooltipForKitchenDoor.SetActive(true);
+        }   
     }
     public void HoverOffKitchenDoorToolTip() {
-        isHoverKitchen = false;
         if (tooltipForKitchenDoor)
         {
+            isHoverKitchen = false;
             tooltipForKitchenDoor.SetActive(false);
         }
     }
     
     public void HoverOnBedroomDoorToolTip() {
-        tooltipForBedroomDoor.SetActive(true);
+        // Disable bedroom door tooltip
+        // tooltipForBedroomDoor.SetActive(true);
     }
     public void HoverOffBedroomDoorToolTip() {
-        tooltipForBedroomDoor.SetActive(false);
+        // tooltipForBedroomDoor.SetActive(false);
     }
 
-    public void HoverOnFireExtinguisherToolTip() {
-        tooltipForFireExtinguisher.SetActive(true);
-    }
-    public void HoverOffFireExtinguisherToolTip() {
-        tooltipForFireExtinguisher.SetActive(false);
-    }
+    // public void HoverOnFireExtinguisherToolTip() {
+    //     // Disable fire extinguisher tooltip
+    //     tooltipForFireExtinguisher.SetActive(true);
+    // }
+    // public void HoverOffFireExtinguisherToolTip() {
+    //     // Disable fire extinguisher tooltip
+    //     tooltipForFireExtinguisher.SetActive(false);
+    // }
 
-    public void HoverOnWetExtensionCordTip() {
-        tooltipForWetExtensionCord.SetActive(true);
-    }
-    public void HoverOffWetExtensionCordToolTip() {
-        tooltipForWetExtensionCord.SetActive(false);
-    }
+    // public void HoverOnWetExtensionCordTip() {
+    //     tooltipForWetExtensionCord.SetActive(true);
+    // }
+    // public void HoverOffWetExtensionCordToolTip() {
+    //     tooltipForWetExtensionCord.SetActive(false);
+    // }
 
     public void HoverOnLightSwitchToolTip() {
         tooltipForLightSwitch.SetActive(true);
@@ -104,6 +111,7 @@ public class LivingRoomInteractions : MonoBehaviour
     public void PullOutExtensionCord() {
         if (tooltipForSocket.activeSelf) {
             Debug.Log("Extension cord pulled out");
+            ExtensionCord.GetComponent<PlugAnimationScript>().PlugOut();
             
             LivingRoomSceneState.SetExtensionCordPulled();
         }
@@ -124,12 +132,18 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void LockDoor() {
-        if (tooltipForMainDoor.activeSelf) {
+        if (tooltipForMainDoor.activeSelf && !GlobalState.IsGameOver() && !LivingRoomSceneState.Level2Complete()) {
             Debug.Log("Main door locked");
             MainDoor.GetComponent<DoorAnimation>().OnDoorLockGrabbed();
             soundManager.PlayDoorUnlockSound();
             soundManager.PlayLeaveOrICallPolice();
             LivingRoomSceneState.SetDoorLocked();
+        }
+    }
+
+    public void ToggleSwitch() {
+        if (tooltipForLightSwitch.activeSelf) {
+            CircuitBreakerSwitch.GetComponent<ShieldAnimation>().ToggleSwitch();
         }
     }
 

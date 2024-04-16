@@ -38,6 +38,7 @@ public class ActionButtonControllerLivingRoom : MonoBehaviour
                 livingRoomInteractions.LoadKitchenScene();
             }
             if (GlobalState.GetLevel() == 1) {
+                livingRoomInteractions.ToggleSwitch();
                 livingRoomInteractions.PullOutExtensionCord();
             }
             if (GlobalState.GetLevel() == 2) {
