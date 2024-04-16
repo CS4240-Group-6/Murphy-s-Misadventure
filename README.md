@@ -19,11 +19,16 @@ Problems and dangers will be produced in the following rooms for different level
 If players survive all these levels, they WIN the game else they will be put in a dark room to reflect on their mistake and they can choose to be revived!
 
 ## Controls 🕹️
-- Grab (Right Grip)
+Left Controller
 - Teleport (Left Trigger)
 - Movement (Left Joystick)
+  
+Right Controller
+- Canvas Interaction (Right Trigger)
 - Rotation (Right Joystick)
-- Action or Interact (Right Controller 'B')
+- Grab (Right Grip)
+- Action Button (Right Controller 'A')
+
 
 ## Features ⚡
 - Tooltips along the way for players to be guided/assisted.
