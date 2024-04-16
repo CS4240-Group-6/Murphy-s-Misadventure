@@ -22,6 +22,7 @@ public class LivingRoomInteractions : MonoBehaviour
     // GameObjects
     [SerializeField] private GameObject MainDoor;
     [SerializeField] private GameObject CircuitBreakerDoor;
+    [SerializeField] private GameObject CircuitBreakerSwitch;
 
     // For Action Button
     public bool isHoverKitchen = false;
@@ -69,18 +70,21 @@ public class LivingRoomInteractions : MonoBehaviour
     }
     
     public void HoverOnBedroomDoorToolTip() {
-        tooltipForBedroomDoor.SetActive(true);
+        // Disable bedroom door tooltip
+        // tooltipForBedroomDoor.SetActive(true);
     }
     public void HoverOffBedroomDoorToolTip() {
-        tooltipForBedroomDoor.SetActive(false);
+        // tooltipForBedroomDoor.SetActive(false);
     }
 
-    public void HoverOnFireExtinguisherToolTip() {
-        tooltipForFireExtinguisher.SetActive(true);
-    }
-    public void HoverOffFireExtinguisherToolTip() {
-        tooltipForFireExtinguisher.SetActive(false);
-    }
+    // public void HoverOnFireExtinguisherToolTip() {
+    //     // Disable fire extinguisher tooltip
+    //     tooltipForFireExtinguisher.SetActive(true);
+    // }
+    // public void HoverOffFireExtinguisherToolTip() {
+    //     // Disable fire extinguisher tooltip
+    //     tooltipForFireExtinguisher.SetActive(false);
+    // }
 
     // public void HoverOnWetExtensionCordTip() {
     //     tooltipForWetExtensionCord.SetActive(true);
@@ -132,6 +136,12 @@ public class LivingRoomInteractions : MonoBehaviour
             soundManager.PlayDoorUnlockSound();
             soundManager.PlayLeaveOrICallPolice();
             LivingRoomSceneState.SetDoorLocked();
+        }
+    }
+
+    public void ToggleSwitch() {
+        if (tooltipForLightSwitch.activeSelf) {
+            CircuitBreakerSwitch.GetComponent<ShieldAnimation>().ToggleSwitch();
         }
     }
 

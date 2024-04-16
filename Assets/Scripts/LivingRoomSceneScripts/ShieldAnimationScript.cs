@@ -45,24 +45,30 @@ public class ShieldAnimation : MonoBehaviour
         Debug.Log("IsOpen " + isOpen);
     }
 
-    public void OnSwitchGrabbed(SelectEnterEventArgs args)
-    {
-        Debug.Log("grab on " + isGrabbingSwitch);
-        Debug.Log("isopen " + isOpen);
-        if (!isGrabbingSwitch)
-        {
-            isGrabbingSwitch = true;
-            Debug.Log("playing");
-            shieldAnimator.Play("TurnOnSwitch");
-            LivingRoomSceneState.SetCircuitBreakerOn();
-        }
-        Debug.Log("grab on1 " + isGrabbingSwitch);
+    // Switch to press A button to turn on the circuit breaker
+    public void ToggleSwitch() {
+        shieldAnimator.Play("TurnOnSwitch");
+        LivingRoomSceneState.SetCircuitBreakerOn();
     }
 
-    public void OnSwitchReleased(SelectExitEventArgs args)
-    {
-        isGrabbingSwitch = false;
-        Debug.Log("grab off " + isGrabbingSwitch);
-    }
+    // public void OnSwitchGrabbed(SelectEnterEventArgs args)
+    // {
+    //     Debug.Log("grab on " + isGrabbingSwitch);
+    //     Debug.Log("isopen " + isOpen);
+    //     if (!isGrabbingSwitch)
+    //     {
+    //         isGrabbingSwitch = true;
+    //         Debug.Log("playing");
+    //         shieldAnimator.Play("TurnOnSwitch");
+    //         LivingRoomSceneState.SetCircuitBreakerOn();
+    //     }
+    //     Debug.Log("grab on1 " + isGrabbingSwitch);
+    // }
+
+    // public void OnSwitchReleased(SelectExitEventArgs args)
+    // {
+    //     isGrabbingSwitch = false;
+    //     Debug.Log("grab off " + isGrabbingSwitch);
+    // }
 }
 
