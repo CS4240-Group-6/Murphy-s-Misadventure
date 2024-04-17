@@ -112,7 +112,7 @@ public class LivingRoomInteractions : MonoBehaviour
         if (tooltipForSocket.activeSelf) {
             Debug.Log("Extension cord pulled out");
             ExtensionCord.GetComponent<PlugAnimationScript>().PlugOut();
-            
+            soundManager.PlayGrabSound();
             LivingRoomSceneState.SetExtensionCordPulled();
         }
     }
