@@ -7,8 +7,8 @@ public static class BedroomSceneState
     private static bool playerUnderCorrectTable = false;
     private static bool isCircuitBreakerOff = false;
     private static bool isYellowFireExtinguished = false;
-    private static bool isBlueFireExtinguished = false;
-    private static bool isGreenFireExtinguished = false;
+    private static bool isBlueFireExtinguished = true;
+    private static bool isGreenFireExtinguished = true;
 
     /*
     Earthquake scene related. And a frog?!

@@ -156,6 +156,7 @@ public class BedroomEmergencies : MonoBehaviour
 
     void StartSmallTableFireEffect() {
         smallTableFire.SetActive(true);
+        BedroomSceneState.SetExtinguishGreenFlames(false);
         Transform childTransform = smallTableFire.transform.Find("Fire_Green");
         if (childTransform != null)
         {
@@ -166,6 +167,7 @@ public class BedroomEmergencies : MonoBehaviour
 
     void StartComTableFireEffect() {
         comTableFire.SetActive(true);
+        BedroomSceneState.SetExtinguishBlueFlames(false);
         Transform childTransform = comTableFire.transform.Find("Fire_Blue");
         if (childTransform != null)
         {
