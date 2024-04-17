@@ -74,7 +74,7 @@ public class DeathSceneManger : MonoBehaviour
         string textOnPaper = "";
         switch (GlobalState.GetLevel()) {
             case 1:
-                textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+                textOnPaper = "Black out! Something is probably causing the trip. \n Look for the source before turning on the breaker!";
                 // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
 
@@ -94,7 +94,7 @@ public class DeathSceneManger : MonoBehaviour
                 break;
 
             case 5:
-                textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nBut remember, with each misstep, the shadows grow longer...";
+                textOnPaper = "Uh-oh! Flames from an electrical overload! Water won't help you here. Find something to smother the flames, fast! \nYou might need to use multiple tools to put out the fire.";
                 // textOnPaper = GlobalState.GetLevel().ToString();
                 break;
             case 6:
