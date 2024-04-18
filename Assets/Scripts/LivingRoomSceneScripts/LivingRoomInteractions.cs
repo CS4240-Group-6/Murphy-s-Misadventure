@@ -50,7 +50,9 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void HoverOnMainDoorToolTip() {
-        tooltipForMainDoor.SetActive(true);
+        if (GlobalState.GetLevel() == 2) {
+            tooltipForMainDoor.SetActive(true);
+        }   
     }
     public void HoverOffMainDoorToolTip() {
         tooltipForMainDoor.SetActive(false);
@@ -132,7 +134,7 @@ public class LivingRoomInteractions : MonoBehaviour
     }
 
     public void LockDoor() {
-        if (tooltipForMainDoor.activeSelf && !GlobalState.IsGameOver() && !LivingRoomSceneState.Level2Complete()) {
+        if (tooltipForMainDoor.activeSelf && GlobalState.GetLevel() == 2 && !GlobalState.IsGameOver() && !LivingRoomSceneState.Level2Complete()) {
             Debug.Log("Main door locked");
             MainDoor.GetComponent<DoorAnimation>().OnDoorLockGrabbed();
             soundManager.PlayDoorUnlockSound();
