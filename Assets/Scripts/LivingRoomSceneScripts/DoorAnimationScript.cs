@@ -17,7 +17,7 @@ public class DoorAnimation : MonoBehaviour
     public void OnDoorGrabbed(SelectEnterEventArgs args)
     {
         // Check if the Door is already being grabbed
-        if (!isGrabbingDoor)
+        if (!isGrabbingDoor && GlobalState.GetLevel() == 2)
         {
             isGrabbingDoor = true; 
             ToggleDoor();
