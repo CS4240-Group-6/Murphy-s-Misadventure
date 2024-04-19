@@ -8,6 +8,7 @@ public class PourDetector : MonoBehaviour
     public int pourThreshold = 45;
     public Transform origin = null;
     public GameObject streamPrefab = null;
+    [SerializeField] GameObject streamObject;
 
     private bool isPouring = false;
     private Stream currentStream = null;
@@ -59,7 +60,11 @@ public class PourDetector : MonoBehaviour
 
     private Stream CreateStream()
     {
-        GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
+        //GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
+        streamObject.transform.position = origin.position;
+        streamObject.transform.rotation = Quaternion.identity;
+        streamObject.transform.SetParent(transform);
+        streamObject.SetActive(true);
         return streamObject.GetComponent<Stream>();
     }
 }
