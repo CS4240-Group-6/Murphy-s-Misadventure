@@ -189,7 +189,15 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void SelectFuseBox() {
         Debug.Log("fusebox selected");
-
+        if (!plugFire.activeSelf) {
+            BedroomSceneState.SetExtinguishYellowFlames(true);
+        }
+        if (!comTableFire.activeSelf) {
+            BedroomSceneState.SetExtinguishBlueFlames(true);
+        }
+        if (!smallTableFire.activeSelf) {
+            BedroomSceneState.SetExtinguishGreenFlames(true);
+        }
         CancelInvoke("StartElectricityEffect");
         CancelInvoke("StartPlugFireEffect");
         CancelInvoke("LightFlickering");
