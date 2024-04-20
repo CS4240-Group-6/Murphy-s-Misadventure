@@ -31,6 +31,9 @@ Right Controller
 
 
 ## Features ⚡
+- Tutorial room to get users accustomed to our interactions.
+- FIre showcase room to educate users on the different types of fires that might occur in a household.
+- Death room for users to reflect and learn about the mistakes they did and how they can rectify it.
 - Tooltips along the way for players to be guided/assisted.
 - Unique and realistic sounds behind every action to simulate real-life scenarios.
 - Poly assets to gamify the environment so that it does not stress the players too much.
