@@ -26,6 +26,8 @@ public class KitchenInteractions : MonoBehaviour
     [SerializeField] private GameObject TooltipForWaterBottle;
     [SerializeField] private GameObject TooltipForBedroom;
 
+    [SerializeField] private GameObject tooltipForExtinguisher;
+
     [SerializeField] private OvenFireInteractions ovenFireInteractions;
     
     private static float STOVE_ON_ANGLE = 90f;
@@ -35,6 +37,8 @@ public class KitchenInteractions : MonoBehaviour
     private static float OVEN_CLOSED_ANGLE = 0f;
 
     private float SPEED = 5.0f;
+
+    public bool isFireExtinguisher;
 
     // Bedroom
     public bool isHoverBedroom;
@@ -565,6 +569,17 @@ public class KitchenInteractions : MonoBehaviour
             }
         }
         else Debug.Log("no child with stove front door found");
+    }
+
+    public void hoverOnExtinguisherToolTip() 
+    {
+        isFireExtinguisher = true;
+        tooltipForExtinguisher.SetActive(true);
+    }
+    public void hoverOffExtinguisherToolTip() 
+    {
+        isFireExtinguisher = false;
+        tooltipForExtinguisher.SetActive(false);
     }
 
     // To move to next level

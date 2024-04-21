@@ -19,6 +19,9 @@ public class BedroomEmergencies : MonoBehaviour
     public Light tableLight;
     private bool flickerLight = false;
     private bool bakingSodaParticlesActive;
+    public bool isFireExtinguisher;
+    public bool isCircuitBreaker;
+    public bool isSturdyTable;
     [SerializeField] private GameObject bakingSoda;
     [SerializeField] private ParticleSystem bakingSodaParticles;
     [SerializeField] private AudioSource fuseBoxAudio;
@@ -317,31 +320,43 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void hoverOnBigTableForToolTip()
     {
+        isSturdyTable = true;
         tooltipForBigTable.SetActive(true);
     }
     public void hoverOffBigTableForToolTip()
     {
+        isSturdyTable = false;
         tooltipForBigTable.SetActive(false);
     }
 
-    public void HoverOnBakingSodaToolTip() {
+    public void HoverOnBakingSodaToolTip() 
+    {
         tooltipForBakingSoda.SetActive(true);
     }
-    public void HoverOffBakingSodaToolTip() {
+    public void HoverOffBakingSodaToolTip() 
+    {
         tooltipForBakingSoda.SetActive(false);
     }
 
-    public void HoverOnCircuitBreakerToolTip() {
+    public void HoverOnCircuitBreakerToolTip() 
+    {
+        isCircuitBreaker = true;
         tooltipForCircuitBreaker.SetActive(true);
     }
-    public void HoverOffCircuitBreakerToolTip() {
+    public void HoverOffCircuitBreakerToolTip() 
+    {
+        isCircuitBreaker = false;
         tooltipForCircuitBreaker.SetActive(false);
     }
     
-    public void HoverOnExtinguisherToolTip() {
+    public void HoverOnExtinguisherToolTip() 
+    {
+        isFireExtinguisher = true;
         tooltipForExtinguisher.SetActive(true);
     }
-    public void HoverOffExtinguisherToolTip() {
+    public void HoverOffExtinguisherToolTip() 
+    {
+        isFireExtinguisher = false;
         tooltipForExtinguisher.SetActive(false);
     }
 

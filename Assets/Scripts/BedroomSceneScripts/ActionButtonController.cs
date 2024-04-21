@@ -21,7 +21,6 @@ public class ActionButtonController : MonoBehaviour
     {
         bedroomEmergencies = GetComponent<BedroomEmergencies>(); // Get the BedroomEmergencies script component
         secondaryActionButton.action.Enable(); // Enable the secondary action button
-        // testText.SetActive(false); // Set the testText GameObject to be inactive
     }
 
     private void OnDestroy()
@@ -34,11 +33,16 @@ public class ActionButtonController : MonoBehaviour
         // Check if the secondary action button is pressed
         if (secondaryActionButton.action.triggered)
         {
-            if (GlobalState.GetLevel() == 5) {
+            if (bedroomEmergencies.isFireExtinguisher) 
+            {
                 fireExtinguisherInteraction.EjectParticles(); // Call the EjectParticles method from the FireExtinguisherInteraction script
+            }
+            if (bedroomEmergencies.isCircuitBreaker) 
+            {
                 bedroomEmergencies.SelectFuseBox(); // Call the SelectFuseBox method from the BedroomEmergencies script
             }
-            if (GlobalState.GetLevel() == 6) {
+            if (bedroomEmergencies.isSturdyTable) 
+            {
                 hideUnderTableInteraction.SetPlayerUnderSturdyTable(); // Call the SetPlayerUnderSturdyTable method from the HideUnderTableInteraction script   
             }       
         }
