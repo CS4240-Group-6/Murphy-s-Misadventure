@@ -33,7 +33,7 @@ public class ActionButtonController : MonoBehaviour
         // Check if the secondary action button is pressed
         if (secondaryActionButton.action.triggered)
         {
-            if (bedroomEmergencies.isFireExtinguisher) 
+            if (fireExtinguisherInteraction.isExtinguisherInHand) 
             {
                 fireExtinguisherInteraction.EjectParticles(); // Call the EjectParticles method from the FireExtinguisherInteraction script
             }

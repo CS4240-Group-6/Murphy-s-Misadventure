@@ -30,7 +30,7 @@ public class ActionButtonControllerKitchen : MonoBehaviour
         // Check if the secondary action button is pressed
         if (secondaryActionButton.action.triggered)
         {
-            if (kitchenInteractions.isFireExtinguisher)
+            if (fireExtinguisherInteraction.isExtinguisherInHand)
             {
                 fireExtinguisherInteraction.EjectParticles();
             }
