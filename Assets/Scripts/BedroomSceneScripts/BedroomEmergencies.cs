@@ -33,6 +33,8 @@ public class BedroomEmergencies : MonoBehaviour
     public float shakeForce = 5f;
     public GameObject[] objectsToShake;
     private Vector3[] originalObjectPositions;
+    private Quaternion[] originalObjectRotations;
+
     public GameObject[] ceilingChunks; 
     public float collapseDelay = 10f; // time for ceiling to collapse once things start shakin
     public float collapseDuration = 60f; 
@@ -75,11 +77,11 @@ public class BedroomEmergencies : MonoBehaviour
         }
         
 
-        originalObjectPositions = new Vector3[objectsToShake.Length];
-        for (int i = 0; i < objectsToShake.Length; i++)
-        {
-            originalObjectPositions[i] = objectsToShake[i].transform.position;
-        }
+        // originalObjectPositions = new Vector3[objectsToShake.Length];
+        // for (int i = 0; i < objectsToShake.Length; i++)
+        // {
+        //     originalObjectPositions[i] = objectsToShake[i].transform.position;
+        // }
    
     }
 
@@ -120,6 +122,14 @@ public class BedroomEmergencies : MonoBehaviour
         60s limit -> YOU DIED
     */
     public void StartFireScene() {
+        originalObjectPositions = new Vector3[objectsToShake.Length];
+        originalObjectRotations = new Quaternion[objectsToShake.Length];
+        for (int i = 0; i < objectsToShake.Length; i++)
+        {
+            originalObjectPositions[i] = objectsToShake[i].transform.position;
+            originalObjectRotations[i] = objectsToShake[i].transform.rotation;
+            Debug.Log("setting original pos");
+        }
         sparksFlying.Play();
         Invoke("StartElectricityEffect", 10f);
         InvokeRepeating("StartPlugFireEffect", 5, 10);
@@ -191,18 +201,23 @@ public class BedroomEmergencies : MonoBehaviour
         Debug.Log("fusebox selected");
         if (!plugFire.activeSelf) {
             BedroomSceneState.SetExtinguishYellowFlames(true);
-        }
-        if (!comTableFire.activeSelf) {
+            CancelInvoke("StartElectricityEffect");
+            CancelInvoke("StartPlugFireEffect");
+            CancelInvoke("LightFlickering");
+            CancelInvoke("StartSmallTableFireEffect");
+            CancelInvoke("StartComTableFireEffect");
+            if (!comTableFire.activeSelf) {
             BedroomSceneState.SetExtinguishBlueFlames(true);
-        }
-        if (!smallTableFire.activeSelf) {
-            BedroomSceneState.SetExtinguishGreenFlames(true);
+            }
+            if (!smallTableFire.activeSelf) {
+                BedroomSceneState.SetExtinguishGreenFlames(true);
+            }
         }
         CancelInvoke("StartElectricityEffect");
         CancelInvoke("StartPlugFireEffect");
-        CancelInvoke("LightFlickering");
-        CancelInvoke("StartSmallTableFireEffect");
-        CancelInvoke("StartComTableFireEffect");
+        // CancelInvoke("LightFlickering");
+        // CancelInvoke("StartSmallTableFireEffect");
+        // CancelInvoke("StartComTableFireEffect");
 
         BedroomSceneState.SetCircuitBreakerOff(true);
         fuseBoxAudio.Play();
@@ -211,6 +226,11 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void StartEarthquakeScene()
     {
+        for (int i = 0; i < objectsToShake.Length; i++)
+            {
+                objectsToShake[i].transform.position = originalObjectPositions[i];
+                objectsToShake[i].transform.rotation = originalObjectRotations[i];
+            }
         soundManager.PlayEarthquakeSound();
         InvokeRepeating("ShakeObjects", 0, 0.01f);
         Invoke("StartCollapse", collapseDelay);
