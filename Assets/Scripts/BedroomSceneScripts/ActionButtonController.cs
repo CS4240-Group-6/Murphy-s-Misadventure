@@ -41,10 +41,14 @@ public class ActionButtonController : MonoBehaviour
             {
                 bedroomEmergencies.SelectFuseBox(); // Call the SelectFuseBox method from the BedroomEmergencies script
             }
-            if (bedroomEmergencies.isSturdyTable) 
+            if (hideUnderTableInteraction.isSturdyTable) 
             {
                 hideUnderTableInteraction.SetPlayerUnderSturdyTable(); // Call the SetPlayerUnderSturdyTable method from the HideUnderTableInteraction script   
             }       
+            if (hideUnderTableInteraction.isFlimsyTable) 
+            {
+                hideUnderTableInteraction.SetPlayerUnderSturdyTable(); // Call the SetPlayerUnderSturdyTable method from the HideUnderTableInteraction script   
+            }    
         }
     }
 }

@@ -229,11 +229,18 @@ public class BedroomEmergencies : MonoBehaviour
 
     public void StartEarthquakeScene()
     {
-        for (int i = 0; i < objectsToShake.Length; i++)
-            {
-                objectsToShake[i].transform.position = originalObjectPositions[i];
-                objectsToShake[i].transform.rotation = originalObjectRotations[i];
-            }
+        // foreach (var obj in objectsToShake)
+        // {
+        //     if (obj == null) {
+        //         Debug.LogError("An element in Objects To Shake is null.");
+        //     }
+        // }
+
+        // for (int i = 0; i < objectsToShake.Length; i++)
+        // {
+        //     objectsToShake[i].transform.position = originalObjectPositions[i];
+        //     objectsToShake[i].transform.rotation = originalObjectRotations[i];
+        // }
         soundManager.PlayEarthquakeSound();
         InvokeRepeating("ShakeObjects", 0, 0.01f);
         Invoke("StartCollapse", collapseDelay);
@@ -318,16 +325,14 @@ public class BedroomEmergencies : MonoBehaviour
         return availableChunks[randomIndex];
     }
 
-    public void hoverOnBigTableForToolTip()
-    {
-        isSturdyTable = true;
-        tooltipForBigTable.SetActive(true);
-    }
-    public void hoverOffBigTableForToolTip()
-    {
-        isSturdyTable = false;
-        tooltipForBigTable.SetActive(false);
-    }
+    // public void hoverOnBigTableForToolTip()
+    // {
+    //     tooltipForBigTable.SetActive(true);
+    // }
+    // public void hoverOffBigTableForToolTip()
+    // {
+    //     tooltipForBigTable.SetActive(false);
+    // }
 
     public void HoverOnBakingSodaToolTip() 
     {

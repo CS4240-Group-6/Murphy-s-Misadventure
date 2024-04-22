@@ -18,6 +18,8 @@ public class HideUnderTableInteraction : MonoBehaviour
     [Header("Tooltips")]
     [SerializeField] private GameObject tooltipForSturdyTable;
     [SerializeField] private GameObject tooltipForFlimsyTable;
+    public bool isFlimsyTable;
+    public bool isSturdyTable;
 
     public void SetPlayerUnderSturdyTable() {
         if (tooltipForSturdyTable.activeSelf) {
@@ -50,19 +52,23 @@ public class HideUnderTableInteraction : MonoBehaviour
 
     public void hoverOnSturdyTableForToolTip()
     {
+        isSturdyTable = true;
         tooltipForSturdyTable.SetActive(true);
     }
     public void hoverOffSturdyTableForToolTip()
     {
+        isSturdyTable = false;
         tooltipForSturdyTable.SetActive(false);
     }
 
     public void hoverOnFlimsyTableForToolTip()
     {
+        isFlimsyTable = true;
         tooltipForFlimsyTable.SetActive(true);
     }
     public void hoverOffFlimsyTableForToolTip()
     {
+        isFlimsyTable = false;
         tooltipForFlimsyTable.SetActive(false);
     }
 
