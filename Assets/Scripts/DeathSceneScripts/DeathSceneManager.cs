@@ -24,9 +24,6 @@ public class DeathSceneManger : MonoBehaviour
     [SerializeField] 
     private GameObject TooltipForNote;
 
-    [SerializeField] 
-    private GameObject TooltipForDoor;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -122,13 +119,10 @@ public class DeathSceneManger : MonoBehaviour
     public void hoverOnDoorForToolTip()
     {
         isHoverDoor = true;
-        TooltipForDoor.SetActive(true);
     }
 
     public void hoverOffDoorForToolTip()
     {
         isHoverDoor = false;
-        TooltipForDoor.SetActive(false);
     }
-
 }
