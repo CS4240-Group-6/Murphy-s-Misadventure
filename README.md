@@ -71,4 +71,5 @@ A VR game made using **Unity 2022.3.16f1**
 - Open this from Unity Hub
 - The starting scene is called "Introduction"
 - To build the game onto your Oculus, go to File > Build Settings, and switch to Android platform (Make sure all the scenes are present under "scenes in build")
+![image](https://github.com/CS4240-Group-6/Murphy-s-Misadventure/assets/69337196/3d0cac2c-abe8-4f10-908d-3564659d7c18)
 - In Run Device, select your Oculus, and click Build and Run, it should take around 10 minutes to build the project the first time
